@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Deric\\source\\repos\\VkApiBot\\VkApiBot\\VkApiBot.csproj": {}
+    "C:\\Repositories\\Diplom_VK_Api_Bot\\VkApiBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Deric\\source\\repos\\VkApiBot\\VkApiBot\\VkApiBot.csproj": {
+    "C:\\Repositories\\Diplom_VK_Api_Bot\\VkApiBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Deric\\source\\repos\\VkApiBot\\VkApiBot\\VkApiBot.csproj",
+        "projectUniqueName": "C:\\Repositories\\Diplom_VK_Api_Bot\\VkApiBot.csproj",
         "projectName": "VkApiBot",
-        "projectPath": "C:\\Users\\Deric\\source\\repos\\VkApiBot\\VkApiBot\\VkApiBot.csproj",
+        "projectPath": "C:\\Repositories\\Diplom_VK_Api_Bot\\VkApiBot.csproj",
         "packagesPath": "C:\\Users\\Deric\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Deric\\source\\repos\\VkApiBot\\VkApiBot\\obj\\",
+        "outputPath": "C:\\Repositories\\Diplom_VK_Api_Bot\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
