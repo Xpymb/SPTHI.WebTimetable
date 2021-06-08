@@ -23,8 +23,7 @@ namespace VkApiBot
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseKestrel(options =>
-                    {
-                        //options.Listen(IPAddress.Loopback, 5000);
+                    { 
                         options.Listen(IPAddress.Parse(args[0]), 5986);
                     });
                     webBuilder.UseStartup<Startup>();
