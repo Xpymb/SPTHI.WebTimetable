@@ -24,7 +24,7 @@ namespace VkApiBot
                     webBuilder.UseKestrel(options =>
                     {
                         options.Listen(IPAddress.Loopback, 5000);
-                        options.Listen(IPAddress.Parse("46.148.228.111"), 5986);
+                        options.Listen(IPAddress.Parse(args[0]), 5986);
                     });
                     webBuilder.UseStartup<Startup>();
                 });
