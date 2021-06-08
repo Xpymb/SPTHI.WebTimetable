@@ -17,7 +17,7 @@ namespace VkApiBot.Controllers
             _configuration = configuration;
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult Update([FromBody] Updates updates)
         {
             switch(updates.Type)
