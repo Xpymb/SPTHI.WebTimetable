@@ -38,7 +38,6 @@ C:\Repositories\Diplom_VK_Api_Bot\bin\Debug\net5.0\HtmlAgilityPack.dll
 C:\Repositories\Diplom_VK_Api_Bot\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Repositories\Diplom_VK_Api_Bot\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Repositories\Diplom_VK_Api_Bot\bin\Debug\net5.0\VkNet.dll
-C:\Repositories\Diplom_VK_Api_Bot\obj\Debug\net5.0\VkApiBot.csprojAssemblyReference.cache
 C:\Repositories\Diplom_VK_Api_Bot\obj\Debug\net5.0\VkApiBot.GeneratedMSBuildEditorConfig.editorconfig
 C:\Repositories\Diplom_VK_Api_Bot\obj\Debug\net5.0\VkApiBot.AssemblyInfoInputs.cache
 C:\Repositories\Diplom_VK_Api_Bot\obj\Debug\net5.0\VkApiBot.AssemblyInfo.cs
