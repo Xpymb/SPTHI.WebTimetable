@@ -15,6 +15,7 @@ namespace VkApiBot
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+            Console.ReadKey();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
