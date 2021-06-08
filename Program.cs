@@ -15,7 +15,6 @@ namespace VkApiBot
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-            Console.ReadKey();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -25,7 +24,7 @@ namespace VkApiBot
                     webBuilder.UseKestrel(options =>
                     {
                         options.Listen(IPAddress.Loopback, 5000);
-                        options.Listen(IPAddress.Parse("46.148.228.111"), 5986);
+                        options.Listen(IPAddress.Parse("46.148.228.49"), 5986);
                     });
                     webBuilder.UseStartup<Startup>();
                 });
