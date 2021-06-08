@@ -52,4 +52,3 @@ C:\Repositories\Diplom_VK_Api_Bot\obj\Debug\net5.0\VkApiBot.dll
 C:\Repositories\Diplom_VK_Api_Bot\obj\Debug\net5.0\ref\VkApiBot.dll
 C:\Repositories\Diplom_VK_Api_Bot\obj\Debug\net5.0\VkApiBot.pdb
 C:\Repositories\Diplom_VK_Api_Bot\obj\Debug\net5.0\VkApiBot.genruntimeconfig.cache
-C:\Repositories\Diplom_VK_Api_Bot\obj\Debug\net5.0\VkApiBot.csprojAssemblyReference.cache
