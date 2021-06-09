@@ -6,6 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="publishfiles\**" />
+    <Content Remove="publishfiles\**" />
+    <EmbeddedResource Remove="publishfiles\**" />
+    <None Remove="publishfiles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove=".gitignore" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="VkNet" Version="1.63.0" />
   </ItemGroup>
 

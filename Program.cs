@@ -15,7 +15,6 @@ namespace VkApiBot
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(args[0]);
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -23,10 +22,6 @@ namespace VkApiBot
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseKestrel(options =>
-                    { 
-                        options.Listen(IPAddress.Parse(args[0]), 80);
-                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }
