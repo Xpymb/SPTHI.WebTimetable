@@ -9,7 +9,6 @@ C:\Repositories\Diplom_VK_Api_Bot\VkBot\bin\Release\net5.0\ref\VkBot.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkBot\bin\Release\net5.0\VkBot.pdb
 C:\Repositories\Diplom_VK_Api_Bot\VkBot\bin\Release\net5.0\VkBot.Views.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkBot\bin\Release\net5.0\VkBot.Views.pdb
-C:\Repositories\Diplom_VK_Api_Bot\VkBot\obj\Release\net5.0\VkBot.csprojAssemblyReference.cache
 C:\Repositories\Diplom_VK_Api_Bot\VkBot\obj\Release\net5.0\VkBot.GeneratedMSBuildEditorConfig.editorconfig
 C:\Repositories\Diplom_VK_Api_Bot\VkBot\obj\Release\net5.0\VkBot.AssemblyInfoInputs.cache
 C:\Repositories\Diplom_VK_Api_Bot\VkBot\obj\Release\net5.0\VkBot.AssemblyInfo.cs
@@ -38,3 +37,4 @@ C:\Repositories\Diplom_VK_Api_Bot\VkBot\obj\Release\net5.0\ref\VkBot.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkBot\obj\Release\net5.0\VkBot.pdb
 C:\Repositories\Diplom_VK_Api_Bot\VkBot\obj\Release\net5.0\VkBot.genruntimeconfig.cache
 C:\Repositories\Diplom_VK_Api_Bot\VkBot\obj\Release\net5.0\VkBot.csproj.CopyComplete
+C:\Repositories\Diplom_VK_Api_Bot\VkBot\obj\Release\net5.0\VkBot.csproj.AssemblyReference.cache
