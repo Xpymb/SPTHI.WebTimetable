@@ -34,7 +34,8 @@ namespace VkApiBot.Models
                 ApplicationId = 2685278,
                 Login = AppSettings.Login,
                 Password = AppSettings.Password,
-                Settings = Settings.All
+                Settings = Settings.All,
+                AccessToken = AppSettings.Token
             });
 
             return _client;
