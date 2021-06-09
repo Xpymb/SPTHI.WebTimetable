@@ -19,7 +19,8 @@ namespace VkApiBot.Models.Commands
             {
                 PeerId = userId,
                 RandomId = new Random().Next(Int32.MinValue, Int32.MinValue),
-                Message = Message
+                Message = Message,
+                GroupId = AppSettings.GroupId
             });
         }
     }
