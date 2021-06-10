@@ -67,8 +67,8 @@ namespace VkApiBot.Controllers
 		[JsonProperty("conversation_message_id")]
 		public ulong ConversationMessageId { get; set; }
 
-		[JsonProperty("fwd_messages")]
-		public string[] ForwardMessages { get; set; }
+		//[JsonProperty("fwd_messages")]
+		//public string[] ForwardMessages { get; set; }
 
 		[JsonProperty("important")]
 		public bool Important { get; set; }
@@ -76,8 +76,8 @@ namespace VkApiBot.Controllers
 		[JsonProperty("random_id")]
 		public ulong RandomId { get; set; }
 
-		[JsonProperty("attachments")]
-		public string[] Attachments { get; set; }
+		//[JsonProperty("attachments")]
+		//public string[] Attachments { get; set; }
 
 		[JsonProperty("is_hidden")]
 		public bool IsHidden { get; set; }
