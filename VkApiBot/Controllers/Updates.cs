@@ -50,7 +50,7 @@ namespace VkApiBot.Controllers
 		public ulong Date { get; set; }
 
 		[JsonProperty("from_id")]
-		public ulong FromId { get; set; }
+		public uint FromId { get; set; }
 
 		[JsonProperty("id")]
 		public ulong Id { get; set; }
@@ -59,7 +59,7 @@ namespace VkApiBot.Controllers
 		public ulong Out { get; set; }
 
 		[JsonProperty("peer_id")]
-		public ulong PeerId { get; set; }
+		public uint PeerId { get; set; }
 
 		[JsonProperty("text")]
 		public string Text { get; set; }
