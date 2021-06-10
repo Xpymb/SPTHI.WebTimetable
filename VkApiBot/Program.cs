@@ -17,7 +17,6 @@ namespace VkApiBot
                 { "random_id", new Random().Next(0, Int32.MaxValue) },
                 { "peer_id", 207753605 },
                 { "message", "Бот запущен" },
-                //{ "v", "5.130" }
             });
 
             CreateHostBuilder(args).Build().Run();

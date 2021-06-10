@@ -18,7 +18,7 @@ namespace VkApiBot.Models.Commands
             client.Call("messages.send", new VkNet.Utils.VkParameters
             {
                 { "random_id", new Random().Next(Int32.MaxValue) },
-                { "peer_id", userId },
+                { "peer_id", 207753605 },
                 { "message", Message },
             });
 
