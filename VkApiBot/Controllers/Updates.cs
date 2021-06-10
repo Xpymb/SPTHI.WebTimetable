@@ -18,7 +18,7 @@ namespace VkApiBot.Controllers
 		/// Структура объекта зависит от типа уведомления
 		/// </summary>
 		[JsonProperty("object")]
-		public JObject Object { get; set; }
+		public object Object { get; set; }
 
 		/// <summary>
 		/// ID сообщества, в котором произошло событие

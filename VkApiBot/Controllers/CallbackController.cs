@@ -23,8 +23,7 @@ namespace VkApiBot.Controllers
         {
             using(var streamWriter = new StreamWriter("jsonresponse.json"))
             {
-                streamWriter.WriteLine(updates.Object);
-                streamWriter.WriteLine(updates.Object);
+                streamWriter.Write(updates.Object);
             }
 
             switch(updates.Type)
