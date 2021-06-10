@@ -12,9 +12,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
             var obj = JsonConvert.DeserializeObject<Updates>(File.ReadAllText("json1.json"));
 
-            var text = obj.Object.Message.Date;
+            var text = obj.Object.Message.Text;
+
+            Console.WriteLine(text);
+            
+
 
             Console.WriteLine(text);
             Console.ReadKey();
