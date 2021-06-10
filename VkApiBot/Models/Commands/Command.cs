@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using VkApiBot.Controllers;
 using VkNet;
-using VkNet.Model;
 
 namespace VkApiBot.Models.Commands
 {

@@ -66,7 +66,6 @@ C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\bin\Debug\net5.0\HtmlAgilityPack.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\bin\Debug\net5.0\VkNet.dll
-C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.csprojAssemblyReference.cache
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.GeneratedMSBuildEditorConfig.editorconfig
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.AssemblyInfoInputs.cache
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.AssemblyInfo.cs
@@ -81,3 +80,5 @@ C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\ref\VkApiBot.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.pdb
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.genruntimeconfig.cache
+C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\bin\Debug\net5.0\web.config
+C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.csproj.AssemblyReference.cache

@@ -29,7 +29,7 @@ namespace VkApiBot.Controllers
 
                 case "message_new":
                 {
-                    var msg = Message.FromJson(new VkResponse(updates.Object));
+                    var msg = updates.Object.Message;
                     var client = Bot.Get();
 
                     foreach(var command in Bot.Commands)

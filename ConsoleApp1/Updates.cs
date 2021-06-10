@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace VkApiBot.Controllers
+namespace ConsoleApp1
 {
 	[Serializable]
 	public class Updates
@@ -35,57 +35,57 @@ namespace VkApiBot.Controllers
 
 	[Serializable]
 	public class Object
-	{
+    {
 		[JsonProperty("message")]
 		public Message Message { get; set; }
 
 		[JsonProperty("client_info")]
 		public ClientInfo ClientInfo { get; set; }
-	}
+    }
 
 	[Serializable]
 	public class Message
-	{
+    {
 		[JsonProperty("date")]
 		public ulong Date { get; set; }
 
 		[JsonProperty("from_id")]
 		public ulong FromId { get; set; }
-
+		
 		[JsonProperty("id")]
 		public ulong Id { get; set; }
-
+		
 		[JsonProperty("out")]
 		public ulong Out { get; set; }
-
+		
 		[JsonProperty("peer_id")]
 		public ulong PeerId { get; set; }
-
+		
 		[JsonProperty("text")]
 		public string Text { get; set; }
-
+		
 		[JsonProperty("conversation_message_id")]
 		public ulong ConversationMessageId { get; set; }
-
+		
 		[JsonProperty("fwd_messages")]
 		public string[] ForwardMessages { get; set; }
-
+		
 		[JsonProperty("important")]
 		public bool Important { get; set; }
-
+		
 		[JsonProperty("random_id")]
 		public ulong RandomId { get; set; }
-
+		
 		[JsonProperty("attachments")]
 		public string[] Attachments { get; set; }
-
+		
 		[JsonProperty("is_hidden")]
 		public bool IsHidden { get; set; }
-	}
+    }
 
 	[Serializable]
 	public class ClientInfo
-	{
+    {
 		[JsonProperty("button_actions")]
 		public string[] ButtonActions { get; set; }
 
@@ -100,5 +100,5 @@ namespace VkApiBot.Controllers
 
 		[JsonProperty("lang_id")]
 		public int LangId { get; set; }
-	}
+    }
 }

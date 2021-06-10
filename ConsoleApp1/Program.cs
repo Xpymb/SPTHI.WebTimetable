@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using VkNet;
 using VkNet.Model;
 
@@ -8,20 +12,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var client = new VkApi();
+            var obj = JsonConvert.DeserializeObject<Updates>(File.ReadAllText("json1.json"));
 
-            client.Authorize(new ApiAuthParams
-            {
-                AccessToken = "dbfffc021ae9db88fdc08e36fb90e0f9b8fca5f9a65dadc50a25cf2dc11cf6e93367bc74a14aedcaeaea9",
-            });
+            var text = obj.Object.Message.Date;
 
-            client.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams
-            {
-                PeerId = 658187118,
-                RandomId = new Random().Next(Int32.MinValue, Int32.MaxValue),
-                Message = "Приветули"
-            });
-
+            Console.WriteLine(text);
             Console.ReadKey();
         }
     }

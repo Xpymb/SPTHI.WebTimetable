@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using VkApiBot.Controllers;
 using VkNet;
-using VkNet.Model;
 
 namespace VkApiBot.Models.Commands
 {
@@ -13,7 +13,7 @@ namespace VkApiBot.Models.Commands
 
         public override void Execute(Message message, VkApi client)
         {
-            var userId = message.FromId;
+            var userId = (long)message.FromId;
                         
             client.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams
             {
