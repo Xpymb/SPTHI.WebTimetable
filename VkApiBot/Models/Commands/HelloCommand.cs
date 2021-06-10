@@ -19,7 +19,7 @@ namespace VkApiBot.Models.Commands
             {
                 { "random_id", new Random().Next(0, Int32.MaxValue) },
                 { "peer_id", (Int32)userId },
-                { "message", Message },
+                { "message", Message }
                 //{ "v", "5.130" }
             });
 

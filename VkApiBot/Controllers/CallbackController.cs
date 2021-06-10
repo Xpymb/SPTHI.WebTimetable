@@ -37,7 +37,7 @@ namespace VkApiBot.Controllers
                     {
                         if(command.Contains(msg.Text))
                         {
-                            command.Execute(msg, client);
+                            //command.Execute(msg, client);
                         }
                     }
 
