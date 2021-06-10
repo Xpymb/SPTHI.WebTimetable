@@ -2,13 +2,13 @@
   "type": "message_new",
   "object": {
     "message": {
-      "date": 1623301812,
+      "date": 1623323642,
       "from_id": 658187118,
-      "id": 23,
+      "id": 34,
       "out": 0,
       "peer_id": 658187118,
-      "text": "Привет",
-      "conversation_message_id": 17,
+      "text": "привет",
+      "conversation_message_id": 26,
       "fwd_messages": [],
       "important": false,
       "random_id": 0,
@@ -33,5 +33,5 @@
     }
   },
   "group_id": 205071272,
-  "event_id": "6266a1c6f6621cb61321df3e577c560a64546648"
+  "event_id": "eb851a856a952ef0b605a186def7caa12f4ddecb"
 }

@@ -21,11 +21,6 @@ namespace VkApiBot.Controllers
         [HttpPost]
         public IActionResult Update([FromBody] Updates updates)
         {
-            using(StreamWriter streamWriter = new StreamWriter("jsonresponse.json"))
-            {
-                streamWriter.Write(updates.Object);
-            }
-
             switch(updates.Type)
             {
                 case "confirmation":
@@ -35,7 +30,7 @@ namespace VkApiBot.Controllers
 
                 case "message_new":
                 {
-                    /*var msg = updates.Object.Message;
+                    var msg = updates.Object.Message;
                     var client = Bot.Get();
 
                     foreach(var command in Bot.Commands)
@@ -44,7 +39,7 @@ namespace VkApiBot.Controllers
                         {
                             command.Execute(msg, client);
                         }
-                    }    */
+                    }
 
                     break;
                 }

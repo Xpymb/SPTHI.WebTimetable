@@ -1,0 +1,32 @@
+{
+  "message": {
+    "date": 1623301812,
+    "from_id": 658187118,
+    "id": 23,
+    "out": 0,
+    "peer_id": 658187118,
+    "text": "������",
+    "conversation_message_id": 17,
+    "fwd_messages": [],
+    "important": false,
+    "random_id": 0,
+    "attachments": [],
+    "is_hidden": false
+  },
+  "client_info": {
+    "button_actions": [
+      "text",
+      "vkpay",
+      "open_app",
+      "location",
+      "open_link",
+      "callback",
+      "intent_subscribe",
+      "intent_unsubscribe"
+    ],
+    "keyboard": true,
+    "inline_keyboard": true,
+    "carousel": true,
+    "lang_id": 0
+  }
+}

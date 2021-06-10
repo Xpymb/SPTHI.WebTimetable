@@ -11,15 +11,10 @@ namespace ConsoleApp1
     class Program
     {
         static void Main(string[] args)
-        {
-
+        { 
             var obj = JsonConvert.DeserializeObject<Updates>(File.ReadAllText("json1.json"));
 
-            var text = obj.Object.Message.Text;
-
-            Console.WriteLine(text);
-            
-
+            var text = obj.Object.Message.Text.ToString();
 
             Console.WriteLine(text);
             Console.ReadKey();

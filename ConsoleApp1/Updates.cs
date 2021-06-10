@@ -62,7 +62,7 @@ namespace ConsoleApp1
 		public ulong PeerId { get; set; }
 		
 		[JsonProperty("text")]
-		public string Text { get; set; }
+		public char[] Text { get; set; }
 		
 		[JsonProperty("conversation_message_id")]
 		public ulong ConversationMessageId { get; set; }
