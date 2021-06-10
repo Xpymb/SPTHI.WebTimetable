@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using VkApiBot.Models;
 
 namespace VkApiBot
 {
@@ -15,6 +16,7 @@ namespace VkApiBot
     {
         public static void Main(string[] args)
         {
+            var client = Bot.Get().Result;
             CreateHostBuilder(args).Build().Run();
         }
 

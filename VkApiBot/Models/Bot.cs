@@ -31,10 +31,6 @@ namespace VkApiBot.Models
 
             await _client.AuthorizeAsync(new ApiAuthParams()
             {
-                ApplicationId = 2685278,
-                Login = AppSettings.Login,
-                Password = AppSettings.Password,
-                Settings = Settings.Messages,
                 AccessToken = AppSettings.Token
             });
 
