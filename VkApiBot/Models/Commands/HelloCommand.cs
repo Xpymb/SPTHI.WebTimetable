@@ -13,13 +13,14 @@ namespace VkApiBot.Models.Commands
 
         public override void Execute(Message message, VkApi client)
         {
-            var userId = message.FromId;
+            var userId = message.FromId.ToString();
 
             client.Call("messages.send", new VkNet.Utils.VkParameters
             {
                 { "random_id", new Random().Next(0, Int32.MaxValue) },
-                { "peer_id", (Int32)userId },
-                { "message", Message }
+                { "peer_id", userId },
+                { "message", Message },
+                //{ "user_id", userId },
                 //{ "v", "5.130" }
             });
 
