@@ -16,7 +16,7 @@ namespace VkApiBot
     {
         public static void Main(string[] args)
         {
-            var client = Bot.Get().Result;
+            Bot.Get();
             CreateHostBuilder(args).Build().Run();
         }
 

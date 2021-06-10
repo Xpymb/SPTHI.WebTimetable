@@ -15,7 +15,7 @@ namespace VkApiBot.Models
 
         public static IReadOnlyList<Command> Commands { get => _listCommands.AsReadOnly(); }
 
-        public static async Task<VkApi> Get()
+        public static VkApi Get()
         {
             if(_client != null)
             {
@@ -29,9 +29,10 @@ namespace VkApiBot.Models
 
             _client = new VkApi();
 
-            await _client.AuthorizeAsync(new ApiAuthParams()
+            _client.Authorize(new ApiAuthParams()
             {
-                AccessToken = AppSettings.Token
+                AccessToken = AppSettings.Token,
+                Settings = Settings.Messages,
             });
 
             return _client;
