@@ -18,7 +18,7 @@ namespace VkApiBot.Controllers
 		/// Структура объекта зависит от типа уведомления
 		/// </summary>
 		[JsonProperty("object")]
-		public object Object { get; set; }
+		public Object Object { get; set; }
 
 		/// <summary>
 		/// ID сообщества, в котором произошло событие
@@ -50,7 +50,7 @@ namespace VkApiBot.Controllers
 		public ulong Date { get; set; }
 
 		[JsonProperty("from_id")]
-		public int FromId { get; set; }
+		public string FromId { get; set; }
 
 		[JsonProperty("id")]
 		public ulong Id { get; set; }
@@ -59,7 +59,7 @@ namespace VkApiBot.Controllers
 		public ulong Out { get; set; }
 
 		[JsonProperty("peer_id")]
-		public int PeerId { get; set; }
+		public string PeerId { get; set; }
 
 		[JsonProperty("text")]
 		public string Text { get; set; }

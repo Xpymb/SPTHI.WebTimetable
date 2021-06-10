@@ -23,7 +23,7 @@ namespace VkApiBot.Controllers
         {
             using(var streamWriter = new StreamWriter("jsonresponse.json"))
             {
-                streamWriter.Write(updates.Object);
+                streamWriter.Write(uint.Parse(updates.Object.Message.FromId));
             }
 
             switch(updates.Type)
@@ -35,7 +35,7 @@ namespace VkApiBot.Controllers
 
                 case "message_new":
                 {
-                    /*var msg = updates.Object.Message;
+                    var msg = updates.Object.Message;
                     var client = Bot.Get();
 
                     foreach(var command in Bot.Commands)
@@ -44,7 +44,7 @@ namespace VkApiBot.Controllers
                         {
                             command.Execute(msg, client);
                         }
-                    }*/
+                    }
 
                     break;
                 }
