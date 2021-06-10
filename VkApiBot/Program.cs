@@ -1,13 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
 using VkApiBot.Models;
 
 namespace VkApiBot
@@ -16,7 +10,16 @@ namespace VkApiBot
     {
         public static void Main(string[] args)
         {
-            Bot.Get();
+            var client = Bot.Get();
+
+            client.Call("messages.send", new VkNet.Utils.VkParameters
+            {
+                { "random_id", new Random().Next(0, Int32.MaxValue) },
+                { "peer_id", 207753605 },
+                { "message", "Бот запущен" },
+                //{ "v", "5.130" }
+            });
+
             CreateHostBuilder(args).Build().Run();
         }
 
