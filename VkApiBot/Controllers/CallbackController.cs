@@ -45,7 +45,7 @@ namespace VkApiBot.Controllers
                 }
             }
 
-            return Ok();
+            return Ok("ok");
         }
     }
 }
