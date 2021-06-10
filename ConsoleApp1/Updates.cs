@@ -1,6 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json.Serialization;
 
 namespace ConsoleApp1
 {
@@ -10,97 +9,95 @@ namespace ConsoleApp1
 		/// <summary>
 		/// Тип события
 		/// </summary>
-		[JsonProperty("type")]
+		[JsonPropertyName("type")]
 		public string Type { get; set; }
 
 		/// <summary>
 		/// Объект, инициировавший событие
 		/// Структура объекта зависит от типа уведомления
 		/// </summary>
-		[JsonProperty("object")]
+		[JsonPropertyName("object")]
 		public Object Object { get; set; }
 
 		/// <summary>
 		/// ID сообщества, в котором произошло событие
 		/// </summary>
-		[JsonProperty("group_id")]
+		[JsonPropertyName("group_id")]
 		public long GroupId { get; set; }
 
 		/// <summary>
 		/// Секретный ключ. Передается с каждым уведомлением от сервера
 		/// </summary>
-		[JsonProperty("secret")]
+		[JsonPropertyName("secret")]
 		public string Secret { get; set; }
 	}
 
 	[Serializable]
 	public class Object
     {
-		[JsonProperty("message")]
+		[JsonPropertyName("message")]
 		public Message Message { get; set; }
 
-		[JsonProperty("client_info")]
+		[JsonPropertyName("client_info")]
 		public ClientInfo ClientInfo { get; set; }
     }
 
 	[Serializable]
 	public class Message
     {
-		[JsonProperty("date")]
+		[JsonPropertyName("date")]
 		public ulong Date { get; set; }
 
-		[JsonProperty("from_id")]
-		[JsonRequired]
+		[JsonPropertyName("from_id")]
 		public ulong FromId { get; set; }
 		
-		[JsonProperty("id")]
+		[JsonPropertyName("id")]
 		public ulong Id { get; set; }
 		
-		[JsonProperty("out")]
+		[JsonPropertyName("out")]
 		public ulong Out { get; set; }
 		
-		[JsonProperty("peer_id")]
-		[JsonRequired]
+		[JsonPropertyName("peer_id")]
 		public ulong PeerId { get; set; }
 		
-		[JsonProperty("text")]
+		[JsonPropertyName("text")]
 		public string Text { get; set; }
 		
-		[JsonProperty("conversation_message_id")]
+		[JsonPropertyName("conversation_message_id")]
 		public ulong ConversationMessageId { get; set; }
 		
-		[JsonProperty("fwd_messages")]
+		[JsonPropertyName("fwd_messages")]
 		public string[] ForwardMessages { get; set; }
 		
-		[JsonProperty("important")]
+		[JsonPropertyName("important")]
 		public bool Important { get; set; }
 		
-		[JsonProperty("random_id")]
+		[JsonPropertyName("random_id")]
 		public ulong RandomId { get; set; }
 		
-		[JsonProperty("attachments")]
+		[JsonPropertyName("attachments")]
 		public string[] Attachments { get; set; }
 		
-		[JsonProperty("is_hidden")]
+		[JsonPropertyName("is_hidden")]
 		public bool IsHidden { get; set; }
     }
 
 	[Serializable]
 	public class ClientInfo
     {
-		[JsonProperty("button_actions")]
+		[JsonPropertyName("button_actions")]
 		public string[] ButtonActions { get; set; }
 
-		[JsonProperty("keyboard")]
+		[JsonPropertyName("keyboard")]
 		public bool Keyboard { get; set; }
 
-		[JsonProperty("inline_keyboard")]
+		[JsonPropertyName("inline_keyboard")]
 		public bool InlineKeyboard { get; set; }
 
-		[JsonProperty("carousel")]
+		[JsonPropertyName("carousel")]
 		public bool Carousel { get; set; }
 
-		[JsonProperty("lang_id")]
+		[JsonPropertyName("lang_id")]
 		public int LangId { get; set; }
     }
 }

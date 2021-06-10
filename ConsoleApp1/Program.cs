@@ -1,11 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using VkNet;
-using VkNet.Enums.Filters;
-using VkNet.Model;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace ConsoleApp1
 {
@@ -13,7 +10,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var obj = JsonConvert.DeserializeObject<Updates>(File.ReadAllText("json1.json"));
+            var obj = JsonSerializer.Deserialize<Updates>(File.ReadAllText("json1.json"));
+
+
 
             Console.WriteLine(obj.Object.Message.FromId);
 
