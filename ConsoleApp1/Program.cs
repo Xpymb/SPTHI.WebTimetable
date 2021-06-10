@@ -13,9 +13,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var str = "288290";
+            var obj = JsonConvert.DeserializeObject<Updates>(File.ReadAllText("json1.json"));
 
-            Console.WriteLine(Int32.Parse(str));
+            Console.WriteLine(obj.Object.Message.FromId);
 
             Console.ReadKey();
         }

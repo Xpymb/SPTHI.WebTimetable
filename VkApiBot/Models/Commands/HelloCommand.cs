@@ -13,7 +13,7 @@ namespace VkApiBot.Models.Commands
 
         public override void Execute(Message message, VkApi client)
         {
-            var userId = Convert.ToUInt32(message.FromId);
+            var userId = message.FromId;
 
             client.Call("messages.send", new VkNet.Utils.VkParameters
             {

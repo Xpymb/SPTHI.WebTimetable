@@ -50,6 +50,7 @@ namespace ConsoleApp1
 		public ulong Date { get; set; }
 
 		[JsonProperty("from_id")]
+		[JsonRequired]
 		public ulong FromId { get; set; }
 		
 		[JsonProperty("id")]
@@ -59,10 +60,11 @@ namespace ConsoleApp1
 		public ulong Out { get; set; }
 		
 		[JsonProperty("peer_id")]
+		[JsonRequired]
 		public ulong PeerId { get; set; }
 		
 		[JsonProperty("text")]
-		public char[] Text { get; set; }
+		public string Text { get; set; }
 		
 		[JsonProperty("conversation_message_id")]
 		public ulong ConversationMessageId { get; set; }
