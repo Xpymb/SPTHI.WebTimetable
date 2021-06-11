@@ -21,11 +21,6 @@ namespace VkApiBot.Controllers
         [HttpPost]
         public IActionResult Update([FromBody] Updates updates)
         {
-            using(var streamWriter = new StreamWriter("jsonresponse.json"))
-            {
-                streamWriter.Write(updates.Object.Message.FromId);
-            }
-
             switch(updates.Type)
             {
                 case "confirmation":
