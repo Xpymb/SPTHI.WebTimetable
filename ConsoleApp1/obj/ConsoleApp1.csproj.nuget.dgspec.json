@@ -46,6 +46,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            },
             "VkNet": {
               "target": "Package",
               "version": "[1.63.0, )"

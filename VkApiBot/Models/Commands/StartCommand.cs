@@ -5,11 +5,11 @@ using VkNet;
 
 namespace VkApiBot.Models.Commands
 {
-    public class HelloCommand : Command
+    public class StartCommand : Command
     {
-        public override List<string> Name => new() { "привет", "приветули" };
+        public override List<string> Name => new() { "начать" };
 
-        public override string Message => "Привет!";
+        public override string Message => "Всем кискам пис";
 
         public override void Execute(Message message, VkApi client)
         {
