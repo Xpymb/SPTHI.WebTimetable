@@ -33,7 +33,7 @@ namespace VkApiBot.Models.Commands
                 Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
             });
 
-            var keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
+            var keyboard = VkKeyboard.CreateKeyaboard(true, listButtons);
 
             client.Call("messages.send", new VkNet.Utils.VkParameters
             {
