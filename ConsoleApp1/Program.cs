@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using OfficeOpenXml;
+using ConsoleApp1.VkKeyboard;
 
 namespace ConsoleApp1
 {
@@ -11,7 +12,11 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            Console.WriteLine(VkKeyboard.VkKeyboard.CreateKeyaboard(false, new string[] { "Привет!", "Пока!" }, new VkKeyboard.VkKeyboard.ButtonColor[] { VkKeyboard.VkKeyboard.ButtonColor.White, VkKeyboard.VkKeyboard.ButtonColor.Blue }));
+
+            
+
+            /*ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             using (var package = new ExcelPackage(new FileStream("schedule.xlsx", FileMode.Open, FileAccess.Read)))
             {
@@ -23,7 +28,7 @@ namespace ConsoleApp1
                 {
                     Console.WriteLine(lesson);
                 }
-            }
+            }*/
 
             Console.ReadKey();
         }
