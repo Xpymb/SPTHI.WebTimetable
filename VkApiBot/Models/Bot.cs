@@ -24,6 +24,7 @@ namespace VkApiBot.Models
 
             _listCommands = new List<Command>
             {
+                new HomeCommand(),
                 new HelloCommand(),
                 new StartCommand(),
                 new AboutInstituteCommand(),
