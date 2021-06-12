@@ -23,6 +23,8 @@ namespace VkApiBot.Models.Keyboard
     {
         [JsonPropertyName("action")]
         public Action Action { get; set; }
+
+        [JsonPropertyName("color")]
         public string Color { get; set; }
     }
 
