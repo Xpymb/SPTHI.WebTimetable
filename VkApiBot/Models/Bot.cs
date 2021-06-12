@@ -25,7 +25,9 @@ namespace VkApiBot.Models
             _listCommands = new List<Command>
             {
                 new HelloCommand(),
-                new StartCommand()
+                new StartCommand(),
+                new AboutInstituteCommand(),
+                new AboutBotCommand(),
             };
 
             _client = new VkApi();

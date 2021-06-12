@@ -6,17 +6,23 @@ using VkNet;
 
 namespace VkApiBot.Models.Commands
 {
-    public class StartCommand : Command
+    public class AboutBotCommand : Command
     {
-        public override List<string> Name => new() { "начать", "start" };
+        public override List<string> Name => new() { "О боте" };
 
-        public override string Message => "Привет! Я умный чат-бот из системы БАРСик, чтобы перейти в главное меню, нажмите на кнопку ниже.";
+        public override string Message => "Я умный чат-бот из системы БАРСик, разработанный выпускником КС-47д, состоящим в " +
+                                          "лаборатории Мобильной робототехники";
 
         public override void Execute(Message message, VkApi client)
         {
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
+            listButtons.Add(new Button
+            {
+                Action = new Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "О институте" },
+                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
+            });
             listButtons.Add(new Button
             {
                 Action = new Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "Главное меню" },
