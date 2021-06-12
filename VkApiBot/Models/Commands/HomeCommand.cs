@@ -25,7 +25,7 @@ namespace VkApiBot.Models.Commands
             });
             listButtons.Add(new Button
             {
-                Action = new Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "Главное меню" },
+                Action = new Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "О боте" },
                 Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue)
             });
 

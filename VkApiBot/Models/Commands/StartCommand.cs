@@ -8,7 +8,7 @@ namespace VkApiBot.Models.Commands
 {
     public class StartCommand : Command
     {
-        public override List<string> Name => new() { "начать", "start" };
+        public override List<string> Name => new() { "Начать", "Start" };
 
         public override string Message => "Привет! Я умный чат-бот из системы БАРСик, чтобы перейти в главное меню, нажмите на кнопку ниже.";
 

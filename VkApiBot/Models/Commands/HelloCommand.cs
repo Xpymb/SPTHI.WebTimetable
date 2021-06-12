@@ -7,7 +7,7 @@ namespace VkApiBot.Models.Commands
 {
     public class HelloCommand : Command
     {
-        public override List<string> Name => new() { "привет", "приветули" };
+        public override List<string> Name => new() { "Привет", "Приветули" };
 
         public override string Message => "Привет!";
 

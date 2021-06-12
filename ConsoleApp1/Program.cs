@@ -12,7 +12,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(VkKeyboard.VkKeyboard.CreateKeyaboard(false, new string[] { "Привет!", "Пока!" }, new VkKeyboard.VkKeyboard.ButtonColor[] { VkKeyboard.VkKeyboard.ButtonColor.White, VkKeyboard.VkKeyboard.ButtonColor.Blue }));
+            var str = "Главное меню";
+            Console.WriteLine(str.);
 
             
 

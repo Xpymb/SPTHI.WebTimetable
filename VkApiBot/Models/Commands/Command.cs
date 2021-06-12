@@ -15,7 +15,7 @@ namespace VkApiBot.Models.Commands
         {
             foreach(var name in Name)
             {
-                if(message.ToLower().Contains(name))
+                if(message.ToLower().Contains(name.ToLower()))
                 {
                     return true;
                 }
