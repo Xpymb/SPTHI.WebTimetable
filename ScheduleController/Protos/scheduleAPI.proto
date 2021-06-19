@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option csharp_namespace = "ScheduleController";
+
+import "google/protobuf/empty.proto";
+
+package scheduleAPI;
+
+service ScheduleAPI {
+  rpc GetScheduleByGroupName (ScheduleRequest) returns (stream ScheduleReply);
+  rpc GetGroupsName (google.protobuf.Empty) returns (stream GroupsNameReply);
+  rpc GetDateScheduleByGroupName (DateScheduleRequest) returns (stream DateScheduleReply);
+}
+
+message ScheduleRequest {
+	string groupName = 1;
+	string date = 2;
+}
+
+message ScheduleReply {
+	string groupName = 1;
+	string time = 2;
+	string type = 3;
+	string name = 4;
+	string classroom = 5;
+	string teacherName = 6;
+	string class = 7;
+}
+
+message GroupsNameReply {
+	string groupName = 1;
+}
+
+message DateScheduleRequest {
+	string groupName = 1;
+}
+
+message DateScheduleReply {
+	string groupName = 1;
+	string date = 2;
+}

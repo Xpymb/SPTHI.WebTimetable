@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repositories\\Diplom_VK_Api_Bot\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Repositories\\Diplom_VK_Api_Bot\\ScheduleController\\ScheduleController.csproj": {}
   },
   "projects": {
-    "C:\\Repositories\\Diplom_VK_Api_Bot\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Repositories\\Diplom_VK_Api_Bot\\ScheduleController\\ScheduleController.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repositories\\Diplom_VK_Api_Bot\\ConsoleApp1\\ConsoleApp1.csproj",
-        "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Repositories\\Diplom_VK_Api_Bot\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Repositories\\Diplom_VK_Api_Bot\\ScheduleController\\ScheduleController.csproj",
+        "projectName": "ScheduleController",
+        "projectPath": "C:\\Repositories\\Diplom_VK_Api_Bot\\ScheduleController\\ScheduleController.csproj",
         "packagesPath": "C:\\Users\\Deric\\.nuget\\packages\\",
-        "outputPath": "C:\\Repositories\\Diplom_VK_Api_Bot\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Repositories\\Diplom_VK_Api_Bot\\ScheduleController\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -46,17 +46,13 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "EPPlus": {
-              "target": "Package",
-              "version": "[5.5.0, )"
-            },
             "Google.Apis.Sheets.v4": {
               "target": "Package",
               "version": "[1.52.0.2338, )"
             },
-            "VkNet": {
+            "Grpc.AspNetCore": {
               "target": "Package",
-              "version": "[1.63.0, )"
+              "version": "[2.34.0, )"
             }
           },
           "imports": [
@@ -70,6 +66,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

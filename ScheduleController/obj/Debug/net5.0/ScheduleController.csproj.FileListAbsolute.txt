@@ -1,0 +1,6 @@
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.csproj.AssemblyReference.cache
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.AssemblyInfoInputs.cache
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.AssemblyInfo.cs
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.csproj.CoreCompileInputs.cache
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.MvcApplicationPartsAssemblyInfo.cache

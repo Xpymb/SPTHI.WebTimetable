@@ -5,33 +5,24 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using OfficeOpenXml;
 using ConsoleApp1.VkKeyboard;
+using Google.Apis.Sheets.v4;
+using Google.Apis.Auth.OAuth2;
+using System.Threading;
+using Google.Apis.Util.Store;
+using Google.Apis.Services;
+using Google.Apis.Sheets.v4.Data;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
     class Program
     {
+        static string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
+        static string ApplicationName = "Google Sheets API .NET Quickstart";
+
         static void Main(string[] args)
         {
-            var str = "Главное меню";
-            Console.WriteLine(str.);
-
-            
-
-            /*ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
-            using (var package = new ExcelPackage(new FileStream("schedule.xlsx", FileMode.Open, FileAccess.Read)))
-            {
-                var lessons = package.Workbook.Worksheets[14].Cells["S6:S21"].Value;
-
-                for(int i = 0; )
-
-                foreach(var lesson in lessons)
-                {
-                    Console.WriteLine(lesson);
-                }
-            }*/
-
-            Console.ReadKey();
+            Console.WriteLine(DateTime.Parse(DateTime.Now.Date.ToShortDateString()));
         }
     }
 }

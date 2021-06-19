@@ -1,0 +1,3 @@
+obj\Debug\net5.0\Protos/ScheduleAPI.cs \
+obj\Debug\net5.0\Protos/ScheduleAPIGrpc.cs: C:/Users/Deric/.nuget/packages/grpc.tools/2.34.0/build/native/include/google/protobuf/empty.proto\
+ Protos/scheduleAPI.proto

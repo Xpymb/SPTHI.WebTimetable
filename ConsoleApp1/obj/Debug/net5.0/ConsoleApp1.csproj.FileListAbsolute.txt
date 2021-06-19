@@ -39,3 +39,8 @@ C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\runtimes\win\lib\
 C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Apis.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Apis.Auth.PlatformServices.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Apis.Auth.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Apis.Core.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Apis.Sheets.v4.dll
