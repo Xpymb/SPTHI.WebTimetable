@@ -22,15 +22,16 @@ namespace VkApiBot.Models.Commands
             var listButtons = new List<Button>();
 
             var schedulePayload = ButtonPayload.CreatePayload("schedule_choosegroup");
+            var payload = ButtonPayload.CreatePayload("undefined");
 
             listButtons.Add(new Button
             {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "О институте" },
+                Action = new VK.Keyboard.Action { ActionType = "text", Payload = payload, Label = "О институте" },
                 Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
             });
             listButtons.Add(new Button
             {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "О боте" },
+                Action = new VK.Keyboard.Action { ActionType = "text", Payload = payload, Label = "О боте" },
                 Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
             });
             listButtons.Add(new Button

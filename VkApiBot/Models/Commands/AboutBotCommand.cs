@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using VkApiBot.Controllers;
 using VkApiBot.Models.VK.Keyboard;
+using VkApiBot.Models.VK.Payload;
 using VkNet;
 
 namespace VkApiBot.Models.Commands
@@ -19,14 +20,16 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
+            var payload = ButtonPayload.CreatePayload("undefined");
+
             listButtons.Add(new Button
             {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "О институте" },
+                Action = new VK.Keyboard.Action { ActionType = "text", Payload = payload, Label = "О институте" },
                 Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
             });
             listButtons.Add(new Button
             {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "Главное меню" },
+                Action = new VK.Keyboard.Action { ActionType = "text", Payload = payload, Label = "Главное меню" },
                 Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue)
             });
 

@@ -29,9 +29,14 @@ namespace VkApiBot.Models.Commands
 
         public bool ContainsPayload(string payloadArg)
         {
+            if(payloadArg == null || payloadArg == "")
+            {
+                return false;
+            }
+
             foreach (var payload in Payload)
             {
-                if (payloadArg.Contains(payload.ToLower()))
+                if (payloadArg.Contains(payload))
                 {
                     return true;
                 }
