@@ -114,15 +114,15 @@ namespace VkApiBot.Models.Commands
                         Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White),
                     });
 
-                    listButtons.Add(new Button
-                    {
-                        Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "Главное меню" },
-                        Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue),
-                    });
-
                     break;
                 }
             }
+
+            listButtons.Add(new Button
+            {
+                Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "Главное меню" },
+                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue),
+            });
 
             keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
 

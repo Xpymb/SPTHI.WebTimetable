@@ -40,13 +40,13 @@ namespace VkApiBot.Controllers
                         if(command.Contains(msg.Text))
                         {
                             command.Execute(msg, client);
+                            break;
                         }
                         else if(payload.Button != "" && command.ContainsPayload(payload.Button))
                         {
                             command.ExecutePayload(msg, payload.Button, client);
+                            break;
                         }
-
-                        break;
                     }
 
                     break;

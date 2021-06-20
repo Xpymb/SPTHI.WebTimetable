@@ -30,15 +30,7 @@ namespace VkApiBot.Models.Commands
 
             var keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
 
-            client.Call("messages.send", new VkNet.Utils.VkParameters
-            {
-                { "random_id", new Random().Next(Int32.MaxValue) },
-                { "peer_id", userId },
-                { "message", Message },
-                { "keyboard", keyboard }
-            });
-
-            //SendMessage(client, userId, Message, keyboard);
+            SendMessage(client, userId, Message, keyboard);
         }
 
         public override void ExecutePayload(Message message, string payload, VkApi client)
