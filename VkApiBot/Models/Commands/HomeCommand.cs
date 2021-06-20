@@ -22,7 +22,7 @@ namespace VkApiBot.Models.Commands
             var listButtons = new List<Button>();
 
             var schedulePayload = ButtonPayload.CreatePayload("schedule_choosegroup");
-            var payload = ButtonPayload.CreatePayload("undefined");
+            var payload = ButtonPayload.CreatePayload("1");
 
             listButtons.Add(new Button
             {

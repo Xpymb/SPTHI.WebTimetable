@@ -20,7 +20,7 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
-            var payload = ButtonPayload.CreatePayload("undefined");
+            var payload = ButtonPayload.CreatePayload("1");
 
             listButtons.Add(new Button
             {

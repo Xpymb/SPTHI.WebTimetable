@@ -29,7 +29,10 @@ namespace VkApiBot.Models.Commands
             var listButtons = new List<Button>();
             var msg = ".";
 
-            switch(payload)
+            var payloadArgs = payload.Split(" ");
+            var command = payloadArgs[0];
+
+            switch (command)
             {
                 case "schedule_choosegroup":
                 {
@@ -59,8 +62,6 @@ namespace VkApiBot.Models.Commands
                 }
                 case "schedule_choosedate":
                 {
-                    var payloadArgs = payload.Split(" ");
-
                     var groupName = payloadArgs[1];
 
                     var dates = ScheduleServiceAPI.GetDatesSchedulesByGroup(groupName).Result;
@@ -89,8 +90,6 @@ namespace VkApiBot.Models.Commands
                 }
                 case "schedule_result":
                 {
-                    var payloadArgs = payload.Split(" ");
-
                     var groupName = payloadArgs[1];
                     var date = payloadArgs[2];
 

@@ -26,19 +26,9 @@ namespace ConsoleApp1
     {
         static async Task Main(string[] args)
         {
-            var channel = GrpcChannel.ForAddress("http://localhost:5000");
+            var str = "schedule_choosedate МП-21д";
 
-            var client = new ScheduleAPI.ScheduleAPIClient(channel);
-
-            var reply = client.GetDateScheduleByGroupName(new DateScheduleRequest
-            {
-                GroupName = "ТМО-21д",
-            });
-
-            await foreach(var response in reply.ResponseStream.ReadAllAsync())
-            {
-                Console.WriteLine($"{response.GroupName} {response.Date}");
-            }
+            Console.WriteLine(str.Contains("schedule_choosedate"));
 
             Console.ReadKey();
         }
