@@ -99,7 +99,7 @@ namespace VkApiBot.Models.Commands
 
                     foreach (var lesson in lessons)
                     {
-                        msg = $"{lesson.Time} {lesson.Name} {lesson.Classroom} {lesson.TeacherName}\n";
+                        msg += $"{lesson.Time} {lesson.Name} {lesson.Classroom} {lesson.TeacherName}\n";
                     }
 
                     if (lessons.Count == 0)
