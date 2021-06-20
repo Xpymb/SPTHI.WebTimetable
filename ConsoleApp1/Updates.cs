@@ -34,57 +34,60 @@ namespace ConsoleApp1
 
 	[Serializable]
 	public class Object
-    {
+	{
 		[JsonPropertyName("message")]
 		public Message Message { get; set; }
 
 		[JsonPropertyName("client_info")]
 		public ClientInfo ClientInfo { get; set; }
-    }
+	}
 
 	[Serializable]
 	public class Message
-    {
+	{
 		[JsonPropertyName("date")]
 		public ulong Date { get; set; }
 
 		[JsonPropertyName("from_id")]
 		public ulong FromId { get; set; }
-		
+
 		[JsonPropertyName("id")]
 		public ulong Id { get; set; }
-		
+
 		[JsonPropertyName("out")]
 		public ulong Out { get; set; }
-		
+
 		[JsonPropertyName("peer_id")]
 		public ulong PeerId { get; set; }
-		
+
 		[JsonPropertyName("text")]
 		public string Text { get; set; }
-		
+
 		[JsonPropertyName("conversation_message_id")]
 		public ulong ConversationMessageId { get; set; }
-		
+
 		[JsonPropertyName("fwd_messages")]
 		public string[] ForwardMessages { get; set; }
-		
+
 		[JsonPropertyName("important")]
 		public bool Important { get; set; }
-		
+
 		[JsonPropertyName("random_id")]
 		public ulong RandomId { get; set; }
-		
+
 		[JsonPropertyName("attachments")]
 		public string[] Attachments { get; set; }
-		
+
+		[JsonPropertyName("payload")]
+		public string payload { get; set; }
+
 		[JsonPropertyName("is_hidden")]
 		public bool IsHidden { get; set; }
-    }
+	}
 
 	[Serializable]
 	public class ClientInfo
-    {
+	{
 		[JsonPropertyName("button_actions")]
 		public string[] ButtonActions { get; set; }
 
@@ -99,5 +102,5 @@ namespace ConsoleApp1
 
 		[JsonPropertyName("lang_id")]
 		public int LangId { get; set; }
-    }
+	}
 }

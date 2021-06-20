@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VkApiBot.Controllers;
 using VkNet;
 
@@ -7,10 +8,12 @@ namespace VkApiBot.Models.Commands
     public abstract class Command
     {
         public abstract List<string> Name { get; }
+        public abstract List<string> Payload { get; }
         public abstract string Message { get; }
 
         public abstract void Execute(Message message, VkApi client);
-        
+        public abstract void ExecutePayload(Message message, string payload, VkApi client);
+
         public bool Contains(string message)
         {
             foreach(var name in Name)
@@ -22,6 +25,40 @@ namespace VkApiBot.Models.Commands
             }
 
             return false;
+        }
+
+        public bool ContainsPayload(string payloadArg)
+        {
+            foreach (var payload in Payload)
+            {
+                if (payloadArg.Contains(payload.ToLower()))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        protected void SendMessage(VkApi client, ulong userId, string message)
+        {
+            client.Call("messages.send", new VkNet.Utils.VkParameters
+            {
+                { "random_id", new Random().Next(Int32.MaxValue) },
+                { "peer_id", userId },
+                { "message", message },
+            });
+        }
+
+        protected void SendMessage(VkApi client, ulong userId, string message, string keyboard)
+        {
+            client.Call("messages.send", new VkNet.Utils.VkParameters
+            {
+                { "random_id", new Random().Next(Int32.MaxValue) },
+                { "peer_id", userId },
+                { "message", Message },
+                { "keyboard", keyboard }
+            });
         }
     }
 }

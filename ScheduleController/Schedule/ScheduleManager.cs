@@ -17,7 +17,7 @@ namespace ScheduleController.Schedule
 
         public static List<Group> Groups { get; private set; }
 
-        public static void UpdateSchedule()
+        public static void UpdateSchedule(object sender, EventArgs e)
         {
             var schedule = SheetsAPI.GetSheetValues(SheetsAPI.SpreadSheetId, SheetsAPI.RangeValues);
 
@@ -81,13 +81,22 @@ namespace ScheduleController.Schedule
 
             foreach (var lesson in lessons)
             {
-                if (lesson.DateTime != prevDate)
+                if (lesson.DateTime.Date != prevDate.Date)
                 {
-                    dates.Add(lesson.DateTime);
+                    var date = lesson.DateTime.Date;
+
+                    prevDate = date;
+
+                    dates.Add(date);
                 }
             }
 
             return dates;
+        }
+
+        public static void SubscribeOnUpdates()
+        {
+            Ticks.TicksController.TickEvery5Min += UpdateSchedule;
         }
 
         private static List<Lesson> GetLessonsByDate(List<Lesson> lessons, DateTime date)

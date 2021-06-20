@@ -44,3 +44,13 @@ C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Apis.Auth.
 C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Apis.Auth.dll
 C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Apis.Core.dll
 C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Apis.Sheets.v4.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Google.Protobuf.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Grpc.Core.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Grpc.Core.Api.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Grpc.Net.Client.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\Grpc.Net.Common.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\runtimes\linux-arm64\native\libgrpc_csharp_ext.arm64.so
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+C:\Repositories\Diplom_VK_Api_Bot\ConsoleApp1\bin\Debug\net5.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll

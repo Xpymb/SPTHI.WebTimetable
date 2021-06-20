@@ -2,17 +2,18 @@
   "type": "message_new",
   "object": {
     "message": {
-      "date": 1623323642,
-      "from_id": 658187118,
-      "id": 34,
+      "date": 1624141969,
+      "from_id": 207753605,
+      "id": 363,
       "out": 0,
-      "peer_id": 658187118,
-      "text": "привет",
-      "conversation_message_id": 26,
+      "peer_id": 207753605,
+      "text": "О институте",
+      "conversation_message_id": 255,
       "fwd_messages": [],
       "important": false,
       "random_id": 0,
       "attachments": [],
+      "payload": "{\"button\":\"schedule\"}",
       "is_hidden": false
     },
     "client_info": {
@@ -22,6 +23,7 @@
         "open_app",
         "location",
         "open_link",
+        "open_photo",
         "callback",
         "intent_subscribe",
         "intent_unsubscribe"
@@ -33,5 +35,5 @@
     }
   },
   "group_id": 205071272,
-  "event_id": "eb851a856a952ef0b605a186def7caa12f4ddecb"
+  "event_id": "d9c5852dfedc16a04d654eb8913497384b292519"
 }

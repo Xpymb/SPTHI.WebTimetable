@@ -15,16 +15,16 @@ namespace ScheduleController.GoogleSheets
         private static readonly string[] _scopes = { SheetsService.Scope.SpreadsheetsReadonly };
         private static readonly string _applicationName = "Google Sheets API .NET Quickstart";
 
-        private static readonly SheetsService _service;
+        private static SheetsService _service;
 
         public static string SpreadSheetId { get; } = "1l4y2eBdwInbG3C7hKObvwRYqduNgX9px06GL7kYK4N0";
-        public static string RangeValues { get; } = "Лист1!A2:G";
+        public static string RangeValues { get; } = "Лист1!A2:H";
 
         public static void ConnectToSheetsAPI()
         {
             UserCredential credential;
 
-            using (var stream = new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
+            using (var stream = new FileStream("GoogleSheets/Credentials/credentials.json", FileMode.Open, FileAccess.Read))
             {
                 string credPath = "token.json";
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
@@ -33,10 +33,9 @@ namespace ScheduleController.GoogleSheets
                     "user",
                     CancellationToken.None,
                     new FileDataStore(credPath, true)).Result;
-                Console.WriteLine("Credential file saved to: " + credPath);
             }
 
-            var service = new SheetsService(new BaseClientService.Initializer()
+            _service = new SheetsService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
                 ApplicationName = _applicationName,

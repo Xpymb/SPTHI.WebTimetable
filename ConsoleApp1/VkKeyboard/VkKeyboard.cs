@@ -15,7 +15,7 @@ namespace ConsoleApp1.VkKeyboard
             Blue
         }
 
-        public static string CreateKeyaboard(bool oneTime, string[] labels, ButtonColor[] colors)
+        public static string CreateKeyaboard(bool oneTime, string[] labels, ButtonColor[] colors, string payload)
         {
             var Buttons = new Button[labels.Length][];
             
@@ -25,7 +25,7 @@ namespace ConsoleApp1.VkKeyboard
                 Buttons[i] = new Button[1];
                 var ColorValue = GetColorValue(colors[i]);
 
-                Buttons[i][0] = new Button { Action = new Action { ActionType = "text", Payload = "{\"\button\": \"1\"}", Label = labels[i] }, Color = ColorValue };
+                Buttons[i][0] = new Button { Action = new Action { ActionType = "text", Payload = payload, Label = labels[i] }, Color = ColorValue };
             }
 
             var keyboard = new VkKeyboardClass

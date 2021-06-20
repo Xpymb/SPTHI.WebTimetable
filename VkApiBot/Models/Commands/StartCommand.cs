@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using VkApiBot.Controllers;
-using VkApiBot.Models.Keyboard;
+using VkApiBot.Models.VK.Keyboard;
 using VkNet;
 
 namespace VkApiBot.Models.Commands
@@ -12,6 +12,8 @@ namespace VkApiBot.Models.Commands
 
         public override string Message => "Привет! Я умный чат-бот из системы БАРСик, чтобы перейти в главное меню, нажмите на кнопку ниже.";
 
+        public override List<string> Payload => new() { "undefined" };
+
         public override void Execute(Message message, VkApi client)
         {
             var userId = message.FromId;
@@ -19,19 +21,18 @@ namespace VkApiBot.Models.Commands
 
             listButtons.Add(new Button
             {
-                Action = new Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "Главное меню" },
+                Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "Главное меню" },
                 Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue)
             });
 
-            var keyboard = VkKeyboard.CreateKeyaboard(true, listButtons);
+            var keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
 
-            client.Call("messages.send", new VkNet.Utils.VkParameters
-            {
-                { "random_id", new Random().Next(Int32.MaxValue) },
-                { "peer_id", userId },
-                { "message", Message },
-                { "keyboard", keyboard }
-            });
+            SendMessage(client, userId, Message, keyboard);
+        }
+
+        public override void ExecutePayload(Message message, string payload, VkApi client)
+        {
+            throw new NotImplementedException();
         }
     }
 }

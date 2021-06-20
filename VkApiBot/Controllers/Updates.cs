@@ -78,6 +78,9 @@ namespace VkApiBot.Controllers
 		[JsonPropertyName("attachments")]
 		public string[] Attachments { get; set; }
 
+		[JsonPropertyName("payload")]
+		public string Payload { get; set; }
+
 		[JsonPropertyName("is_hidden")]
 		public bool IsHidden { get; set; }
 	}

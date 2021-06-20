@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using ScheduleController.GoogleSheets;
+using ScheduleController.Threads;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +14,13 @@ namespace ScheduleController
     {
         public static void Main(string[] args)
         {
+            SheetsAPI.ConnectToSheetsAPI();
+
+            Schedule.ScheduleManager.SubscribeOnUpdates();
+
+            ThreadsController.CreateThread();
+            ThreadsController.StartThreads();
+            
             CreateHostBuilder(args).Build().Run();
         }
 

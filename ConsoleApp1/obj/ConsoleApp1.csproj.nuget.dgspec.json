@@ -54,6 +54,28 @@
               "target": "Package",
               "version": "[1.52.0.2338, )"
             },
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.17.3, )"
+            },
+            "Grpc": {
+              "target": "Package",
+              "version": "[2.38.0, )"
+            },
+            "Grpc.Core": {
+              "target": "Package",
+              "version": "[2.38.0, )"
+            },
+            "Grpc.Net.Client": {
+              "target": "Package",
+              "version": "[2.38.0, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.38.0, )"
+            },
             "VkNet": {
               "target": "Package",
               "version": "[1.63.0, )"

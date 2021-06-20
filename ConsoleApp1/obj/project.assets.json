@@ -78,6 +78,100 @@
           "lib/netstandard2.0/Google.Apis.Sheets.v4.dll": {}
         }
       },
+      "Google.Protobuf/3.17.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {}
+        }
+      },
+      "Grpc/2.38.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core": "2.38.0"
+        }
+      },
+      "Grpc.Core/2.38.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.38.0",
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Core.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libgrpc_csharp_ext.x64.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libgrpc_csharp_ext.x64.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/grpc_csharp_ext.x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/grpc_csharp_ext.x86.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.38.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {}
+        }
+      },
+      "Grpc.Net.Client/2.38.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Common": "2.38.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.3"
+        },
+        "compile": {
+          "lib/net5.0/Grpc.Net.Client.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Grpc.Net.Client.dll": {}
+        }
+      },
+      "Grpc.Net.Common/2.38.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.37.0"
+        },
+        "compile": {
+          "lib/net5.0/Grpc.Net.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Grpc.Net.Common.dll": {}
+        }
+      },
+      "Grpc.Tools/2.38.0": {
+        "type": "package",
+        "build": {
+          "build/Grpc.Tools.props": {},
+          "build/Grpc.Tools.targets": {}
+        }
+      },
       "HtmlAgilityPack/1.11.33": {
         "type": "package",
         "compile": {
@@ -731,6 +825,15 @@
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.dll": {}
+        }
+      },
+      "System.Memory/4.5.3": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
         }
       },
       "System.Reflection/4.3.0": {
@@ -1434,6 +1537,177 @@
         "lib/netstandard2.0/Google.Apis.Sheets.v4.dll",
         "lib/netstandard2.0/Google.Apis.Sheets.v4.pdb",
         "lib/netstandard2.0/Google.Apis.Sheets.v4.xml"
+      ]
+    },
+    "Google.Protobuf/3.17.3": {
+      "sha512": "vBUga9diexJgv9JPNYcs9AZ/5rPKpPCPSWqcqevF6e9KKzv0JwQdz58dSb7nm1xWeeCVB/Umr03cQ5ulF1RNLw==",
+      "type": "package",
+      "path": "google.protobuf/3.17.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.17.3.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/net5.0/Google.Protobuf.dll",
+        "lib/net5.0/Google.Protobuf.pdb",
+        "lib/net5.0/Google.Protobuf.xml",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.xml",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
+    "Grpc/2.38.0": {
+      "sha512": "qWsJVaCbV957XT0rnT1XKQne8BdGPZ4caB2t+GFn1xevq8lUIvKk/O+eWezRv6vJATqc9Helod+d2WR6XmwhvA==",
+      "type": "package",
+      "path": "grpc/2.38.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.2.38.0.nupkg.sha512",
+        "grpc.nuspec"
+      ]
+    },
+    "Grpc.Core/2.38.0": {
+      "sha512": "D6BmwIYqZgl7TS1i2avqDdjSRY25QvhlqcnG6KfBnyNAoypwX3N8joxeHEQ5L9USrq0KycoAoL645WhpfxwVBQ==",
+      "type": "package",
+      "path": "grpc.core/2.38.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net45/Grpc.Core.targets",
+        "buildTransitive/net45/Grpc.Core.targets",
+        "grpc.core.2.38.0.nupkg.sha512",
+        "grpc.core.nuspec",
+        "lib/net45/Grpc.Core.dll",
+        "lib/net45/Grpc.Core.pdb",
+        "lib/net45/Grpc.Core.xml",
+        "lib/netstandard1.5/Grpc.Core.dll",
+        "lib/netstandard1.5/Grpc.Core.pdb",
+        "lib/netstandard1.5/Grpc.Core.xml",
+        "lib/netstandard2.0/Grpc.Core.dll",
+        "lib/netstandard2.0/Grpc.Core.pdb",
+        "lib/netstandard2.0/Grpc.Core.xml",
+        "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so",
+        "runtimes/linux-x64/native/libgrpc_csharp_ext.x64.so",
+        "runtimes/osx-x64/native/libgrpc_csharp_ext.x64.dylib",
+        "runtimes/win-x64/native/grpc_csharp_ext.x64.dll",
+        "runtimes/win-x86/native/grpc_csharp_ext.x86.dll"
+      ]
+    },
+    "Grpc.Core.Api/2.38.0": {
+      "sha512": "hqQEPxKyCwoq75OXmWDKe/rw/O9YjgdfIYmU/w8r5itMmHJp0HNmfHdxVVW9DSRuA836NM93qYoMdbTYQfWOHA==",
+      "type": "package",
+      "path": "grpc.core.api/2.38.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.core.api.2.38.0.nupkg.sha512",
+        "grpc.core.api.nuspec",
+        "lib/net45/Grpc.Core.Api.dll",
+        "lib/net45/Grpc.Core.Api.pdb",
+        "lib/net45/Grpc.Core.Api.xml",
+        "lib/netstandard1.5/Grpc.Core.Api.dll",
+        "lib/netstandard1.5/Grpc.Core.Api.pdb",
+        "lib/netstandard1.5/Grpc.Core.Api.xml",
+        "lib/netstandard2.0/Grpc.Core.Api.dll",
+        "lib/netstandard2.0/Grpc.Core.Api.pdb",
+        "lib/netstandard2.0/Grpc.Core.Api.xml"
+      ]
+    },
+    "Grpc.Net.Client/2.38.0": {
+      "sha512": "5SvCXCIYe2pHv0xn55M0Fy5GmOJEFNYAZT2mih4cRtv+Tzkyj70CPJ80Kgqc/RI5KLkspDIeTl36equxRBXOKg==",
+      "type": "package",
+      "path": "grpc.net.client/2.38.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.net.client.2.38.0.nupkg.sha512",
+        "grpc.net.client.nuspec",
+        "lib/net5.0/Grpc.Net.Client.dll",
+        "lib/net5.0/Grpc.Net.Client.pdb",
+        "lib/net5.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.0/Grpc.Net.Client.dll",
+        "lib/netstandard2.0/Grpc.Net.Client.pdb",
+        "lib/netstandard2.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.1/Grpc.Net.Client.dll",
+        "lib/netstandard2.1/Grpc.Net.Client.pdb",
+        "lib/netstandard2.1/Grpc.Net.Client.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Common/2.38.0": {
+      "sha512": "ZFmGJPYK1hMRDRtCdFcG/xrX5KZ2vDNBHS+Mu1Eijp9ekdfKJE/yVGxnIRKgISNFCWJ7zTSL8tpH/galMETtNA==",
+      "type": "package",
+      "path": "grpc.net.common/2.38.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.net.common.2.38.0.nupkg.sha512",
+        "grpc.net.common.nuspec",
+        "lib/net5.0/Grpc.Net.Common.dll",
+        "lib/net5.0/Grpc.Net.Common.pdb",
+        "lib/net5.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.0/Grpc.Net.Common.dll",
+        "lib/netstandard2.0/Grpc.Net.Common.pdb",
+        "lib/netstandard2.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.1/Grpc.Net.Common.dll",
+        "lib/netstandard2.1/Grpc.Net.Common.pdb",
+        "lib/netstandard2.1/Grpc.Net.Common.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Tools/2.38.0": {
+      "sha512": "jeaD9UGnuthwSclhoazNXsBBLkJVS7O1VNOTRZUUyWTTiwf26qdCX45eVMrGt7tqBFZTFOEqWFGQ8sf1HTxB0Q==",
+      "type": "package",
+      "path": "grpc.tools/2.38.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Grpc.Tools.props",
+        "build/Grpc.Tools.targets",
+        "build/_grpc/Grpc.CSharp.xml",
+        "build/_grpc/_Grpc.Tools.props",
+        "build/_grpc/_Grpc.Tools.targets",
+        "build/_protobuf/Google.Protobuf.Tools.props",
+        "build/_protobuf/Google.Protobuf.Tools.targets",
+        "build/_protobuf/Protobuf.CSharp.xml",
+        "build/_protobuf/net45/Protobuf.MSBuild.dll",
+        "build/_protobuf/net45/Protobuf.MSBuild.pdb",
+        "build/_protobuf/netstandard1.3/Protobuf.MSBuild.dll",
+        "build/_protobuf/netstandard1.3/Protobuf.MSBuild.pdb",
+        "build/native/Grpc.Tools.props",
+        "build/native/include/google/protobuf/any.proto",
+        "build/native/include/google/protobuf/api.proto",
+        "build/native/include/google/protobuf/descriptor.proto",
+        "build/native/include/google/protobuf/duration.proto",
+        "build/native/include/google/protobuf/empty.proto",
+        "build/native/include/google/protobuf/field_mask.proto",
+        "build/native/include/google/protobuf/source_context.proto",
+        "build/native/include/google/protobuf/struct.proto",
+        "build/native/include/google/protobuf/timestamp.proto",
+        "build/native/include/google/protobuf/type.proto",
+        "build/native/include/google/protobuf/wrappers.proto",
+        "grpc.tools.2.38.0.nupkg.sha512",
+        "grpc.tools.nuspec",
+        "tools/linux_arm64/grpc_csharp_plugin",
+        "tools/linux_arm64/protoc",
+        "tools/linux_x64/grpc_csharp_plugin",
+        "tools/linux_x64/protoc",
+        "tools/linux_x86/grpc_csharp_plugin",
+        "tools/linux_x86/protoc",
+        "tools/macosx_x64/grpc_csharp_plugin",
+        "tools/macosx_x64/protoc",
+        "tools/windows_x64/grpc_csharp_plugin.exe",
+        "tools/windows_x64/protoc.exe",
+        "tools/windows_x86/grpc_csharp_plugin.exe",
+        "tools/windows_x86/protoc.exe"
       ]
     },
     "HtmlAgilityPack/1.11.33": {
@@ -3134,6 +3408,27 @@
         "ref/xamarinwatchos10/_._",
         "system.linq.4.3.0.nupkg.sha512",
         "system.linq.nuspec"
+      ]
+    },
+    "System.Memory/4.5.3": {
+      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "type": "package",
+      "path": "system.memory/4.5.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Reflection/4.3.0": {
@@ -4858,6 +5153,11 @@
     "net5.0": [
       "EPPlus >= 5.5.0",
       "Google.Apis.Sheets.v4 >= 1.52.0.2338",
+      "Google.Protobuf >= 3.17.3",
+      "Grpc >= 2.38.0",
+      "Grpc.Core >= 2.38.0",
+      "Grpc.Net.Client >= 2.38.0",
+      "Grpc.Tools >= 2.38.0",
       "VkNet >= 1.63.0"
     ]
   },
@@ -4915,6 +5215,28 @@
           "Google.Apis.Sheets.v4": {
             "target": "Package",
             "version": "[1.52.0.2338, )"
+          },
+          "Google.Protobuf": {
+            "target": "Package",
+            "version": "[3.17.3, )"
+          },
+          "Grpc": {
+            "target": "Package",
+            "version": "[2.38.0, )"
+          },
+          "Grpc.Core": {
+            "target": "Package",
+            "version": "[2.38.0, )"
+          },
+          "Grpc.Net.Client": {
+            "target": "Package",
+            "version": "[2.38.0, )"
+          },
+          "Grpc.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.38.0, )"
           },
           "VkNet": {
             "target": "Package",

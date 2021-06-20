@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,9 +6,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="VkKeyboard\**" />
+    <EmbeddedResource Remove="VkKeyboard\**" />
+    <None Remove="VkKeyboard\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\scheduleAPI.proto" GrpcServices="Client" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EPPlus" Version="5.5.0" />
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.52.0.2338" />
+    <PackageReference Include="Google.Protobuf" Version="3.17.3" />
+    <PackageReference Include="Grpc" Version="2.38.0" />
+    <PackageReference Include="Grpc.Core" Version="2.38.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.38.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.38.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="VkNet" Version="1.63.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\scheduleAPI.proto" GrpcServices="Client" />
   </ItemGroup>
 
 </Project>

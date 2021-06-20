@@ -33,6 +33,11 @@
     ".NETCoreApp,Version=v5.0": {
       "VkApiBot/1.0.0": {
         "dependencies": {
+          "Google.Protobuf": "3.17.3",
+          "Grpc": "2.38.0",
+          "Grpc.Core": "2.38.0",
+          "Grpc.Net.Client": "2.38.0",
+          "Grpc.Tools": "2.38.0",
           "VkNet": "1.63.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -218,7 +223,7 @@
           "System.Linq.Expressions": "5.0.0.0",
           "System.Linq.Parallel": "5.0.0.0",
           "System.Linq.Queryable": "5.0.0.0",
-          "System.Memory": "5.0.0.0",
+          "System.Memory.Reference": "5.0.0.0",
           "System.Net": "4.0.0.0",
           "System.Net.Http": "5.0.0.0",
           "System.Net.Http.Json": "5.0.0.0",
@@ -324,6 +329,108 @@
           "VkApiBot.dll": {}
         }
       },
+      "Google.Protobuf/3.17.3": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.17.3.0",
+            "fileVersion": "3.17.3.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {}
+        }
+      },
+      "Grpc/2.38.0": {
+        "dependencies": {
+          "Grpc.Core": "2.38.0"
+        }
+      },
+      "Grpc.Core/2.38.0": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.38.0",
+          "System.Memory": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.38.0.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libgrpc_csharp_ext.x64.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libgrpc_csharp_ext.x64.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/grpc_csharp_ext.x64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/grpc_csharp_ext.x86.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Core.dll": {}
+        }
+      },
+      "Grpc.Core.Api/2.38.0": {
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.38.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Core.Api.dll": {}
+        }
+      },
+      "Grpc.Net.Client/2.38.0": {
+        "dependencies": {
+          "Grpc.Net.Common": "2.38.0",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Grpc.Net.Client.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.38.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Grpc.Net.Client.dll": {}
+        }
+      },
+      "Grpc.Net.Common/2.38.0": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.38.0"
+        },
+        "runtime": {
+          "lib/net5.0/Grpc.Net.Common.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.38.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Grpc.Net.Common.dll": {}
+        }
+      },
+      "Grpc.Tools/2.38.0": {},
       "HtmlAgilityPack/1.11.33": {
         "runtime": {
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
@@ -362,6 +469,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "System.Memory/4.5.3": {},
       "VkNet/1.63.0": {
         "dependencies": {
           "HtmlAgilityPack": "1.11.33",
@@ -1483,7 +1591,7 @@
         },
         "compileOnly": true
       },
-      "System.Memory/5.0.0.0": {
+      "System.Memory.Reference/5.0.0.0": {
         "compile": {
           "System.Memory.dll": {}
         },
@@ -2079,6 +2187,55 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Google.Protobuf/3.17.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vBUga9diexJgv9JPNYcs9AZ/5rPKpPCPSWqcqevF6e9KKzv0JwQdz58dSb7nm1xWeeCVB/Umr03cQ5ulF1RNLw==",
+      "path": "google.protobuf/3.17.3",
+      "hashPath": "google.protobuf.3.17.3.nupkg.sha512"
+    },
+    "Grpc/2.38.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qWsJVaCbV957XT0rnT1XKQne8BdGPZ4caB2t+GFn1xevq8lUIvKk/O+eWezRv6vJATqc9Helod+d2WR6XmwhvA==",
+      "path": "grpc/2.38.0",
+      "hashPath": "grpc.2.38.0.nupkg.sha512"
+    },
+    "Grpc.Core/2.38.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D6BmwIYqZgl7TS1i2avqDdjSRY25QvhlqcnG6KfBnyNAoypwX3N8joxeHEQ5L9USrq0KycoAoL645WhpfxwVBQ==",
+      "path": "grpc.core/2.38.0",
+      "hashPath": "grpc.core.2.38.0.nupkg.sha512"
+    },
+    "Grpc.Core.Api/2.38.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hqQEPxKyCwoq75OXmWDKe/rw/O9YjgdfIYmU/w8r5itMmHJp0HNmfHdxVVW9DSRuA836NM93qYoMdbTYQfWOHA==",
+      "path": "grpc.core.api/2.38.0",
+      "hashPath": "grpc.core.api.2.38.0.nupkg.sha512"
+    },
+    "Grpc.Net.Client/2.38.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5SvCXCIYe2pHv0xn55M0Fy5GmOJEFNYAZT2mih4cRtv+Tzkyj70CPJ80Kgqc/RI5KLkspDIeTl36equxRBXOKg==",
+      "path": "grpc.net.client/2.38.0",
+      "hashPath": "grpc.net.client.2.38.0.nupkg.sha512"
+    },
+    "Grpc.Net.Common/2.38.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZFmGJPYK1hMRDRtCdFcG/xrX5KZ2vDNBHS+Mu1Eijp9ekdfKJE/yVGxnIRKgISNFCWJ7zTSL8tpH/galMETtNA==",
+      "path": "grpc.net.common/2.38.0",
+      "hashPath": "grpc.net.common.2.38.0.nupkg.sha512"
+    },
+    "Grpc.Tools/2.38.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jeaD9UGnuthwSclhoazNXsBBLkJVS7O1VNOTRZUUyWTTiwf26qdCX45eVMrGt7tqBFZTFOEqWFGQ8sf1HTxB0Q==",
+      "path": "grpc.tools/2.38.0",
+      "hashPath": "grpc.tools.2.38.0.nupkg.sha512"
+    },
     "HtmlAgilityPack/1.11.33": {
       "type": "package",
       "serviceable": true,
@@ -2113,6 +2270,13 @@
       "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "path": "newtonsoft.json/13.0.1",
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "System.Memory/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "path": "system.memory/4.5.3",
+      "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "VkNet/1.63.0": {
       "type": "package",
@@ -3041,7 +3205,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Memory/5.0.0.0": {
+    "System.Memory.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

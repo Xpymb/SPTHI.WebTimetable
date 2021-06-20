@@ -11,16 +11,18 @@ namespace VkApiBot.Models.Commands
 
         public override string Message => "Привет!";
 
+        public override List<string> Payload => new() { "undefined" };
+
         public override void Execute(Message message, VkApi client)
         {
             var userId = message.FromId;
 
-            client.Call("messages.send", new VkNet.Utils.VkParameters
-            {
-                { "random_id", new Random().Next(Int32.MaxValue) },
-                { "peer_id", userId },
-                { "message", Message },
-            });
+            SendMessage(client, userId, Message);
+        }
+
+        public override void ExecutePayload(Message message, string payload, VkApi client)
+        {
+            throw new NotImplementedException();
         }
     }
 }
