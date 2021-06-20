@@ -53,7 +53,7 @@ namespace VkApiBot.Controllers
                 }
             }
 
-            return Ok(Json("ok"));
+            return Ok("ok");
         }
     }
 }
