@@ -32,7 +32,7 @@ namespace VkApiBot.Controllers
                 case "message_new":
                 {
                     var msg = updates.Object.Message;
-                    var payload = ButtonPayload.DeserializePayload(msg.Payload);
+                    var payload = msg.Payload != null ? ButtonPayload.DeserializePayload(msg.Payload) : new ButtonPayloadClass { Button = "" };
                     var client = Bot.Get();
 
                     foreach(var command in Bot.Commands)
@@ -41,10 +41,10 @@ namespace VkApiBot.Controllers
                         {
                             command.Execute(msg, client);
                         }
-                        /*else if(command.ContainsPayload(payload.Button))
+                        else if(payload.Button != "" && command.ContainsPayload(payload.Button))
                         {
                             command.ExecutePayload(msg, payload.Button, client);
-                        }*/
+                        }
 
                         break;
                     }
