@@ -22,6 +22,7 @@ namespace VkApiBot.Models.Commands
             var listButtons = new List<Button>();
 
             var schedulePayload = ButtonPayload.CreatePayload("schedule_choosegroup");
+            var callPayload = ButtonPayload.CreatePayload("call");
             var payload = ButtonPayload.CreatePayload("1");
 
             listButtons.Add(new Button
@@ -36,7 +37,12 @@ namespace VkApiBot.Models.Commands
             });
             listButtons.Add(new Button
             {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = schedulePayload, Label = "Расписание" },
+                Action = new VK.Keyboard.Action { ActionType = "text", Payload = schedulePayload, Label = "Расписание пар" },
+                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
+            });
+            listButtons.Add(new Button
+            {
+                Action = new VK.Keyboard.Action { ActionType = "text", Payload = callPayload, Label = "Расписание звонков" },
                 Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
             });
 

@@ -12,6 +12,7 @@ namespace VkApiBot
         public static void Main(string[] args)
         {
             ScheduleServiceAPI.ConnectToService("http://localhost:5000");
+            CallControllerServiceAPI.ConnectToService("http://localhost:5002");
 
             var client = Bot.Get();
 

@@ -10,10 +10,9 @@ namespace VkApiBot.Models.Commands
 {
     public class ScheduleCommand : Command
     {
-        public override List<string> Name => new() { "Расписание" };
+        public override List<string> Name => new() { "Расписание пар" };
 
-        public override string Message => "Я умный чат-бот из системы БАРСик, разработанный выпускником КС-47д, состоящим в " +
-                                          "лаборатории Мобильной робототехники";
+        public override string Message => "";
 
         public override List<string> Payload => new() { "schedule", "schedule_choosegroup", "schedule_choosedate", "schedule_result" };
         public override void Execute(Message message, VkApi client)
@@ -55,7 +54,7 @@ namespace VkApiBot.Models.Commands
                     }
                     else
                     {
-                        msg = "Ошибка сервиса.";
+                        msg = "Внутренняя ошибка сервиса, попробуйте позже.";
                     }
                     
                     break;
