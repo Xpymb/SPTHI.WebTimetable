@@ -26,19 +26,20 @@ namespace ConsoleApp1
     {
         static async Task Main(string[] args)
         {
-            using (var stream = new StreamReader("json1.json"))
+            var client = new VkApi();
+
+            client.Authorize(new ApiAuthParams()
             {
-                var json = stream.ReadToEnd();
+                AccessToken = "dbfffc021ae9db88fdc08e36fb90e0f9b8fca5f9a65dadc50a25cf2dc11cf6e93367bc74a14aedcaeaea9",
+                Settings = Settings.Messages,
+            });
 
-                var deser = JsonSerializer.Deserialize<Updates>(json);
-
-                Console.WriteLine(deser.Object.Message.payload);
-
-                var deserpayload = JsonSerializer.Deserialize<ButtonPayloadClass>(deser.Object.Message.payload);
-
-                Console.WriteLine(deserpayload.Button);
-            }
-                
+            client.Call("messages.send", new VkNet.Utils.VkParameters
+            {
+                { "random_id", new Random().Next(0, Int32.MaxValue) },
+                { "peer_id", 207753605 },
+                { "message", "Бот запущен" },
+            });
 
             Console.ReadKey();
         }
