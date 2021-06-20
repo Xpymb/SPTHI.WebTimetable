@@ -66,13 +66,13 @@ namespace VkApiBot.Models.Commands
 
                     break;
                 }
-                case "schedule_next":
+                case "call_next":
                 {
                     var call = CallControllerServiceAPI.GetNextCall();
 
                     if(call != null)
                     {
-                        msg = $"Следующий звонок в {call.DateTime}";
+                        msg = $"Следующий звонок в {call.DateTime} - {call.Name}";
                     }
                     else
                     {
@@ -91,7 +91,12 @@ namespace VkApiBot.Models.Commands
 
                         foreach (var call in calls)
                         {
-                            msg += $"{call.DateTime}\n";
+                            msg += $"{call.DateTime} - {call.Name}\n";
+
+                            if (call.Name.Contains("конец"))
+                            {
+                                msg += "\n";
+                            }
                         }
                     }
                     else
@@ -111,8 +116,13 @@ namespace VkApiBot.Models.Commands
 
                         foreach (var call in calls)
                         {
-                            msg += $"{call.DateTime}\n";
-                        }
+                            msg += $"{call.DateTime} - {call.Name}\n";
+
+                            if (call.Name.Contains("конец"))
+                            {
+                                msg += "\n";
+                            }
+                            }
                     }
                     else
                     {
