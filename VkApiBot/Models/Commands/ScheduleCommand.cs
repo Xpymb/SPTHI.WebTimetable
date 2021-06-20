@@ -110,7 +110,7 @@ namespace VkApiBot.Models.Commands
 
                     listButtons.Add(new Button
                     {
-                        Action = new VK.Keyboard.Action { ActionType = "text", Payload = nextPayload, Label = "Расписание" },
+                        Action = new VK.Keyboard.Action { ActionType = "text", Payload = nextPayload, Label = "Расписание пар" },
                         Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White),
                     });
 

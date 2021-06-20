@@ -35,9 +35,9 @@ namespace VkApiBot.Models.Commands
             {
                 case "call":
                 {
-                    var nextCallPayload = ButtonPayload.CreatePayload($"schedule_next");
-                    var allCallsPayload = ButtonPayload.CreatePayload($"schedule_all");
-                    var allNextCallsPayload = ButtonPayload.CreatePayload($"schedule_all_next");
+                    var nextCallPayload = ButtonPayload.CreatePayload($"call_next");
+                    var allCallsPayload = ButtonPayload.CreatePayload($"call_all");
+                    var allNextCallsPayload = ButtonPayload.CreatePayload($"call_all_next");
 
                     listButtons.Add(new Button
                     {
