@@ -27,6 +27,11 @@ namespace CallControllerService
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => 
                 {
+                    webBuilder.UseKestrel(options =>
+                    {
+                        options.Listen(IPAddress.Loopback, 5002);
+                    });
+
                     webBuilder.UseStartup<Startup>(); 
                 });
     }
