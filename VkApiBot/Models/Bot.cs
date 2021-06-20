@@ -29,6 +29,7 @@ namespace VkApiBot.Models
                 new StartCommand(),
                 new AboutInstituteCommand(),
                 new AboutBotCommand(),
+                new ScheduleCommand(),
             };
 
             _client = new VkApi();

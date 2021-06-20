@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using VkApiBot.Controllers;
 using VkApiBot.Models.VK.Keyboard;
+using VkApiBot.Models.VK.Payload;
 using VkNet;
 
 namespace VkApiBot.Models.Commands
@@ -20,6 +21,8 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
+            var schedulePayload = ButtonPayload.CreatePayload("schedule_choosegroup");
+
             listButtons.Add(new Button
             {
                 Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "О институте" },
@@ -28,7 +31,12 @@ namespace VkApiBot.Models.Commands
             listButtons.Add(new Button
             {
                 Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "О боте" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue)
+                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
+            });
+            listButtons.Add(new Button
+            {
+                Action = new VK.Keyboard.Action { ActionType = "text", Payload = schedulePayload, Label = "Расписание" },
+                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
             });
 
             var keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
