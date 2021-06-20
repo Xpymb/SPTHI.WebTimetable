@@ -95,7 +95,7 @@ namespace VkApiBot.Models.Commands
 
                     var lessons = ScheduleServiceAPI.GetScheduleByGroupName(groupName, date).Result;
 
-                    msg = $"Расписание группы {groupName} на {date}\n";
+                    msg = $"Расписание группы {groupName} на {date}:\n\n";
 
                     foreach (var lesson in lessons)
                     {
