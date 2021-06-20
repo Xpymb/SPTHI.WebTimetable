@@ -26,9 +26,8 @@ namespace VkApiBot.Models.Commands
         public override void ExecutePayload(Message message, string payload, VkApi client)
         {
             var userId = message.FromId;
-            var keyboard = "";
             var listButtons = new List<Button>();
-            var msg = "";
+            var msg = ".";
 
             switch(payload)
             {
@@ -36,7 +35,6 @@ namespace VkApiBot.Models.Commands
                 {
                     var groupsName = ScheduleServiceAPI.GetGroupsName().Result;
                     
-
                     foreach(var groupName in groupsName)
                     {
                         var nextPayload = ButtonPayload.CreatePayload($"schedule_choosedate {groupName.GroupName}");
@@ -61,7 +59,11 @@ namespace VkApiBot.Models.Commands
                 }
                 case "schedule_choosedate":
                 {
-                    var dates = ScheduleServiceAPI.GetDatesSchedulesByGroup(message.Text).Result;
+                    var payloadArgs = payload.Split(" ");
+
+                    var groupName = payloadArgs[1];
+
+                    var dates = ScheduleServiceAPI.GetDatesSchedulesByGroup(groupName).Result;
                     
                     foreach (var date in dates)
                     {
@@ -87,7 +89,7 @@ namespace VkApiBot.Models.Commands
                 }
                 case "schedule_result":
                 {
-                    var payloadArgs = payload.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                    var payloadArgs = payload.Split(" ");
 
                     var groupName = payloadArgs[1];
                     var date = payloadArgs[2];
@@ -124,7 +126,7 @@ namespace VkApiBot.Models.Commands
                 Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue),
             });
 
-            keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
+            var keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
 
             SendMessage(client, userId, msg, keyboard);
         }
