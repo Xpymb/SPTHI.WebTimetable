@@ -39,3 +39,5 @@ message DateScheduleReply {
 	string groupName = 1;
 	string date = 2;
 }
+
+

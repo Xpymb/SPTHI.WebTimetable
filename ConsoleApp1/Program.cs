@@ -26,20 +26,19 @@ namespace ConsoleApp1
     {
         static async Task Main(string[] args)
         {
-            var client = new VkApi();
+            var channel = GrpcChannel.ForAddress("http://localhost:5000");
 
-            client.Authorize(new ApiAuthParams()
+            var client = new ScheduleAPI.ScheduleAPIClient(channel);
+
+            var reply = client.GetDateScheduleByGroupName(new DateScheduleRequest
             {
-                AccessToken = "dbfffc021ae9db88fdc08e36fb90e0f9b8fca5f9a65dadc50a25cf2dc11cf6e93367bc74a14aedcaeaea9",
-                Settings = Settings.Messages,
+                GroupName = "ТМО-21д",
             });
 
-            client.Call("messages.send", new VkNet.Utils.VkParameters
+            await foreach(var response in reply.ResponseStream.ReadAllAsync())
             {
-                { "random_id", new Random().Next(0, Int32.MaxValue) },
-                { "peer_id", 207753605 },
-                { "message", "Бот запущен" },
-            });
+                Console.WriteLine($"{response.GroupName} {response.Date}");
+            }
 
             Console.ReadKey();
         }
