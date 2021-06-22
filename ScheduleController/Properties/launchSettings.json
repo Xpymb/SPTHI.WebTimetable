@@ -1,13 +1,18 @@
-﻿{
+{
   "profiles": {
     "ScheduleController": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
-      "launchBrowser": false,
-      "applicationUrl": "http://localhost:5000;https://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "dotnetRunMessages": "true",
+      "applicationUrl": "http://localhost:5000;https://localhost:5001"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "http://localhost:5000",
+      "publishAllPorts": true,
+      "useSSL": true
     }
   }
 }

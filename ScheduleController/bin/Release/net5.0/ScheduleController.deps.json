@@ -35,6 +35,7 @@
         "dependencies": {
           "Google.Apis.Sheets.v4": "1.52.0.2338",
           "Grpc.AspNetCore": "2.34.0",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.14",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -544,6 +545,7 @@
         }
       },
       "Microsoft.Extensions.Primitives/3.0.3": {},
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.14": {},
       "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -2424,6 +2426,13 @@
       "sha512": "sha512-eJuAFVIH9zUZ7j7tCSbJD+tS0dueENIerwoGxFL8RYqCmbEqQ7wVOG+mt2mZAbEpnMPsGl1Fc/HIhWpB9ftwhg==",
       "path": "microsoft.extensions.primitives/3.0.3",
       "hashPath": "microsoft.extensions.primitives.3.0.3.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vjweoaSTnMiJY4Ts4/9xHt3vStk36q8FRXxvwqSx7YjdXTbQE0i/JxncHeL6vsdE1+4sn6of2/eLQeGZ43eL2Q==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.10.14",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512"
     },
     "Newtonsoft.Json/12.0.3": {
       "type": "package",

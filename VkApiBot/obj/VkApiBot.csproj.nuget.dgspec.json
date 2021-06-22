@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[2.38.0, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.10.14, )"
+            },
             "VkNet": {
               "target": "Package",
               "version": "[1.63.0, )"
