@@ -1,6 +1,7 @@
 ﻿using ScheduleController.GoogleSheets;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace ScheduleController.Schedule
 {
@@ -139,9 +140,11 @@ namespace ScheduleController.Schedule
                     date = lesson[0].ToString();
                 }
 
+                var time = lesson[1].ToString().Split("-")[0];
+
                 lessons.Add(new Lesson
                 {
-                    DateTime = DateTime.Parse($"{date} {lesson[1].ToString().Split("-")[0]}"),
+                    DateTime = DateTime.ParseExact($"{date} {time}", "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture),
                     Type = lesson[2].ToString(),
                     Name = lesson[3].ToString(),
                     Classroom = lesson[4].ToString(),

@@ -36,3 +36,7 @@ C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Release\net5.0\Schedule
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Release\net5.0\ref\ScheduleController.dll
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Release\net5.0\ScheduleController.pdb
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Release\net5.0\ScheduleController.genruntimeconfig.cache
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Release\net5.0\ScheduleController.Properties.Resources.resources
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Release\net5.0\ScheduleController.csproj.GenerateResource.cache
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Release\net5.0\GoogleSheets\Credentials\credentials.p12
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Release\net5.0\GoogleSheets\Credentials\Google.Apis.Auth.OAuth2.Responses.TokenResponse-user

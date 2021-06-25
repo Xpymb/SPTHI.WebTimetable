@@ -10,7 +10,7 @@
     },
     "Docker": {
       "commandName": "Docker",
-      "launchUrl": "http://localhost:5000",
+      "launchUrl": "http://localhost:80",
       "publishAllPorts": true,
       "useSSL": true
     }

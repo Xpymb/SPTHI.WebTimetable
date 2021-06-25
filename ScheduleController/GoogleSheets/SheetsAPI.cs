@@ -2,23 +2,17 @@
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
-using Google.Apis.Util.Store;
 using ScheduleController.Settings;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Security.Cryptography.X509Certificates;
-using System.Text.Json;
-using System.Threading;
 
 namespace ScheduleController.GoogleSheets
 {
     public static class SheetsAPI
     {
         private static readonly string[] _scopes = { SheetsService.Scope.SpreadsheetsReadonly };
-        private static readonly string _applicationName = "Google Sheets API .NET Quickstart";
+        private static readonly string _applicationName = "ScheduleController API";
         private static readonly string _credentialPath = "GoogleSheets/Credentials/credentials.p12";
-        private static readonly string _tokenResponses = "GoogleSheets/Credentials/Google.Apis.Auth.OAuth2.Responses.TokenResponse-user";
 
         private static SheetsService _service;
 
@@ -29,28 +23,13 @@ namespace ScheduleController.GoogleSheets
         {
             ServiceAccountCredential credential;
 
-            TokenSerializable tokenResponse;
-
-            /*using (var stream = new StreamReader(_tokenResponses))
-            {
-                var token = stream.ReadToEndAsync().Result;
-
-                var options = new JsonSerializerOptions
-                {
-                    WriteIndented = true,
-                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-                };
-
-                tokenResponse = JsonSerializer.Deserialize<TokenSerializable>(token, options);
-            }*/
-
             var certificate = new X509Certificate2(_credentialPath, "notasecret", X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable);
 
             credential = new ServiceAccountCredential(new ServiceAccountCredential.Initializer(AppSettings.ServiceAccountEmail).FromCertificate(certificate));
 
             credential.Token = new Google.Apis.Auth.OAuth2.Responses.TokenResponse()
             {
-                //Scope = tokenResponse.Scope
+                Scope = _scopes[0]
             };
 
             _service = new SheetsService(new BaseClientService.Initializer()

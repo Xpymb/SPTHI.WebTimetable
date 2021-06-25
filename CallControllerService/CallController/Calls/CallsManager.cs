@@ -69,7 +69,7 @@ namespace CallControllerService.CallController.Calls
                 _calendarEvents = e.Events;
                 ListCalls.Clear();
 
-                if (_calendarEvents != null)
+                if (_calendarEvents.Items != null && _calendarEvents.Items.Count > 0)
                 {
                     foreach (var calendarEvent in _calendarEvents.Items)
                     {

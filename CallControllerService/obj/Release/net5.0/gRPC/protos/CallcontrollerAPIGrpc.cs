@@ -93,68 +93,6 @@ namespace CallControllerService {
 
     }
 
-    /// <summary>Client for CallControllerAPI</summary>
-    public partial class CallControllerAPIClient : grpc::ClientBase<CallControllerAPIClient>
-    {
-      /// <summary>Creates a new client for CallControllerAPI</summary>
-      /// <param name="channel">The channel to use to make remote calls.</param>
-      public CallControllerAPIClient(grpc::ChannelBase channel) : base(channel)
-      {
-      }
-      /// <summary>Creates a new client for CallControllerAPI that uses a custom <c>CallInvoker</c>.</summary>
-      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-      public CallControllerAPIClient(grpc::CallInvoker callInvoker) : base(callInvoker)
-      {
-      }
-      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
-      protected CallControllerAPIClient() : base()
-      {
-      }
-      /// <summary>Protected constructor to allow creation of configured clients.</summary>
-      /// <param name="configuration">The client configuration.</param>
-      protected CallControllerAPIClient(ClientBaseConfiguration configuration) : base(configuration)
-      {
-      }
-
-      public virtual global::CallControllerService.CallReply GetNextCall(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return GetNextCall(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual global::CallControllerService.CallReply GetNextCall(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_GetNextCall, null, options, request);
-      }
-      public virtual grpc::AsyncUnaryCall<global::CallControllerService.CallReply> GetNextCallAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return GetNextCallAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncUnaryCall<global::CallControllerService.CallReply> GetNextCallAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_GetNextCall, null, options, request);
-      }
-      public virtual grpc::AsyncServerStreamingCall<global::CallControllerService.CallReply> GetListCalls(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return GetListCalls(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncServerStreamingCall<global::CallControllerService.CallReply> GetListCalls(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncServerStreamingCall(__Method_GetListCalls, null, options, request);
-      }
-      public virtual grpc::AsyncServerStreamingCall<global::CallControllerService.CallReply> GetListNextCalls(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return GetListNextCalls(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncServerStreamingCall<global::CallControllerService.CallReply> GetListNextCalls(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncServerStreamingCall(__Method_GetListNextCalls, null, options, request);
-      }
-      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
-      protected override CallControllerAPIClient NewInstance(ClientBaseConfiguration configuration)
-      {
-        return new CallControllerAPIClient(configuration);
-      }
-    }
-
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static grpc::ServerServiceDefinition BindService(CallControllerAPIBase serviceImpl)

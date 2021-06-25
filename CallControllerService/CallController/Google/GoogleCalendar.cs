@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using CallControllerService.CallController.Ticks;
 using Google.Apis.Auth.OAuth2;
@@ -16,6 +17,7 @@ namespace CallController.Google
         private readonly string[] _scopes = { CalendarService.Scope.CalendarReadonly };
         private const string ApplicationName = "CallController SPHTI";
         private const string CalendarId = "pit5gsmeoig0m329opvjh8f5o4@group.calendar.google.com";
+        private const string _credentialPath = "Credentials/token/credentials.p12";
 
         //Define Ticks Controller instance
         private readonly TicksController _ticksController;
@@ -50,14 +52,11 @@ namespace CallController.Google
 
         private void ConnectToCalendarApi()
         {
-            UserCredential credential;
+            ServiceAccountCredential credential;
 
-            using (var stream = new FileStream("CallController/Google/Credentials/credentials.json", FileMode.Open, FileAccess.Read))
-            {
-                const string credPath = "CallController/Google/Credentials/token";
+            var certificate = new X509Certificate2(_credentialPath, "notasecret", X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.Exportable);
 
-                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(GoogleClientSecrets.Load(stream).Secrets, _scopes, "user", CancellationToken.None, new FileDataStore(credPath, true)).Result;
-            }
+            credential = new ServiceAccountCredential(new ServiceAccountCredential.Initializer("callcontrollermain@callcontroller-1614994327804.iam.gserviceaccount.com").FromCertificate(certificate));
 
             _calendarService = new CalendarService(new BaseClientService.Initializer()
             {

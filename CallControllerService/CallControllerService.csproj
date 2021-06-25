@@ -15,18 +15,18 @@
         <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="CallController" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Protobuf Include="gRPC\protos\callcontrollerAPI.proto">
-        <Generator>MSBuild:Compile</Generator>
-      </Protobuf>
-    </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="gRPC\protos\callcontrollerAPI.proto" GrpcServices="Server" />
+  </ItemGroup>
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Google\Credentials\credentials.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Credentials\token\credentials.p12">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

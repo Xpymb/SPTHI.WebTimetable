@@ -74,3 +74,4 @@ C:\Repositories\Diplom_VK_Api_Bot\CallControllerService\obj\Debug\net5.0\CallCon
 C:\Repositories\Diplom_VK_Api_Bot\CallControllerService\obj\Debug\net5.0\ref\CallControllerService.dll
 C:\Repositories\Diplom_VK_Api_Bot\CallControllerService\obj\Debug\net5.0\CallControllerService.pdb
 C:\Repositories\Diplom_VK_Api_Bot\CallControllerService\obj\Debug\net5.0\CallControllerService.genruntimeconfig.cache
+C:\Repositories\Diplom_VK_Api_Bot\CallControllerService\bin\Debug\net5.0\Credentials\token\credentials.p12

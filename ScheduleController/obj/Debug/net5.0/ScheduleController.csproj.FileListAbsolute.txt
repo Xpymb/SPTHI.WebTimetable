@@ -36,3 +36,5 @@ C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleCo
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ref\ScheduleController.dll
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.pdb
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.genruntimeconfig.cache
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.Properties.Resources.resources
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.csproj.GenerateResource.cache
