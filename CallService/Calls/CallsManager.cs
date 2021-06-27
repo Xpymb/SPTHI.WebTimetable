@@ -1,11 +1,9 @@
 ﻿using CallService.GoogleCalendar;
 using CallService.Ticks;
 using CallService.Tools;
-using Google.Apis.Calendar.v3.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CallService.Calls
 {

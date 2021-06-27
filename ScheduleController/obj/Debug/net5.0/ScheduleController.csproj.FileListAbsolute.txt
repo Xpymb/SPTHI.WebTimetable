@@ -1,13 +1,9 @@
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.csproj.AssemblyReference.cache
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.GeneratedMSBuildEditorConfig.editorconfig
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.AssemblyInfoInputs.cache
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.AssemblyInfo.cs
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.csproj.CoreCompileInputs.cache
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.MvcApplicationPartsAssemblyInfo.cache
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\appsettings.Development.json
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\appsettings.json
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\GoogleSheets\Credentials\credentials.json
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\ScheduleController.exe
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\GoogleSheets\Credentials\credentials.p12
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\GoogleSheets\Credentials\Google.Apis.Auth.OAuth2.Responses.TokenResponse-user
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\ScheduleController.deps.json
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\ScheduleController.runtimeconfig.json
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\ScheduleController.runtimeconfig.dev.json
@@ -27,6 +23,13 @@ C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\Grpc.Net.C
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\Grpc.Net.ClientFactory.dll
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\Grpc.Net.Common.dll
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.Properties.Resources.resources
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.csproj.GenerateResource.cache
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.AssemblyInfoInputs.cache
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.AssemblyInfo.cs
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.csproj.CoreCompileInputs.cache
+C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.MvcApplicationPartsAssemblyInfo.cache
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\staticwebassets\ScheduleController.StaticWebAssets.Manifest.cache
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\staticwebassets\ScheduleController.StaticWebAssets.xml
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\scopedcss\bundle\ScheduleController.styles.css
@@ -36,7 +39,3 @@ C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleCo
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ref\ScheduleController.dll
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.pdb
 C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.genruntimeconfig.cache
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.Properties.Resources.resources
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\obj\Debug\net5.0\ScheduleController.csproj.GenerateResource.cache
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\GoogleSheets\Credentials\credentials.p12
-C:\Repositories\Diplom_VK_Api_Bot\ScheduleController\bin\Debug\net5.0\GoogleSheets\Credentials\Google.Apis.Auth.OAuth2.Responses.TokenResponse-user

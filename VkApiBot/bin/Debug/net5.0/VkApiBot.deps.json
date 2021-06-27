@@ -34,10 +34,10 @@
       "VkApiBot/1.0.0": {
         "dependencies": {
           "Google.Protobuf": "3.17.3",
-          "Grpc": "2.38.0",
-          "Grpc.Core": "2.38.0",
+          "Grpc": "2.38.1",
+          "Grpc.Core": "2.38.1",
           "Grpc.Net.Client": "2.38.0",
-          "Grpc.Tools": "2.38.0",
+          "Grpc.Tools": "2.38.1",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.14",
           "VkNet": "1.63.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -341,20 +341,20 @@
           "lib/net5.0/Google.Protobuf.dll": {}
         }
       },
-      "Grpc/2.38.0": {
+      "Grpc/2.38.1": {
         "dependencies": {
-          "Grpc.Core": "2.38.0"
+          "Grpc.Core": "2.38.1"
         }
       },
-      "Grpc.Core/2.38.0": {
+      "Grpc.Core/2.38.1": {
         "dependencies": {
-          "Grpc.Core.Api": "2.38.0",
+          "Grpc.Core.Api": "2.38.1",
           "System.Memory": "4.5.3"
         },
         "runtime": {
           "lib/netstandard2.0/Grpc.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.38.0.0"
+            "fileVersion": "2.38.1.0"
           }
         },
         "runtimeTargets": {
@@ -388,14 +388,14 @@
           "lib/netstandard2.0/Grpc.Core.dll": {}
         }
       },
-      "Grpc.Core.Api/2.38.0": {
+      "Grpc.Core.Api/2.38.1": {
         "dependencies": {
           "System.Memory": "4.5.3"
         },
         "runtime": {
           "lib/netstandard2.0/Grpc.Core.Api.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.38.0.0"
+            "fileVersion": "2.38.1.0"
           }
         },
         "compile": {
@@ -419,7 +419,7 @@
       },
       "Grpc.Net.Common/2.38.0": {
         "dependencies": {
-          "Grpc.Core.Api": "2.38.0"
+          "Grpc.Core.Api": "2.38.1"
         },
         "runtime": {
           "lib/net5.0/Grpc.Net.Common.dll": {
@@ -431,7 +431,7 @@
           "lib/net5.0/Grpc.Net.Common.dll": {}
         }
       },
-      "Grpc.Tools/2.38.0": {},
+      "Grpc.Tools/2.38.1": {},
       "HtmlAgilityPack/1.11.33": {
         "runtime": {
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
@@ -2196,26 +2196,26 @@
       "path": "google.protobuf/3.17.3",
       "hashPath": "google.protobuf.3.17.3.nupkg.sha512"
     },
-    "Grpc/2.38.0": {
+    "Grpc/2.38.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qWsJVaCbV957XT0rnT1XKQne8BdGPZ4caB2t+GFn1xevq8lUIvKk/O+eWezRv6vJATqc9Helod+d2WR6XmwhvA==",
-      "path": "grpc/2.38.0",
-      "hashPath": "grpc.2.38.0.nupkg.sha512"
+      "sha512": "sha512-VY82vQG7apE3DSQ7qBeuyg5UpfkcrPdoAK7cV9Dxd5GefFnv3jHA+tkmG52gp7KsOSP7AmA6E88js1fZ7xBl4A==",
+      "path": "grpc/2.38.1",
+      "hashPath": "grpc.2.38.1.nupkg.sha512"
     },
-    "Grpc.Core/2.38.0": {
+    "Grpc.Core/2.38.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-D6BmwIYqZgl7TS1i2avqDdjSRY25QvhlqcnG6KfBnyNAoypwX3N8joxeHEQ5L9USrq0KycoAoL645WhpfxwVBQ==",
-      "path": "grpc.core/2.38.0",
-      "hashPath": "grpc.core.2.38.0.nupkg.sha512"
+      "sha512": "sha512-dFgCYVMNaOYiagWJZ7X/1MkGzS7+fnirvqh+0DPw+rPvcEa5UFU7O747wWz+QTKzuZ9Sii7DjfSbgZj65/lWxw==",
+      "path": "grpc.core/2.38.1",
+      "hashPath": "grpc.core.2.38.1.nupkg.sha512"
     },
-    "Grpc.Core.Api/2.38.0": {
+    "Grpc.Core.Api/2.38.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hqQEPxKyCwoq75OXmWDKe/rw/O9YjgdfIYmU/w8r5itMmHJp0HNmfHdxVVW9DSRuA836NM93qYoMdbTYQfWOHA==",
-      "path": "grpc.core.api/2.38.0",
-      "hashPath": "grpc.core.api.2.38.0.nupkg.sha512"
+      "sha512": "sha512-Z7e+LEXDCr2C0qUvyydShgLkuMChdT4biZsCg8xUaENZpO+y5VN4pUzcfj9jYVS8DOi8c/oqjx4WOlBuBKVhEg==",
+      "path": "grpc.core.api/2.38.1",
+      "hashPath": "grpc.core.api.2.38.1.nupkg.sha512"
     },
     "Grpc.Net.Client/2.38.0": {
       "type": "package",
@@ -2231,12 +2231,12 @@
       "path": "grpc.net.common/2.38.0",
       "hashPath": "grpc.net.common.2.38.0.nupkg.sha512"
     },
-    "Grpc.Tools/2.38.0": {
+    "Grpc.Tools/2.38.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jeaD9UGnuthwSclhoazNXsBBLkJVS7O1VNOTRZUUyWTTiwf26qdCX45eVMrGt7tqBFZTFOEqWFGQ8sf1HTxB0Q==",
-      "path": "grpc.tools/2.38.0",
-      "hashPath": "grpc.tools.2.38.0.nupkg.sha512"
+      "sha512": "sha512-VNVXRUdBz/jRJXqp4jth3JWjQOIo1fdeQZvmzLY83WMcUwCGGnC743LV9qMpHO8YmHi1+MTQbsqhg/F0Q5knXg==",
+      "path": "grpc.tools/2.38.1",
+      "hashPath": "grpc.tools.2.38.1.nupkg.sha512"
     },
     "HtmlAgilityPack/1.11.33": {
       "type": "package",

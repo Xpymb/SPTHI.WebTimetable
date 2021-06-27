@@ -11,16 +11,16 @@
           "lib/net5.0/Google.Protobuf.dll": {}
         }
       },
-      "Grpc/2.38.0": {
+      "Grpc/2.38.1": {
         "type": "package",
         "dependencies": {
-          "Grpc.Core": "2.38.0"
+          "Grpc.Core": "2.38.1"
         }
       },
-      "Grpc.Core/2.38.0": {
+      "Grpc.Core/2.38.1": {
         "type": "package",
         "dependencies": {
-          "Grpc.Core.Api": "2.38.0",
+          "Grpc.Core.Api": "2.38.1",
           "System.Memory": "4.5.3"
         },
         "compile": {
@@ -52,7 +52,7 @@
           }
         }
       },
-      "Grpc.Core.Api/2.38.0": {
+      "Grpc.Core.Api/2.38.1": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -89,7 +89,7 @@
           "lib/net5.0/Grpc.Net.Common.dll": {}
         }
       },
-      "Grpc.Tools/2.38.0": {
+      "Grpc.Tools/2.38.1": {
         "type": "package",
         "build": {
           "build/Grpc.Tools.props": {},
@@ -201,27 +201,27 @@
         "lib/netstandard2.0/Google.Protobuf.xml"
       ]
     },
-    "Grpc/2.38.0": {
-      "sha512": "qWsJVaCbV957XT0rnT1XKQne8BdGPZ4caB2t+GFn1xevq8lUIvKk/O+eWezRv6vJATqc9Helod+d2WR6XmwhvA==",
+    "Grpc/2.38.1": {
+      "sha512": "VY82vQG7apE3DSQ7qBeuyg5UpfkcrPdoAK7cV9Dxd5GefFnv3jHA+tkmG52gp7KsOSP7AmA6E88js1fZ7xBl4A==",
       "type": "package",
-      "path": "grpc/2.38.0",
+      "path": "grpc/2.38.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "grpc.2.38.0.nupkg.sha512",
+        "grpc.2.38.1.nupkg.sha512",
         "grpc.nuspec"
       ]
     },
-    "Grpc.Core/2.38.0": {
-      "sha512": "D6BmwIYqZgl7TS1i2avqDdjSRY25QvhlqcnG6KfBnyNAoypwX3N8joxeHEQ5L9USrq0KycoAoL645WhpfxwVBQ==",
+    "Grpc.Core/2.38.1": {
+      "sha512": "dFgCYVMNaOYiagWJZ7X/1MkGzS7+fnirvqh+0DPw+rPvcEa5UFU7O747wWz+QTKzuZ9Sii7DjfSbgZj65/lWxw==",
       "type": "package",
-      "path": "grpc.core/2.38.0",
+      "path": "grpc.core/2.38.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/net45/Grpc.Core.targets",
         "buildTransitive/net45/Grpc.Core.targets",
-        "grpc.core.2.38.0.nupkg.sha512",
+        "grpc.core.2.38.1.nupkg.sha512",
         "grpc.core.nuspec",
         "lib/net45/Grpc.Core.dll",
         "lib/net45/Grpc.Core.pdb",
@@ -239,14 +239,14 @@
         "runtimes/win-x86/native/grpc_csharp_ext.x86.dll"
       ]
     },
-    "Grpc.Core.Api/2.38.0": {
-      "sha512": "hqQEPxKyCwoq75OXmWDKe/rw/O9YjgdfIYmU/w8r5itMmHJp0HNmfHdxVVW9DSRuA836NM93qYoMdbTYQfWOHA==",
+    "Grpc.Core.Api/2.38.1": {
+      "sha512": "Z7e+LEXDCr2C0qUvyydShgLkuMChdT4biZsCg8xUaENZpO+y5VN4pUzcfj9jYVS8DOi8c/oqjx4WOlBuBKVhEg==",
       "type": "package",
-      "path": "grpc.core.api/2.38.0",
+      "path": "grpc.core.api/2.38.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "grpc.core.api.2.38.0.nupkg.sha512",
+        "grpc.core.api.2.38.1.nupkg.sha512",
         "grpc.core.api.nuspec",
         "lib/net45/Grpc.Core.Api.dll",
         "lib/net45/Grpc.Core.Api.pdb",
@@ -301,10 +301,10 @@
         "packageIcon.png"
       ]
     },
-    "Grpc.Tools/2.38.0": {
-      "sha512": "jeaD9UGnuthwSclhoazNXsBBLkJVS7O1VNOTRZUUyWTTiwf26qdCX45eVMrGt7tqBFZTFOEqWFGQ8sf1HTxB0Q==",
+    "Grpc.Tools/2.38.1": {
+      "sha512": "VNVXRUdBz/jRJXqp4jth3JWjQOIo1fdeQZvmzLY83WMcUwCGGnC743LV9qMpHO8YmHi1+MTQbsqhg/F0Q5knXg==",
       "type": "package",
-      "path": "grpc.tools/2.38.0",
+      "path": "grpc.tools/2.38.1",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -333,7 +333,7 @@
         "build/native/include/google/protobuf/timestamp.proto",
         "build/native/include/google/protobuf/type.proto",
         "build/native/include/google/protobuf/wrappers.proto",
-        "grpc.tools.2.38.0.nupkg.sha512",
+        "grpc.tools.2.38.1.nupkg.sha512",
         "grpc.tools.nuspec",
         "tools/linux_arm64/grpc_csharp_plugin",
         "tools/linux_arm64/protoc",
@@ -613,10 +613,10 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Google.Protobuf >= 3.17.3",
-      "Grpc >= 2.38.0",
-      "Grpc.Core >= 2.38.0",
+      "Grpc >= 2.38.1",
+      "Grpc.Core >= 2.38.1",
       "Grpc.Net.Client >= 2.38.0",
-      "Grpc.Tools >= 2.38.0",
+      "Grpc.Tools >= 2.38.1",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.14",
       "VkNet >= 1.63.0"
     ]
@@ -674,11 +674,11 @@
           },
           "Grpc": {
             "target": "Package",
-            "version": "[2.38.0, )"
+            "version": "[2.38.1, )"
           },
           "Grpc.Core": {
             "target": "Package",
-            "version": "[2.38.0, )"
+            "version": "[2.38.1, )"
           },
           "Grpc.Net.Client": {
             "target": "Package",
@@ -688,7 +688,7 @@
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.38.0, )"
+            "version": "[2.38.1, )"
           },
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",

@@ -93,6 +93,7 @@ C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\bin\Debug\net5.0\runtimes\linux-x64\n
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\bin\Debug\net5.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\bin\Debug\net5.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\bin\Debug\net5.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
+C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.csproj.AssemblyReference.cache
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.GeneratedMSBuildEditorConfig.editorconfig
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.AssemblyInfoInputs.cache
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Debug\net5.0\VkApiBot.AssemblyInfo.cs

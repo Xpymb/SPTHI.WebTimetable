@@ -3,7 +3,6 @@ using CallService.GoogleCalendar;
 using CallService.Threads;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using System;
 
 namespace CallService
 {

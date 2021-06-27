@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using VkApiBot.Models.Commands;
 using VkNet;
 using VkNet.Enums.Filters;

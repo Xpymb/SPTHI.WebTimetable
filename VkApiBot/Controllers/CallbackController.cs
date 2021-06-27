@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using System.IO;
 using VkApiBot.Models;
 using VkApiBot.Models.VK.Payload;
-using VkNet.Model;
-using VkNet.Utils;
 
 namespace VkApiBot.Controllers
 {

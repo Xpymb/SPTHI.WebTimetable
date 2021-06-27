@@ -6,7 +6,6 @@ using Google.Apis.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 
 namespace CallService.GoogleCalendar

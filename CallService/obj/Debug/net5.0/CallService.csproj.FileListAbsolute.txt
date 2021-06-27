@@ -22,6 +22,7 @@ C:\Repositories\Diplom_VK_Api_Bot\CallService\bin\Debug\net5.0\Grpc.Net.Client.d
 C:\Repositories\Diplom_VK_Api_Bot\CallService\bin\Debug\net5.0\Grpc.Net.ClientFactory.dll
 C:\Repositories\Diplom_VK_Api_Bot\CallService\bin\Debug\net5.0\Grpc.Net.Common.dll
 C:\Repositories\Diplom_VK_Api_Bot\CallService\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Repositories\Diplom_VK_Api_Bot\CallService\obj\Debug\net5.0\CallService.csproj.AssemblyReference.cache
 C:\Repositories\Diplom_VK_Api_Bot\CallService\obj\Debug\net5.0\CallService.GeneratedMSBuildEditorConfig.editorconfig
 C:\Repositories\Diplom_VK_Api_Bot\CallService\obj\Debug\net5.0\CallService.AssemblyInfoInputs.cache
 C:\Repositories\Diplom_VK_Api_Bot\CallService\obj\Debug\net5.0\CallService.AssemblyInfo.cs
