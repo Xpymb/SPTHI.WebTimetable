@@ -1,3 +1,0 @@
-obj\Debug\net5.0\gRPC\protos/CallcontrollerAPI.cs \
-obj\Debug\net5.0\gRPC\protos/CallcontrollerAPIGrpc.cs: C:/Users/Deric/.nuget/packages/grpc.tools/2.36.1/build/native/include/google/protobuf/empty.proto\
- gRPC/protos/callcontrollerAPI.proto

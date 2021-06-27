@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using ScheduleController.Schedule;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,13 +21,13 @@ namespace ScheduleController
         public override async Task GetScheduleByGroupName(ScheduleRequest request,
             IServerStreamWriter<ScheduleReply> responseStream, ServerCallContext context)
         {
-            var lessons = ScheduleManager.GetScheduleByGroupName(request.GroupName, DateTime.Parse(request.Date));
+            var lessons = ScheduleManager.GetScheduleByGroupName(request.GroupName, DateTime.ParseExact(request.Date, "dd.MM.yyyy", CultureInfo.InvariantCulture));
 
             foreach (var lesson in lessons)
             {
                 await responseStream.WriteAsync(new ScheduleReply
                 {
-                    Time = lesson.DateTime.ToShortTimeString(),
+                    Time = lesson.DateTime.ToString("HH:mm"),
                     Type = lesson.Type,
                     Name = lesson.Name,
                     Classroom = lesson.Classroom,
@@ -61,7 +62,7 @@ namespace ScheduleController
                 await responseStream.WriteAsync(new DateScheduleReply
                 {
                     GroupName = request.GroupName,
-                    Date = lessonDate.ToShortDateString(),
+                    Date = lessonDate.ToString("dd.MM.yyyy"),
                 });
             }
         }

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScheduleController", "ScheduleController\ScheduleController.csproj", "{DA532B92-FCE3-435F-8F80-4051E1A9A92C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallControllerService", "CallControllerService\CallControllerService.csproj", "{C70905F9-088D-43C1-B925-C35C8073414B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CallService", "CallService\CallService.csproj", "{C9FEA620-D194-4BF7-8EAD-365D2AF4C542}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{DA532B92-FCE3-435F-8F80-4051E1A9A92C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA532B92-FCE3-435F-8F80-4051E1A9A92C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA532B92-FCE3-435F-8F80-4051E1A9A92C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C70905F9-088D-43C1-B925-C35C8073414B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C70905F9-088D-43C1-B925-C35C8073414B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C70905F9-088D-43C1-B925-C35C8073414B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C70905F9-088D-43C1-B925-C35C8073414B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9FEA620-D194-4BF7-8EAD-365D2AF4C542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9FEA620-D194-4BF7-8EAD-365D2AF4C542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9FEA620-D194-4BF7-8EAD-365D2AF4C542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9FEA620-D194-4BF7-8EAD-365D2AF4C542}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

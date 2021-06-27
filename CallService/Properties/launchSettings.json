@@ -1,0 +1,18 @@
+{
+  "profiles": {
+    "CallService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": "true",
+      "applicationUrl": "http://localhost:5000;https://localhost:5001"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "http://localhost:80",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  }
+}
