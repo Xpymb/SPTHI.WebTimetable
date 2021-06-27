@@ -6,7 +6,10 @@ namespace VkApiBot.Models.VK.Payload
     [Serializable]
     public class ButtonPayloadClass
     {
-        [JsonPropertyName("button")]
-        public string Button { get; set; }
+        [JsonPropertyName("command")]
+        public string Command { get; set; }
+
+        [JsonPropertyName("logic")]
+        public string Logic { get; set; }
     }
 }

@@ -40,11 +40,6 @@ namespace CallService.Calls
             _listCalls = UpdateListCalls();
             NextCall = UpdateNextCall();
             _listNextCalls = UpdateListNextCalls();
-
-            foreach (var call in ListCalls)
-            {
-                Console.WriteLine(call.CallTime);
-            }
         }
 
         private static Call UpdateNextCall()

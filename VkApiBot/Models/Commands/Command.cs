@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using VkApiBot.Controllers;
+using VkApiBot.Models.VK.Payload;
 using VkNet;
 
 namespace VkApiBot.Models.Commands
@@ -12,7 +13,7 @@ namespace VkApiBot.Models.Commands
         public abstract string Message { get; }
 
         public abstract void Execute(Message message, VkApi client);
-        public abstract void ExecutePayload(Message message, string payload, VkApi client);
+        public abstract void ExecutePayload(Message message, ButtonPayloadClass payload, VkApi client);
 
         public bool Contains(string message)
         {
@@ -29,11 +30,6 @@ namespace VkApiBot.Models.Commands
 
         public bool ContainsPayload(string payloadArg)
         {
-            if(payloadArg == null || payloadArg == "")
-            {
-                return false;
-            }
-
             foreach (var payload in Payload)
             {
                 if (payloadArg.Contains(payload))

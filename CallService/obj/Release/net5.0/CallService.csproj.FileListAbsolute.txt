@@ -36,3 +36,4 @@ C:\Repositories\Diplom_VK_Api_Bot\CallService\obj\Release\net5.0\CallService.dll
 C:\Repositories\Diplom_VK_Api_Bot\CallService\obj\Release\net5.0\ref\CallService.dll
 C:\Repositories\Diplom_VK_Api_Bot\CallService\obj\Release\net5.0\CallService.pdb
 C:\Repositories\Diplom_VK_Api_Bot\CallService\obj\Release\net5.0\CallService.genruntimeconfig.cache
+C:\Repositories\Diplom_VK_Api_Bot\CallService\obj\Release\net5.0\CallService.csproj.AssemblyReference.cache

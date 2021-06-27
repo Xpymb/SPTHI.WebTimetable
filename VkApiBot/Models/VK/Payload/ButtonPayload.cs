@@ -4,25 +4,72 @@ namespace VkApiBot.Models.VK.Payload
 {
     public static class ButtonPayload
     {
-        public static string CreatePayload(string body)
+        public static string CreatePayload(string command, string logic = null)
         {
             var payload = new ButtonPayloadClass
             {
-                Button = body
+                Command = command,
+                Logic = logic,
             };
 
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-            };
+            var options = GetDefaultOptions();
 
-            return JsonSerializer.Serialize<ButtonPayloadClass>(payload, options);
+            return JsonSerializer.Serialize(payload, options);
         }
 
         public static ButtonPayloadClass DeserializePayload(string json)
         {
-            return JsonSerializer.Deserialize<ButtonPayloadClass>(json);
+            if(json == null)
+            {
+                return new ButtonPayloadClass();
+            }
+
+            var options = GetDefaultOptions();
+
+            return JsonSerializer.Deserialize<ButtonPayloadClass>(json, options);
+        }
+
+        public static string CreateSchedulePayload(string groupName = null, string _class = null, string date = null)
+        {
+            var payload = new SchedulePayloadClass
+            {
+                GroupName = groupName,
+                Class = _class,
+                Date = date,
+            };
+
+            var options = GetDefaultOptions();
+
+            return JsonSerializer.Serialize(payload, options);
+        }
+
+        public static SchedulePayloadClass DeserializeSchedulePayload(string json)
+        {
+            if(json == null)
+            {
+                return new SchedulePayloadClass();
+            }
+
+            var options = GetDefaultOptions();
+
+            return JsonSerializer.Deserialize<SchedulePayloadClass>(json, options);
+        }
+
+        private static JsonSerializerOptions GetDefaultOptions()
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+            };
+
+            return options;
+        }
+
+        public static string GetDefaultPayload()
+        {
+            return CreatePayload("");
         }
     }
 }

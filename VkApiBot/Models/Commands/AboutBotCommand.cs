@@ -12,33 +12,27 @@ namespace VkApiBot.Models.Commands
         public override List<string> Name => new() { "О боте" };
 
         public override string Message => "Я умный чат-бот из системы БАРСик, разработанный выпускником КС-47д, состоящим в " +
-                                          "лаборатории Мобильной робототехники";
+                                                "лаборатории Мобильной робототехники";
 
         public override List<string> Payload => new() { "undefined" };
+
         public override void Execute(Message message, VkApi client)
         {
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
-            var payload = ButtonPayload.CreatePayload("1");
+            var aboutInstituteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "О институте", VkKeyboard.ButtonColor.White);
+            var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColor.Blue);
 
-            listButtons.Add(new Button
-            {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = payload, Label = "О институте" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
-            });
-            listButtons.Add(new Button
-            {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = payload, Label = "Главное меню" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue)
-            });
+            listButtons.Add(aboutInstituteButton);
+            listButtons.Add(homeButton);
 
-            var keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
+            var keyboard = VkKeyboard.CreateKeyboard(false, listButtons);
 
             SendMessage(client, userId, Message, keyboard);
         }
 
-        public override void ExecutePayload(Message message, string payload, VkApi client)
+        public override void ExecutePayload(Message message, ButtonPayloadClass payload, VkApi client)
         {
             throw new NotImplementedException();
         }

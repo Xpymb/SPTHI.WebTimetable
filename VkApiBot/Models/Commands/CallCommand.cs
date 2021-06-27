@@ -15,141 +15,123 @@ namespace VkApiBot.Models.Commands
         public override string Message => "";
 
         public override List<string> Payload => new() { "call", "call_all", "call_next", "call_all_next" };
+
         public override void Execute(Message message, VkApi client)
         {
             var payload = ButtonPayload.DeserializePayload(message.Payload);
 
-            ExecutePayload(message, payload.Button, client);
+            //ExecutePayload(message, payload.Button, client);
         }
 
-        public override void ExecutePayload(Message message, string payload, VkApi client)
+        public override void ExecutePayload(Message message, ButtonPayloadClass payload, VkApi client)
         {
             var userId = message.FromId;
             var listButtons = new List<Button>();
-            var msg = ".";
 
-            var payloadArgs = payload.Split(" ");
-            var command = payloadArgs[0];
-
-            switch (command)
+            var newMessage = payload.Command switch
             {
-                case "call":
+                "call" => ChooseCommands(listButtons),
+                "call_next" => GetNextCall(),
+                "call_all" => GetAllCalls(),
+                "call_all_next" => GetAllNextCalls(),
+                _ => "Сервис временно не доступен, повторите попытку позже",
+            };
+
+            if(payload.Command != "call")
+            {
+                var nextPayload = ButtonPayload.CreatePayload("call");
+
+                var button = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, nextPayload, "Расписание звонков", VkKeyboard.ButtonColor.White);
+
+                listButtons.Add(button);
+            }
+
+            var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColor.Blue);
+
+            listButtons.Add(homeButton);
+
+            var keyboard = VkKeyboard.CreateKeyboard(false, listButtons);
+
+            SendMessage(client, userId, newMessage, keyboard);
+        }
+
+
+        private string ChooseCommands(List<Button> listButtons)
+        {
+            var nextCallPayload = ButtonPayload.CreatePayload("call_next");
+            var nextCallButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, nextCallPayload, "Время следующего звонка", VkKeyboard.ButtonColor.White);
+
+            var allCallsPayload = ButtonPayload.CreatePayload("call_all");
+            var allCallsButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, allCallsPayload, "Список всех звонков на сегодня", VkKeyboard.ButtonColor.White);
+
+            var allNextCallsPayload = ButtonPayload.CreatePayload("call_all_next");
+            var allNextCallsButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, allNextCallsPayload, "Список всех следующих звонков на сегодня", VkKeyboard.ButtonColor.White);
+
+            listButtons.Add(nextCallButton);
+            listButtons.Add(allCallsButton);
+            listButtons.Add(allNextCallsButton);
+
+            return "Выберите действие с помощью одной из кнопок.";
+        }
+
+        private string GetNextCall()
+        {
+            var call = CallControllerServiceAPI.GetNextCall();
+
+            if (call == null)
+            {
+                return "Сервис временно не доступен, повторите попытку позже.";
+            }
+
+            return $"Следующий звонок в {call.DateTime} - {call.Name}";
+        }
+
+        private string GetAllCalls()
+        {
+            var calls = CallControllerServiceAPI.GetListCalls().Result;
+
+            if (calls == null || calls.Count == 0)
+            {
+                return "Сервис временно не доступен, повторите попытку позже.";
+            }
+
+            var newMessage = $"Список звонков на сегодня:\n\n";
+
+            foreach (var call in calls)
+            {
+                newMessage += $"{call.DateTime} - {call.Name}\n";
+
+                if (call.Name.Contains("конец"))
                 {
-                    var nextCallPayload = ButtonPayload.CreatePayload($"call_next");
-                    var allCallsPayload = ButtonPayload.CreatePayload($"call_all");
-                    var allNextCallsPayload = ButtonPayload.CreatePayload($"call_all_next");
-
-                    listButtons.Add(new Button
-                    {
-                        Action = new VK.Keyboard.Action { ActionType = "text", Payload = nextCallPayload, Label = "Следующий звонок" },
-                        Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White),
-                    });
-                    listButtons.Add(new Button
-                    {
-                        Action = new VK.Keyboard.Action { ActionType = "text", Payload = allCallsPayload, Label = "Все звонки на сегодня" },
-                        Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White),
-                    });
-                    listButtons.Add(new Button
-                    {
-                        Action = new VK.Keyboard.Action { ActionType = "text", Payload = allNextCallsPayload, Label = "Все следующие звонки на сегодня" },
-                        Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White),
-                    });
-
-                    if (listButtons.Count > 0)
-                    {
-                        msg = "Выберите действие с помощью одной из кнопок.";
-                    }
-                    else
-                    {
-                        msg = "Ошибка сервиса.";
-                    }
-
-                    break;
-                }
-                case "call_next":
-                {
-                    var call = CallControllerServiceAPI.GetNextCall();
-
-                    if(call != null)
-                    {
-                        msg = $"Следующий звонок в {call.DateTime} - {call.Name}";
-                    }
-                    else
-                    {
-                        msg = "Внутренняя ошибка сервиса, попробуйте позже.";
-                    }
-
-                    break;
-                }
-                case "call_all":
-                {
-                    var calls = CallControllerServiceAPI.GetListCalls().Result;
-
-                    if (calls != null)
-                    {
-                        msg = $"Список звонков на сегодня:\n\n";
-
-                        foreach (var call in calls)
-                        {
-                            msg += $"{call.DateTime} - {call.Name}\n";
-
-                            if (call.Name.Contains("конец"))
-                            {
-                                msg += "\n";
-                            }
-                        }
-                    }
-                    else
-                    {
-                        msg = "Внутренняя ошибка сервиса, попробуйте позже.";
-                    }
-
-                    break;
-                }
-                case "call_all_next":
-                {
-                    var calls = CallControllerServiceAPI.GetListNextCalls().Result;
-
-                    if (calls != null)
-                    {
-                        msg = $"Список следующих звонков на сегодня:\n\n";
-
-                        foreach (var call in calls)
-                        {
-                            msg += $"{call.DateTime} - {call.Name}\n";
-
-                            if (call.Name.Contains("конец"))
-                            {
-                                msg += "\n";
-                            }
-                            }
-                    }
-                    else
-                    {
-                        msg = "Внутренняя ошибка сервиса, попробуйте позже.";
-                    }
-
-                    break;
+                    newMessage += "\n";
                 }
             }
 
-            var nextPayload = ButtonPayload.CreatePayload("call");
+            return newMessage;
+        }
 
-            listButtons.Add(new Button
+        private string GetAllNextCalls()
+        {
+            var calls = CallControllerServiceAPI.GetListNextCalls().Result;
+
+            if (calls == null || calls.Count == 0)
             {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = nextPayload, Label = "Расписание звонков" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White),
-            });
+                return "Сервис временно не доступен, повторите попытку позже.";
+            }
 
-            listButtons.Add(new Button
+            var newMessage = $"Список звонков на сегодня:\n\n";
+
+            foreach (var call in calls)
             {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = VkKeyboard.DefaultPayload, Label = "Главное меню" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue),
-            });
+                newMessage += $"{call.DateTime} - {call.Name}\n";
 
-            var keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
+                if (call.Name.Contains("конец"))
+                {
+                    newMessage += "\n";
+                }
+            }
 
-            SendMessage(client, userId, msg, keyboard);
+            return newMessage;
         }
     }
 }

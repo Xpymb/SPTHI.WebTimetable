@@ -26,11 +26,18 @@ namespace ConsoleApp1
     {
         static async Task Main(string[] args)
         {
-            var str = "schedule_choosedate МП-21д";
+            var list = new List<string>();
 
-            Console.WriteLine(str.Contains("schedule_choosedate"));
+            UpdateList(list);
+
+            Console.WriteLine(list.Count);
 
             Console.ReadKey();
+        }
+
+        private static void UpdateList(List<string> list)
+        {
+            //list.Add("1");
         }
     }
 }

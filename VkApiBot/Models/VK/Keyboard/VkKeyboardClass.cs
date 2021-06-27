@@ -34,5 +34,17 @@ namespace VkApiBot.Models.VK.Keyboard
 
         [JsonPropertyName("label")]
         public string Label { get; set; }
+
+        [JsonPropertyName("link")]
+        public string Link { get; set; }
+
+        [JsonPropertyName("hash")]
+        public string Hash { get; set; }
+
+        [JsonPropertyName("app_id")]
+        public string AppId { get; set; }
+
+        [JsonPropertyName("owner_id")]
+        public string OwnerId { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System;
 using VkApiBot.Models;
 using VkApiBot.Models.VK.Payload;
 
@@ -29,19 +30,19 @@ namespace VkApiBot.Controllers
                 case "message_new":
                 {
                     var msg = updates.Object.Message;
-                    var payload = msg.Payload != null ? ButtonPayload.DeserializePayload(msg.Payload) : new ButtonPayloadClass { Button = "" };
+                    var payload = ButtonPayload.DeserializePayload(msg.Payload);
                     var client = Bot.Get();
 
                     foreach(var command in Bot.Commands)
                     {
-                        if(command.Contains(msg.Text))
+                        if ((payload.Command != null) && (command.ContainsPayload(payload.Command)))
                         {
-                            command.Execute(msg, client);
+                            command.ExecutePayload(msg, payload, client);
                             break;
                         }
-                        else if(payload.Button != "" && command.ContainsPayload(payload.Button))
+                        else if (command.Contains(msg.Text))
                         {
-                            command.ExecutePayload(msg, payload.Button, client);
+                            command.Execute(msg, client);
                             break;
                         }
                     }

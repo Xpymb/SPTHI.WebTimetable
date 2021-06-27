@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using VkApiBot.Controllers;
+using VkApiBot.Models.VK.Payload;
 using VkNet;
 
 namespace VkApiBot.Models.Commands
@@ -20,7 +21,7 @@ namespace VkApiBot.Models.Commands
             SendMessage(client, userId, Message);
         }
 
-        public override void ExecutePayload(Message message, string payload, VkApi client)
+        public override void ExecutePayload(Message message, ButtonPayloadClass payload, VkApi client)
         {
             throw new NotImplementedException();
         }

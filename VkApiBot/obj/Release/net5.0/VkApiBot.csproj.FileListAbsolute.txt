@@ -108,3 +108,4 @@ C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Release\net5.0\VkApiBot.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Release\net5.0\ref\VkApiBot.dll
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Release\net5.0\VkApiBot.pdb
 C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Release\net5.0\VkApiBot.genruntimeconfig.cache
+C:\Repositories\Diplom_VK_Api_Bot\VkApiBot\obj\Release\net5.0\VkApiBot.csproj.AssemblyReference.cache

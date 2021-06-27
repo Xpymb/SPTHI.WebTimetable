@@ -20,20 +20,14 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
-            var payload = ButtonPayload.CreatePayload("1");
+            listButtons.Add(VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColor.Blue));
 
-            listButtons.Add(new Button
-            {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = payload, Label = "Главное меню" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.Blue)
-            });
-
-            var keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
+            var keyboard = VkKeyboard.CreateKeyboard(false, listButtons);
 
             SendMessage(client, userId, Message, keyboard);
         }
 
-        public override void ExecutePayload(Message message, string payload, VkApi client)
+        public override void ExecutePayload(Message message, ButtonPayloadClass payload, VkApi client)
         {
             throw new NotImplementedException();
         }

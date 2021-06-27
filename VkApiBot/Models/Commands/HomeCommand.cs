@@ -21,37 +21,27 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
+            var aboutInstituteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "О институте", VkKeyboard.ButtonColor.White);
+
+            var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "О боте", VkKeyboard.ButtonColor.White);
+
             var schedulePayload = ButtonPayload.CreatePayload("schedule_choosegroup");
+            var scheduleButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, schedulePayload, "Расписание пар", VkKeyboard.ButtonColor.White);
+
             var callPayload = ButtonPayload.CreatePayload("call");
-            var payload = ButtonPayload.CreatePayload("1");
+            var callButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, callPayload, "Расписание звонков", VkKeyboard.ButtonColor.White);
 
-            listButtons.Add(new Button
-            {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = payload, Label = "О институте" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
-            });
-            listButtons.Add(new Button
-            {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = payload, Label = "О боте" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
-            });
-            listButtons.Add(new Button
-            {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = schedulePayload, Label = "Расписание пар" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
-            });
-            listButtons.Add(new Button
-            {
-                Action = new VK.Keyboard.Action { ActionType = "text", Payload = callPayload, Label = "Расписание звонков" },
-                Color = VkKeyboard.GetColorValue(VkKeyboard.ButtonColor.White)
-            });
+            listButtons.Add(aboutInstituteButton);
+            listButtons.Add(aboutBotButton);
+            listButtons.Add(scheduleButton);
+            listButtons.Add(callButton);
 
-            var keyboard = VkKeyboard.CreateKeyaboard(false, listButtons);
+            var keyboard = VkKeyboard.CreateKeyboard(false, listButtons);
 
             SendMessage(client, userId, Message, keyboard);
         }
 
-        public override void ExecutePayload(Message message, string payload, VkApi client)
+        public override void ExecutePayload(Message message, ButtonPayloadClass payload, VkApi client)
         {
             throw new NotImplementedException();
         }
