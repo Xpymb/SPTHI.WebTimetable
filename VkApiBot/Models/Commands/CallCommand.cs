@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using VkApiBot.Controllers;
 using VkApiBot.gRPC.Services;
 using VkApiBot.Models.VK.Keyboard;
@@ -41,12 +42,12 @@ namespace VkApiBot.Models.Commands
             {
                 var nextPayload = ButtonPayload.CreatePayload("call");
 
-                var button = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, nextPayload, "Расписание звонков", VkKeyboard.ButtonColor.White);
+                var button = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, nextPayload, "Расписание звонков", VkKeyboard.ButtonColorType.White);
 
                 listButtons.Add(button);
             }
 
-            var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColor.Blue);
+            var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColorType.Blue);
 
             listButtons.Add(homeButton);
 
@@ -59,13 +60,13 @@ namespace VkApiBot.Models.Commands
         private string ChooseCommands(List<Button> listButtons)
         {
             var nextCallPayload = ButtonPayload.CreatePayload("call_next");
-            var nextCallButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, nextCallPayload, "Время следующего звонка", VkKeyboard.ButtonColor.White);
+            var nextCallButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, nextCallPayload, "Время следующего звонка", VkKeyboard.ButtonColorType.White);
 
             var allCallsPayload = ButtonPayload.CreatePayload("call_all");
-            var allCallsButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, allCallsPayload, "Список всех звонков на сегодня", VkKeyboard.ButtonColor.White);
+            var allCallsButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, allCallsPayload, "Список всех звонков на сегодня", VkKeyboard.ButtonColorType.White);
 
             var allNextCallsPayload = ButtonPayload.CreatePayload("call_all_next");
-            var allNextCallsButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, allNextCallsPayload, "Список всех следующих звонков на сегодня", VkKeyboard.ButtonColor.White);
+            var allNextCallsButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, allNextCallsPayload, "Список всех следующих звонков на сегодня", VkKeyboard.ButtonColorType.White);
 
             listButtons.Add(nextCallButton);
             listButtons.Add(allCallsButton);
@@ -74,7 +75,7 @@ namespace VkApiBot.Models.Commands
             return "Выберите действие с помощью одной из кнопок.";
         }
 
-        private string GetNextCall()
+        private static string GetNextCall()
         {
             var call = CallControllerServiceAPI.GetNextCall();
 
@@ -86,7 +87,7 @@ namespace VkApiBot.Models.Commands
             return $"Следующий звонок в {call.DateTime} - {call.Name}";
         }
 
-        private string GetAllCalls()
+        private static string GetAllCalls()
         {
             var calls = CallControllerServiceAPI.GetListCalls().Result;
 
@@ -95,22 +96,22 @@ namespace VkApiBot.Models.Commands
                 return "Сервис временно не доступен, повторите попытку позже.";
             }
 
-            var newMessage = $"Список звонков на сегодня:\n\n";
+            var message = new StringBuilder($"Список звонков на сегодня:\n\n");
 
             foreach (var call in calls)
             {
-                newMessage += $"{call.DateTime} - {call.Name}\n";
+                message.Append($"{call.DateTime} - {call.Name}\n");
 
                 if (call.Name.Contains("конец"))
                 {
-                    newMessage += "\n";
+                    message.Append('\n');
                 }
             }
 
-            return newMessage;
+            return message.ToString();
         }
 
-        private string GetAllNextCalls()
+        private static string GetAllNextCalls()
         {
             var calls = CallControllerServiceAPI.GetListNextCalls().Result;
 
@@ -119,19 +120,19 @@ namespace VkApiBot.Models.Commands
                 return "Сервис временно не доступен, повторите попытку позже.";
             }
 
-            var newMessage = $"Список звонков на сегодня:\n\n";
+            var message = new StringBuilder($"Список следующих звонков на сегодня:\n\n");
 
             foreach (var call in calls)
             {
-                newMessage += $"{call.DateTime} - {call.Name}\n";
+                message.Append($"{call.DateTime} - {call.Name}\n");
 
                 if (call.Name.Contains("конец"))
                 {
-                    newMessage += "\n";
+                    message.Append('\n');
                 }
             }
 
-            return newMessage;
+            return message.ToString();
         }
     }
 }

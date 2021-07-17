@@ -21,15 +21,15 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
-            var aboutInstituteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "О институте", VkKeyboard.ButtonColor.White);
+            var aboutInstituteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О институте", VkKeyboard.ButtonColorType.White);
 
-            var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "О боте", VkKeyboard.ButtonColor.White);
+            var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О боте", VkKeyboard.ButtonColorType.White);
 
             var schedulePayload = ButtonPayload.CreatePayload("schedule_choosegroup");
-            var scheduleButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, schedulePayload, "Расписание пар", VkKeyboard.ButtonColor.White);
+            var scheduleButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, schedulePayload, "Расписание пар", VkKeyboard.ButtonColorType.White);
 
             var callPayload = ButtonPayload.CreatePayload("call");
-            var callButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, callPayload, "Расписание звонков", VkKeyboard.ButtonColor.White);
+            var callButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, callPayload, "Расписание звонков", VkKeyboard.ButtonColorType.White);
 
             listButtons.Add(aboutInstituteButton);
             listButtons.Add(aboutBotButton);

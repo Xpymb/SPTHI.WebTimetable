@@ -20,7 +20,7 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
-            listButtons.Add(VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColor.Blue));
+            listButtons.Add(VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColorType.Blue));
 
             var keyboard = VkKeyboard.CreateKeyboard(false, listButtons);
 

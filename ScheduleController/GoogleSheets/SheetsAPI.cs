@@ -43,8 +43,10 @@ namespace ScheduleController.GoogleSheets
         {
             try
             {
-                SpreadsheetsResource.ValuesResource.GetRequest request =
-                    _service.Spreadsheets.Values.Get(spreadSheetId, rangeValues);
+                var request = _service.Spreadsheets.Values.Get(spreadSheetId, rangeValues);
+                _service.Spreadsheets.Values.Get(spreadSheetId, rangeValues);
+
+                var sheet = _service.Spreadsheets.Get(spreadSheetId);
 
                 ValueRange response = request.Execute();
                 return response.Values;

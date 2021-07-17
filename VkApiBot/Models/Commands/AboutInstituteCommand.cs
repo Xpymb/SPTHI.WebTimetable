@@ -23,8 +23,8 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
-            var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "О боте", VkKeyboard.ButtonColor.White);
-            var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColor.Blue);
+            var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О боте", VkKeyboard.ButtonColorType.White);
+            var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColorType.Blue);
 
             listButtons.Add(aboutBotButton);
             listButtons.Add(homeButton);

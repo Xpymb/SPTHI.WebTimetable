@@ -6,13 +6,13 @@ namespace VkApiBot.Models.VK.Keyboard
 {
     public static class VkKeyboard
     {
-        public enum ButtonColor
+        public enum ButtonColorType
         {
             White,
             Blue
         }
 
-        public enum ButtonAction
+        public enum ButtonActionType
         {
             Text,
             OpenLink,
@@ -49,7 +49,7 @@ namespace VkApiBot.Models.VK.Keyboard
             return JsonSerializer.Serialize<VkKeyboardClass>(keyboard, options);
         }
 
-        public static Button CreateButton(ButtonAction type, string payload, string label, ButtonColor color, string link = null)
+        public static Button CreateButton(ButtonActionType type, string payload, string label, ButtonColorType color, string link = null)
         {
             var actionVal = GetActionValue(type);
 
@@ -64,17 +64,17 @@ namespace VkApiBot.Models.VK.Keyboard
             return new Button { Action = action, Color = GetColorValue(color) };
         }
 
-        public static string GetColorValue(ButtonColor color)
+        public static string GetColorValue(ButtonColorType color)
         {
             var colorValue = "";
 
             switch(color)
             {
-                case ButtonColor.White:
+                case ButtonColorType.White:
                     colorValue = "secondary";
                     break;
 
-                case ButtonColor.Blue:
+                case ButtonColorType.Blue:
                     colorValue = "primary";
                     break;
             }
@@ -82,16 +82,16 @@ namespace VkApiBot.Models.VK.Keyboard
             return colorValue;
         }
 
-        private static string GetActionValue(ButtonAction type)
+        private static string GetActionValue(ButtonActionType type)
         {
             return type switch
             {
-                ButtonAction.Text => "text",
-                ButtonAction.OpenLink => "open_link",
-                ButtonAction.Location => "location",
-                ButtonAction.VKPay => "vkpay",
-                ButtonAction.VKApps => "open_app",
-                ButtonAction.Callback => "callback",
+                ButtonActionType.Text => "text",
+                ButtonActionType.OpenLink => "open_link",
+                ButtonActionType.Location => "location",
+                ButtonActionType.VKPay => "vkpay",
+                ButtonActionType.VKApps => "open_app",
+                ButtonActionType.Callback => "callback",
                 _ => "",
             };
         }

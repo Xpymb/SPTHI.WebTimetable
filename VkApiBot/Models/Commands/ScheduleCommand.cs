@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text;
 using VkApiBot.Controllers;
 using VkApiBot.gRPC.Services;
 using VkApiBot.Models.VK.Keyboard;
@@ -38,7 +38,7 @@ namespace VkApiBot.Models.Commands
                 _ => "Сервис временно не доступен, повторите попытку позже",
             };
 
-            var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColor.Blue);
+            var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColorType.Blue);
 
             listButtons.Add(homeButton);
 
@@ -48,7 +48,7 @@ namespace VkApiBot.Models.Commands
         }
 
 
-        private string ChooseGroup(List<Button> listButtons)
+        private static string ChooseGroup(List<Button> listButtons)
         {
             var groups = ScheduleServiceAPI.GetGroupsName().Result;
 
@@ -64,7 +64,7 @@ namespace VkApiBot.Models.Commands
                 var schedulePayload = ButtonPayload.CreateSchedulePayload(groupName: group.GroupName);
                 var nextPayload = ButtonPayload.CreatePayload("schedule_choosedate", schedulePayload);
 
-                var button = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, nextPayload, group.GroupName, VkKeyboard.ButtonColor.White);
+                var button = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, nextPayload, group.GroupName, VkKeyboard.ButtonColorType.White);
 
                 listButtons.Add(button);
             }
@@ -72,7 +72,7 @@ namespace VkApiBot.Models.Commands
             return message;
         }
 
-        private string ChooseDate(List<Button> listButtons, string groupName)
+        private static string ChooseDate(List<Button> listButtons, string groupName)
         {
             var dates = ScheduleServiceAPI.GetDatesSchedulesByGroup(groupName).Result;
 
@@ -88,7 +88,7 @@ namespace VkApiBot.Models.Commands
                 var schedulePayload = ButtonPayload.CreateSchedulePayload(groupName: groupName, date: date.Date);
                 var nextPayload = ButtonPayload.CreatePayload("schedule_result", schedulePayload);
 
-                var button = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, nextPayload, date.Date, VkKeyboard.ButtonColor.White);
+                var button = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, nextPayload, date.Date, VkKeyboard.ButtonColorType.White);
 
                 listButtons.Add(button);
             }
@@ -96,7 +96,7 @@ namespace VkApiBot.Models.Commands
             return message;
         }
 
-        private string GetResult(List<Button> listButtons, string groupName, string date)
+        private static string GetResult(List<Button> listButtons, string groupName, string date)
         {
             var lessons = ScheduleServiceAPI.GetScheduleByGroupName(groupName, date).Result;
 
@@ -105,20 +105,20 @@ namespace VkApiBot.Models.Commands
                 return "Сервис временно не доступен, повторите попытку позже.";
             }
 
-            var message = $"Расписание группы {groupName} на {date}:\n\n";
+            var message = new StringBuilder($"Расписание группы {groupName} на {date}:\n\n");
 
             foreach (var lesson in lessons)
             {
-                message += $"{lesson.Time} {lesson.Name} {lesson.Classroom} {lesson.TeacherName}\n";
+                message.Append($"{lesson.Time} {lesson.Name} {lesson.Classroom} {lesson.TeacherName}\n");
             }
 
             var nextPayload = ButtonPayload.CreatePayload("schedule_choosegroup");
 
-            var button = VkKeyboard.CreateButton(VkKeyboard.ButtonAction.Text, nextPayload, "Расписание пар", VkKeyboard.ButtonColor.White);
+            var button = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, nextPayload, "Расписание пар", VkKeyboard.ButtonColorType.White);
 
             listButtons.Add(button);
 
-            return message;
+            return message.ToString();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace VkApiBot.gRPC.Services
             {
                 var scheduleReply = new List<ScheduleReply>();
                 
-                var reply = _client.GetScheduleByGroupName(new ScheduleRequest
+                using var reply = _client.GetScheduleByGroupName(new ScheduleRequest
                 {
                     GroupName = groupName,
                     Date = date,
@@ -48,7 +48,7 @@ namespace VkApiBot.gRPC.Services
             {
                 var groupsName = new List<GroupsNameReply>();
 
-                var reply = _client.GetGroupsName(new Google.Protobuf.WellKnownTypes.Empty());
+                using var reply = _client.GetGroupsName(new Google.Protobuf.WellKnownTypes.Empty());
 
                 await foreach(var response in reply.ResponseStream.ReadAllAsync())
                 {
@@ -69,7 +69,7 @@ namespace VkApiBot.gRPC.Services
             {
                 var dates = new List<DateScheduleReply>();
 
-                var reply = _client.GetDateScheduleByGroupName(new DateScheduleRequest
+                using var reply = _client.GetDateScheduleByGroupName(new DateScheduleRequest
                 {
                     GroupName = groupName,
                 });
