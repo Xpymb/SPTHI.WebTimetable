@@ -17,7 +17,7 @@ namespace VkApiBot.gRPC.Services
             _client = new ScheduleAPI.ScheduleAPIClient(channel);
         }
 
-        public static async Task<List<ScheduleReply>> GetScheduleByGroupName(string groupName, string date)
+        public static async Task<List<ScheduleReply>> GetScheduleByGroupName(string groupName, string date, string weekType)
         {
             try
             {
@@ -27,6 +27,7 @@ namespace VkApiBot.gRPC.Services
                 {
                     GroupName = groupName,
                     Date = date,
+                    WeekType = weekType,
                 });
 
                 await foreach (var response in reply.ResponseStream.ReadAllAsync())
@@ -42,13 +43,17 @@ namespace VkApiBot.gRPC.Services
             }
         }
 
-        public static async Task<List<GroupsNameReply>> GetGroupsName()
+        public static async Task<List<GroupsNameReply>> GetGroupsName(string groupType, string _class)
         {
             try
             {
                 var groupsName = new List<GroupsNameReply>();
 
-                using var reply = _client.GetGroupsName(new Google.Protobuf.WellKnownTypes.Empty());
+                using var reply = _client.GetGroupsName(new GroupsNameRequest
+                {
+                    GroupType = groupType,
+                    Class = _class,
+                });
 
                 await foreach(var response in reply.ResponseStream.ReadAllAsync())
                 {
@@ -63,7 +68,7 @@ namespace VkApiBot.gRPC.Services
             }
         }
 
-        public static async Task<List<DateScheduleReply>> GetDatesSchedulesByGroup(string groupName)
+        public static async Task<List<DateScheduleReply>> GetDatesSchedulesByGroup(string groupName, string groupeType, string _class, string weeksType)
         {
             try
             {
@@ -72,6 +77,9 @@ namespace VkApiBot.gRPC.Services
                 using var reply = _client.GetDateScheduleByGroupName(new DateScheduleRequest
                 {
                     GroupName = groupName,
+                    Class = _class,
+                    GroupType = groupeType,
+                    WeeksType = weeksType,
                 });
 
                 await foreach(var response in reply.ResponseStream.ReadAllAsync())
@@ -80,6 +88,77 @@ namespace VkApiBot.gRPC.Services
                 }
 
                 return dates;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static async Task<List<GroupsTypeReply>> GetGroupType()
+        {
+            try
+            {
+                var groupsTypeList = new List<GroupsTypeReply>();
+
+                using var reply = _client.GetGroupType(new Google.Protobuf.WellKnownTypes.Empty());
+
+                await foreach (var response in reply.ResponseStream.ReadAllAsync())
+                {
+                    groupsTypeList.Add(response);
+                }
+
+                return groupsTypeList;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static async Task<List<ClassesReply>> GetClasses(string groupType)
+        {
+            try
+            {
+                var classesList = new List<ClassesReply>();
+
+                using var reply = _client.GetClasses(new ClassesRequest()
+                {
+                    GroupType = groupType,
+                });
+
+                await foreach (var response in reply.ResponseStream.ReadAllAsync())
+                {
+                    classesList.Add(response);
+                }
+
+                return classesList;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public static async Task<List<WeeksTypeReply>> GetWeeksType(string groupType, string _classes, string groupName)
+        {
+            try
+            {
+                var classesList = new List<WeeksTypeReply>();
+
+                using var reply = _client.GetWeeksType(new WeeksTypeRequest()
+                {
+                    GroupType = groupType,
+                    Class = _classes,
+                    GroupName = groupName,
+                });
+
+                await foreach (var response in reply.ResponseStream.ReadAllAsync())
+                {
+                    classesList.Add(response);
+                }
+
+                return classesList;
             }
             catch
             {

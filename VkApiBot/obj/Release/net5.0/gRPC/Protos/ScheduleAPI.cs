@@ -25,28 +25,47 @@ namespace ScheduleController {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch1nUlBDL1Byb3Rvcy9zY2hlZHVsZUFQSS5wcm90bxILc2NoZWR1bGVBUEka",
-            "G2dvb2dsZS9wcm90b2J1Zi9lbXB0eS5wcm90byIyCg9TY2hlZHVsZVJlcXVl",
-            "c3QSEQoJZ3JvdXBOYW1lGAEgASgJEgwKBGRhdGUYAiABKAkigwEKDVNjaGVk",
-            "dWxlUmVwbHkSEQoJZ3JvdXBOYW1lGAEgASgJEgwKBHRpbWUYAiABKAkSDAoE",
-            "dHlwZRgDIAEoCRIMCgRuYW1lGAQgASgJEhEKCWNsYXNzcm9vbRgFIAEoCRIT",
-            "Cgt0ZWFjaGVyTmFtZRgGIAEoCRINCgVjbGFzcxgHIAEoCSIkCg9Hcm91cHNO",
-            "YW1lUmVwbHkSEQoJZ3JvdXBOYW1lGAEgASgJIigKE0RhdGVTY2hlZHVsZVJl",
-            "cXVlc3QSEQoJZ3JvdXBOYW1lGAEgASgJIjQKEURhdGVTY2hlZHVsZVJlcGx5",
-            "EhEKCWdyb3VwTmFtZRgBIAEoCRIMCgRkYXRlGAIgASgJMo4CCgtTY2hlZHVs",
-            "ZUFQSRJUChZHZXRTY2hlZHVsZUJ5R3JvdXBOYW1lEhwuc2NoZWR1bGVBUEku",
-            "U2NoZWR1bGVSZXF1ZXN0Ghouc2NoZWR1bGVBUEkuU2NoZWR1bGVSZXBseTAB",
-            "EkcKDUdldEdyb3Vwc05hbWUSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaHC5z",
-            "Y2hlZHVsZUFQSS5Hcm91cHNOYW1lUmVwbHkwARJgChpHZXREYXRlU2NoZWR1",
-            "bGVCeUdyb3VwTmFtZRIgLnNjaGVkdWxlQVBJLkRhdGVTY2hlZHVsZVJlcXVl",
-            "c3QaHi5zY2hlZHVsZUFQSS5EYXRlU2NoZWR1bGVSZXBseTABQhWqAhJTY2hl",
-            "ZHVsZUNvbnRyb2xsZXJiBnByb3RvMw=="));
+            "G2dvb2dsZS9wcm90b2J1Zi9lbXB0eS5wcm90byJECg9TY2hlZHVsZVJlcXVl",
+            "c3QSEQoJZ3JvdXBOYW1lGAEgASgJEgwKBGRhdGUYAiABKAkSEAoId2Vla1R5",
+            "cGUYAyABKAkiIwoOQ2xhc3Nlc1JlcXVlc3QSEQoJZ3JvdXBUeXBlGAEgASgJ",
+            "IjUKEUdyb3Vwc05hbWVSZXF1ZXN0EhEKCWdyb3VwVHlwZRgBIAEoCRINCgVj",
+            "bGFzcxgCIAEoCSJHChBXZWVrc1R5cGVSZXF1ZXN0EhEKCWdyb3VwVHlwZRgB",
+            "IAEoCRINCgVjbGFzcxgCIAEoCRIRCglncm91cE5hbWUYAyABKAkiJAoPR3Jv",
+            "dXBzVHlwZVJlcGx5EhEKCWdyb3VwVHlwZRgBIAEoCSIdCgxDbGFzc2VzUmVw",
+            "bHkSDQoFY2xhc3MYASABKAkiIwoOV2Vla3NUeXBlUmVwbHkSEQoJd2Vla3NU",
+            "eXBlGAEgASgJIoMBCg1TY2hlZHVsZVJlcGx5EhEKCWdyb3VwTmFtZRgBIAEo",
+            "CRIMCgR0aW1lGAIgASgJEgwKBHR5cGUYAyABKAkSDAoEbmFtZRgEIAEoCRIR",
+            "CgljbGFzc3Jvb20YBSABKAkSEwoLdGVhY2hlck5hbWUYBiABKAkSDQoFY2xh",
+            "c3MYByABKAkiJAoPR3JvdXBzTmFtZVJlcGx5EhEKCWdyb3VwTmFtZRgBIAEo",
+            "CSJdChNEYXRlU2NoZWR1bGVSZXF1ZXN0EhEKCWdyb3VwVHlwZRgBIAEoCRIR",
+            "Cglncm91cE5hbWUYAiABKAkSDQoFY2xhc3MYAyABKAkSEQoJd2Vla3NUeXBl",
+            "GAQgASgJIjQKEURhdGVTY2hlZHVsZVJlcGx5EhEKCWdyb3VwTmFtZRgBIAEo",
+            "CRIMCgRkYXRlGAIgASgJMvQDCgtTY2hlZHVsZUFQSRJGCgxHZXRHcm91cFR5",
+            "cGUSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaHC5zY2hlZHVsZUFQSS5Hcm91",
+            "cHNUeXBlUmVwbHkwARJGCgpHZXRDbGFzc2VzEhsuc2NoZWR1bGVBUEkuQ2xh",
+            "c3Nlc1JlcXVlc3QaGS5zY2hlZHVsZUFQSS5DbGFzc2VzUmVwbHkwARJPCg1H",
+            "ZXRHcm91cHNOYW1lEh4uc2NoZWR1bGVBUEkuR3JvdXBzTmFtZVJlcXVlc3Qa",
+            "HC5zY2hlZHVsZUFQSS5Hcm91cHNOYW1lUmVwbHkwARJMCgxHZXRXZWVrc1R5",
+            "cGUSHS5zY2hlZHVsZUFQSS5XZWVrc1R5cGVSZXF1ZXN0Ghsuc2NoZWR1bGVB",
+            "UEkuV2Vla3NUeXBlUmVwbHkwARJUChZHZXRTY2hlZHVsZUJ5R3JvdXBOYW1l",
+            "Ehwuc2NoZWR1bGVBUEkuU2NoZWR1bGVSZXF1ZXN0Ghouc2NoZWR1bGVBUEku",
+            "U2NoZWR1bGVSZXBseTABEmAKGkdldERhdGVTY2hlZHVsZUJ5R3JvdXBOYW1l",
+            "EiAuc2NoZWR1bGVBUEkuRGF0ZVNjaGVkdWxlUmVxdWVzdBoeLnNjaGVkdWxl",
+            "QVBJLkRhdGVTY2hlZHVsZVJlcGx5MAFCFaoCElNjaGVkdWxlQ29udHJvbGxl",
+            "cmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.ScheduleRequest), global::ScheduleController.ScheduleRequest.Parser, new[]{ "GroupName", "Date" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.ScheduleRequest), global::ScheduleController.ScheduleRequest.Parser, new[]{ "GroupName", "Date", "WeekType" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.ClassesRequest), global::ScheduleController.ClassesRequest.Parser, new[]{ "GroupType" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.GroupsNameRequest), global::ScheduleController.GroupsNameRequest.Parser, new[]{ "GroupType", "Class" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.WeeksTypeRequest), global::ScheduleController.WeeksTypeRequest.Parser, new[]{ "GroupType", "Class", "GroupName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.GroupsTypeReply), global::ScheduleController.GroupsTypeReply.Parser, new[]{ "GroupType" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.ClassesReply), global::ScheduleController.ClassesReply.Parser, new[]{ "Class" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.WeeksTypeReply), global::ScheduleController.WeeksTypeReply.Parser, new[]{ "WeeksType" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.ScheduleReply), global::ScheduleController.ScheduleReply.Parser, new[]{ "GroupName", "Time", "Type", "Name", "Classroom", "TeacherName", "Class" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.GroupsNameReply), global::ScheduleController.GroupsNameReply.Parser, new[]{ "GroupName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.DateScheduleRequest), global::ScheduleController.DateScheduleRequest.Parser, new[]{ "GroupName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.DateScheduleRequest), global::ScheduleController.DateScheduleRequest.Parser, new[]{ "GroupType", "GroupName", "Class", "WeeksType" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ScheduleController.DateScheduleReply), global::ScheduleController.DateScheduleReply.Parser, new[]{ "GroupName", "Date" }, null, null, null, null)
           }));
     }
@@ -85,6 +104,7 @@ namespace ScheduleController {
     public ScheduleRequest(ScheduleRequest other) : this() {
       groupName_ = other.groupName_;
       date_ = other.date_;
+      weekType_ = other.weekType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -115,6 +135,17 @@ namespace ScheduleController {
       }
     }
 
+    /// <summary>Field number for the "weekType" field.</summary>
+    public const int WeekTypeFieldNumber = 3;
+    private string weekType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string WeekType {
+      get { return weekType_; }
+      set {
+        weekType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ScheduleRequest);
@@ -130,6 +161,7 @@ namespace ScheduleController {
       }
       if (GroupName != other.GroupName) return false;
       if (Date != other.Date) return false;
+      if (WeekType != other.WeekType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,6 +170,7 @@ namespace ScheduleController {
       int hash = 1;
       if (GroupName.Length != 0) hash ^= GroupName.GetHashCode();
       if (Date.Length != 0) hash ^= Date.GetHashCode();
+      if (WeekType.Length != 0) hash ^= WeekType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -162,6 +195,10 @@ namespace ScheduleController {
         output.WriteRawTag(18);
         output.WriteString(Date);
       }
+      if (WeekType.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(WeekType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -179,6 +216,10 @@ namespace ScheduleController {
         output.WriteRawTag(18);
         output.WriteString(Date);
       }
+      if (WeekType.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(WeekType);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -193,6 +234,9 @@ namespace ScheduleController {
       }
       if (Date.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Date);
+      }
+      if (WeekType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(WeekType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,6 +254,9 @@ namespace ScheduleController {
       }
       if (other.Date.Length != 0) {
         Date = other.Date;
+      }
+      if (other.WeekType.Length != 0) {
+        WeekType = other.WeekType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,6 +278,10 @@ namespace ScheduleController {
           }
           case 18: {
             Date = input.ReadString();
+            break;
+          }
+          case 26: {
+            WeekType = input.ReadString();
             break;
           }
         }
@@ -255,6 +306,1150 @@ namespace ScheduleController {
             Date = input.ReadString();
             break;
           }
+          case 26: {
+            WeekType = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ClassesRequest : pb::IMessage<ClassesRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ClassesRequest> _parser = new pb::MessageParser<ClassesRequest>(() => new ClassesRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ClassesRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ClassesRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ClassesRequest(ClassesRequest other) : this() {
+      groupType_ = other.groupType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ClassesRequest Clone() {
+      return new ClassesRequest(this);
+    }
+
+    /// <summary>Field number for the "groupType" field.</summary>
+    public const int GroupTypeFieldNumber = 1;
+    private string groupType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GroupType {
+      get { return groupType_; }
+      set {
+        groupType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ClassesRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ClassesRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (GroupType != other.GroupType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (GroupType.Length != 0) hash ^= GroupType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (GroupType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GroupType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (GroupType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ClassesRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.GroupType.Length != 0) {
+        GroupType = other.GroupType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class GroupsNameRequest : pb::IMessage<GroupsNameRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GroupsNameRequest> _parser = new pb::MessageParser<GroupsNameRequest>(() => new GroupsNameRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GroupsNameRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GroupsNameRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GroupsNameRequest(GroupsNameRequest other) : this() {
+      groupType_ = other.groupType_;
+      class_ = other.class_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GroupsNameRequest Clone() {
+      return new GroupsNameRequest(this);
+    }
+
+    /// <summary>Field number for the "groupType" field.</summary>
+    public const int GroupTypeFieldNumber = 1;
+    private string groupType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GroupType {
+      get { return groupType_; }
+      set {
+        groupType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "class" field.</summary>
+    public const int ClassFieldNumber = 2;
+    private string class_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Class {
+      get { return class_; }
+      set {
+        class_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GroupsNameRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GroupsNameRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (GroupType != other.GroupType) return false;
+      if (Class != other.Class) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (GroupType.Length != 0) hash ^= GroupType.GetHashCode();
+      if (Class.Length != 0) hash ^= Class.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (GroupType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (Class.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Class);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GroupType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (Class.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Class);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (GroupType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupType);
+      }
+      if (Class.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Class);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GroupsNameRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.GroupType.Length != 0) {
+        GroupType = other.GroupType;
+      }
+      if (other.Class.Length != 0) {
+        Class = other.Class;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+          case 18: {
+            Class = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+          case 18: {
+            Class = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class WeeksTypeRequest : pb::IMessage<WeeksTypeRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WeeksTypeRequest> _parser = new pb::MessageParser<WeeksTypeRequest>(() => new WeeksTypeRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<WeeksTypeRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WeeksTypeRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WeeksTypeRequest(WeeksTypeRequest other) : this() {
+      groupType_ = other.groupType_;
+      class_ = other.class_;
+      groupName_ = other.groupName_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WeeksTypeRequest Clone() {
+      return new WeeksTypeRequest(this);
+    }
+
+    /// <summary>Field number for the "groupType" field.</summary>
+    public const int GroupTypeFieldNumber = 1;
+    private string groupType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GroupType {
+      get { return groupType_; }
+      set {
+        groupType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "class" field.</summary>
+    public const int ClassFieldNumber = 2;
+    private string class_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Class {
+      get { return class_; }
+      set {
+        class_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "groupName" field.</summary>
+    public const int GroupNameFieldNumber = 3;
+    private string groupName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GroupName {
+      get { return groupName_; }
+      set {
+        groupName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as WeeksTypeRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(WeeksTypeRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (GroupType != other.GroupType) return false;
+      if (Class != other.Class) return false;
+      if (GroupName != other.GroupName) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (GroupType.Length != 0) hash ^= GroupType.GetHashCode();
+      if (Class.Length != 0) hash ^= Class.GetHashCode();
+      if (GroupName.Length != 0) hash ^= GroupName.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (GroupType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (Class.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Class);
+      }
+      if (GroupName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(GroupName);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GroupType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (Class.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Class);
+      }
+      if (GroupName.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(GroupName);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (GroupType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupType);
+      }
+      if (Class.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Class);
+      }
+      if (GroupName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupName);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(WeeksTypeRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.GroupType.Length != 0) {
+        GroupType = other.GroupType;
+      }
+      if (other.Class.Length != 0) {
+        Class = other.Class;
+      }
+      if (other.GroupName.Length != 0) {
+        GroupName = other.GroupName;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+          case 18: {
+            Class = input.ReadString();
+            break;
+          }
+          case 26: {
+            GroupName = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+          case 18: {
+            Class = input.ReadString();
+            break;
+          }
+          case 26: {
+            GroupName = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class GroupsTypeReply : pb::IMessage<GroupsTypeReply>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GroupsTypeReply> _parser = new pb::MessageParser<GroupsTypeReply>(() => new GroupsTypeReply());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GroupsTypeReply> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GroupsTypeReply() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GroupsTypeReply(GroupsTypeReply other) : this() {
+      groupType_ = other.groupType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GroupsTypeReply Clone() {
+      return new GroupsTypeReply(this);
+    }
+
+    /// <summary>Field number for the "groupType" field.</summary>
+    public const int GroupTypeFieldNumber = 1;
+    private string groupType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GroupType {
+      get { return groupType_; }
+      set {
+        groupType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GroupsTypeReply);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GroupsTypeReply other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (GroupType != other.GroupType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (GroupType.Length != 0) hash ^= GroupType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (GroupType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GroupType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (GroupType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GroupsTypeReply other) {
+      if (other == null) {
+        return;
+      }
+      if (other.GroupType.Length != 0) {
+        GroupType = other.GroupType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ClassesReply : pb::IMessage<ClassesReply>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ClassesReply> _parser = new pb::MessageParser<ClassesReply>(() => new ClassesReply());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ClassesReply> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ClassesReply() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ClassesReply(ClassesReply other) : this() {
+      class_ = other.class_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ClassesReply Clone() {
+      return new ClassesReply(this);
+    }
+
+    /// <summary>Field number for the "class" field.</summary>
+    public const int ClassFieldNumber = 1;
+    private string class_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Class {
+      get { return class_; }
+      set {
+        class_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ClassesReply);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ClassesReply other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Class != other.Class) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Class.Length != 0) hash ^= Class.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Class.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Class);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Class.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Class);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Class.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Class);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ClassesReply other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Class.Length != 0) {
+        Class = other.Class;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Class = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Class = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class WeeksTypeReply : pb::IMessage<WeeksTypeReply>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WeeksTypeReply> _parser = new pb::MessageParser<WeeksTypeReply>(() => new WeeksTypeReply());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<WeeksTypeReply> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WeeksTypeReply() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WeeksTypeReply(WeeksTypeReply other) : this() {
+      weeksType_ = other.weeksType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WeeksTypeReply Clone() {
+      return new WeeksTypeReply(this);
+    }
+
+    /// <summary>Field number for the "weeksType" field.</summary>
+    public const int WeeksTypeFieldNumber = 1;
+    private string weeksType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string WeeksType {
+      get { return weeksType_; }
+      set {
+        weeksType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as WeeksTypeReply);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(WeeksTypeReply other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (WeeksType != other.WeeksType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (WeeksType.Length != 0) hash ^= WeeksType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (WeeksType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(WeeksType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (WeeksType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(WeeksType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (WeeksType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(WeeksType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(WeeksTypeReply other) {
+      if (other == null) {
+        return;
+      }
+      if (other.WeeksType.Length != 0) {
+        WeeksType = other.WeeksType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            WeeksType = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            WeeksType = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -274,7 +1469,7 @@ namespace ScheduleController {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[1]; }
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -662,7 +1857,7 @@ namespace ScheduleController {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[2]; }
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -834,7 +2029,7 @@ namespace ScheduleController {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[3]; }
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -851,7 +2046,10 @@ namespace ScheduleController {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DateScheduleRequest(DateScheduleRequest other) : this() {
+      groupType_ = other.groupType_;
       groupName_ = other.groupName_;
+      class_ = other.class_;
+      weeksType_ = other.weeksType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -860,14 +2058,47 @@ namespace ScheduleController {
       return new DateScheduleRequest(this);
     }
 
+    /// <summary>Field number for the "groupType" field.</summary>
+    public const int GroupTypeFieldNumber = 1;
+    private string groupType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GroupType {
+      get { return groupType_; }
+      set {
+        groupType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "groupName" field.</summary>
-    public const int GroupNameFieldNumber = 1;
+    public const int GroupNameFieldNumber = 2;
     private string groupName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string GroupName {
       get { return groupName_; }
       set {
         groupName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "class" field.</summary>
+    public const int ClassFieldNumber = 3;
+    private string class_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Class {
+      get { return class_; }
+      set {
+        class_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "weeksType" field.</summary>
+    public const int WeeksTypeFieldNumber = 4;
+    private string weeksType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string WeeksType {
+      get { return weeksType_; }
+      set {
+        weeksType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -884,14 +2115,20 @@ namespace ScheduleController {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (GroupType != other.GroupType) return false;
       if (GroupName != other.GroupName) return false;
+      if (Class != other.Class) return false;
+      if (WeeksType != other.WeeksType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (GroupType.Length != 0) hash ^= GroupType.GetHashCode();
       if (GroupName.Length != 0) hash ^= GroupName.GetHashCode();
+      if (Class.Length != 0) hash ^= Class.GetHashCode();
+      if (WeeksType.Length != 0) hash ^= WeeksType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -908,9 +2145,21 @@ namespace ScheduleController {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GroupName.Length != 0) {
+      if (GroupType.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (GroupName.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(GroupName);
+      }
+      if (Class.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Class);
+      }
+      if (WeeksType.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(WeeksType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -921,9 +2170,21 @@ namespace ScheduleController {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GroupName.Length != 0) {
+      if (GroupType.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(GroupType);
+      }
+      if (GroupName.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(GroupName);
+      }
+      if (Class.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Class);
+      }
+      if (WeeksType.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(WeeksType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -934,8 +2195,17 @@ namespace ScheduleController {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (GroupType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupType);
+      }
       if (GroupName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupName);
+      }
+      if (Class.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Class);
+      }
+      if (WeeksType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(WeeksType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -948,8 +2218,17 @@ namespace ScheduleController {
       if (other == null) {
         return;
       }
+      if (other.GroupType.Length != 0) {
+        GroupType = other.GroupType;
+      }
       if (other.GroupName.Length != 0) {
         GroupName = other.GroupName;
+      }
+      if (other.Class.Length != 0) {
+        Class = other.Class;
+      }
+      if (other.WeeksType.Length != 0) {
+        WeeksType = other.WeeksType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -966,7 +2245,19 @@ namespace ScheduleController {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+          case 18: {
             GroupName = input.ReadString();
+            break;
+          }
+          case 26: {
+            Class = input.ReadString();
+            break;
+          }
+          case 34: {
+            WeeksType = input.ReadString();
             break;
           }
         }
@@ -984,7 +2275,19 @@ namespace ScheduleController {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
+            GroupType = input.ReadString();
+            break;
+          }
+          case 18: {
             GroupName = input.ReadString();
+            break;
+          }
+          case 26: {
+            Class = input.ReadString();
+            break;
+          }
+          case 34: {
+            WeeksType = input.ReadString();
             break;
           }
         }
@@ -1006,7 +2309,7 @@ namespace ScheduleController {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[4]; }
+      get { return global::ScheduleController.ScheduleAPIReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

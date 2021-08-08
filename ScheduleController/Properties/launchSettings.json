@@ -2,6 +2,7 @@
   "profiles": {
     "ScheduleController": {
       "commandName": "Project",
+      "commandLineArgs": "collegesheetid=1rt8TVwUqD8Sz25r4AU2a_lowskbURHw70HUN8A8n4o8 collegelistnames=Колледж institutesheetid=1Mmw_ioHWScPLMu5HcTwJtCv9iz2b75naZgekvPS13pg institutelistnames=Нечётная,Чётная magistracysheetid=11OVBjXhby5FhvveP22JiyM4ZN_cw0CoS1dt7JwkZ818 magistracylistnames=Нечётная,Чётная aspiranturesheetid=10v0WQwt2hPf3y03H00jbSYaU2fv9Vx-dZdKDQjbYedg aspiranturelistnames=Нечётная,Чётная range=A2:H",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -10,6 +11,7 @@
     },
     "Docker": {
       "commandName": "Docker",
+      "commandLineArgs": "collegesheetname=Колледж collegesheetid=1rt8TVwUqD8Sz25r4AU2a_lowskbURHw70HUN8A8n4o8 collegelistnames=Колледж institutesheetname=Институт institutesheetid=1Mmw_ioHWScPLMu5HcTwJtCv9iz2b75naZgekvPS13pg institutelistnames=Нечётная,Чётная magistracysheetname=Магистратура magistracysheetid=11OVBjXhby5FhvveP22JiyM4ZN_cw0CoS1dt7JwkZ818 magistracylistnames=Нечётная,Чётная aspiranturesheetname=Аспирантура aspiranturesheetid=10v0WQwt2hPf3y03H00jbSYaU2fv9Vx-dZdKDQjbYedg aspiranturelistnames=Нечётная,Чётная range=A2:H",
       "launchUrl": "http://localhost:80",
       "publishAllPorts": true,
       "useSSL": true

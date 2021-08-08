@@ -6,6 +6,9 @@ namespace VkApiBot.Models.VK.Payload
     [Serializable]
     public class SchedulePayloadClass
     {
+        [JsonPropertyName("group_type")]
+        public string GroupType { get; set; }
+
         [JsonPropertyName("class")]
         public string Class { get; set; }
 
@@ -14,5 +17,8 @@ namespace VkApiBot.Models.VK.Payload
 
         [JsonPropertyName("date")]
         public string Date { get; set; }
+
+        [JsonPropertyName("week_type")]
+        public string WeekType { get; set; }
     }
 }

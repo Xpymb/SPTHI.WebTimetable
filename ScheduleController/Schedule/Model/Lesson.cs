@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScheduleController.Schedule
+namespace ScheduleController.Schedule.Model
 {
     public class Lesson
     {
@@ -11,5 +11,6 @@ namespace ScheduleController.Schedule
         public string TeacherName { get; set; }
         public string GroupName { get; set; }
         public string Class { get; set; }
+        public string WeekType { get; set; }
     }
 }

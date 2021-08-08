@@ -29,13 +29,15 @@ namespace VkApiBot.Models.VK.Payload
             return JsonSerializer.Deserialize<ButtonPayloadClass>(json, options);
         }
 
-        public static string CreateSchedulePayload(string groupName = null, string _class = null, string date = null)
+        public static string CreateSchedulePayload(string groupName = null, string _class = null, string date = null, string groupType = null, string weekType = null)
         {
             var payload = new SchedulePayloadClass
             {
                 GroupName = groupName,
                 Class = _class,
                 Date = date,
+                GroupType = groupType,
+                WeekType = weekType,
             };
 
             var options = GetDefaultOptions();

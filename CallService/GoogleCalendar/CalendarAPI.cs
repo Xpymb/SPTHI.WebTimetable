@@ -38,6 +38,16 @@ namespace CallService.GoogleCalendar
             });
         }
 
+        public static void SetApplicationName(string name)
+        {
+            _applicationName = name;
+        }
+
+        public static void SetCalendarId(string calendarId)
+        {
+            _calendarId = calendarId;
+        }
+
         public static IList<Event> GetEventsToday()
         {
             if(_service == null)

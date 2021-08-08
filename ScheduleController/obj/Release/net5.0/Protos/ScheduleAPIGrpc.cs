@@ -42,12 +42,46 @@ namespace ScheduleController {
       return parser.ParseFrom(context.PayloadAsNewBuffer());
     }
 
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+    static readonly grpc::Marshaller<global::ScheduleController.GroupsTypeReply> __Marshaller_scheduleAPI_GroupsTypeReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.GroupsTypeReply.Parser));
+    static readonly grpc::Marshaller<global::ScheduleController.ClassesRequest> __Marshaller_scheduleAPI_ClassesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.ClassesRequest.Parser));
+    static readonly grpc::Marshaller<global::ScheduleController.ClassesReply> __Marshaller_scheduleAPI_ClassesReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.ClassesReply.Parser));
+    static readonly grpc::Marshaller<global::ScheduleController.GroupsNameRequest> __Marshaller_scheduleAPI_GroupsNameRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.GroupsNameRequest.Parser));
+    static readonly grpc::Marshaller<global::ScheduleController.GroupsNameReply> __Marshaller_scheduleAPI_GroupsNameReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.GroupsNameReply.Parser));
+    static readonly grpc::Marshaller<global::ScheduleController.WeeksTypeRequest> __Marshaller_scheduleAPI_WeeksTypeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.WeeksTypeRequest.Parser));
+    static readonly grpc::Marshaller<global::ScheduleController.WeeksTypeReply> __Marshaller_scheduleAPI_WeeksTypeReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.WeeksTypeReply.Parser));
     static readonly grpc::Marshaller<global::ScheduleController.ScheduleRequest> __Marshaller_scheduleAPI_ScheduleRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.ScheduleRequest.Parser));
     static readonly grpc::Marshaller<global::ScheduleController.ScheduleReply> __Marshaller_scheduleAPI_ScheduleReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.ScheduleReply.Parser));
-    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
-    static readonly grpc::Marshaller<global::ScheduleController.GroupsNameReply> __Marshaller_scheduleAPI_GroupsNameReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.GroupsNameReply.Parser));
     static readonly grpc::Marshaller<global::ScheduleController.DateScheduleRequest> __Marshaller_scheduleAPI_DateScheduleRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.DateScheduleRequest.Parser));
     static readonly grpc::Marshaller<global::ScheduleController.DateScheduleReply> __Marshaller_scheduleAPI_DateScheduleReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ScheduleController.DateScheduleReply.Parser));
+
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::ScheduleController.GroupsTypeReply> __Method_GetGroupType = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::ScheduleController.GroupsTypeReply>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetGroupType",
+        __Marshaller_google_protobuf_Empty,
+        __Marshaller_scheduleAPI_GroupsTypeReply);
+
+    static readonly grpc::Method<global::ScheduleController.ClassesRequest, global::ScheduleController.ClassesReply> __Method_GetClasses = new grpc::Method<global::ScheduleController.ClassesRequest, global::ScheduleController.ClassesReply>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetClasses",
+        __Marshaller_scheduleAPI_ClassesRequest,
+        __Marshaller_scheduleAPI_ClassesReply);
+
+    static readonly grpc::Method<global::ScheduleController.GroupsNameRequest, global::ScheduleController.GroupsNameReply> __Method_GetGroupsName = new grpc::Method<global::ScheduleController.GroupsNameRequest, global::ScheduleController.GroupsNameReply>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetGroupsName",
+        __Marshaller_scheduleAPI_GroupsNameRequest,
+        __Marshaller_scheduleAPI_GroupsNameReply);
+
+    static readonly grpc::Method<global::ScheduleController.WeeksTypeRequest, global::ScheduleController.WeeksTypeReply> __Method_GetWeeksType = new grpc::Method<global::ScheduleController.WeeksTypeRequest, global::ScheduleController.WeeksTypeReply>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GetWeeksType",
+        __Marshaller_scheduleAPI_WeeksTypeRequest,
+        __Marshaller_scheduleAPI_WeeksTypeReply);
 
     static readonly grpc::Method<global::ScheduleController.ScheduleRequest, global::ScheduleController.ScheduleReply> __Method_GetScheduleByGroupName = new grpc::Method<global::ScheduleController.ScheduleRequest, global::ScheduleController.ScheduleReply>(
         grpc::MethodType.ServerStreaming,
@@ -55,13 +89,6 @@ namespace ScheduleController {
         "GetScheduleByGroupName",
         __Marshaller_scheduleAPI_ScheduleRequest,
         __Marshaller_scheduleAPI_ScheduleReply);
-
-    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::ScheduleController.GroupsNameReply> __Method_GetGroupsName = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::ScheduleController.GroupsNameReply>(
-        grpc::MethodType.ServerStreaming,
-        __ServiceName,
-        "GetGroupsName",
-        __Marshaller_google_protobuf_Empty,
-        __Marshaller_scheduleAPI_GroupsNameReply);
 
     static readonly grpc::Method<global::ScheduleController.DateScheduleRequest, global::ScheduleController.DateScheduleReply> __Method_GetDateScheduleByGroupName = new grpc::Method<global::ScheduleController.DateScheduleRequest, global::ScheduleController.DateScheduleReply>(
         grpc::MethodType.ServerStreaming,
@@ -80,12 +107,27 @@ namespace ScheduleController {
     [grpc::BindServiceMethod(typeof(ScheduleAPI), "BindService")]
     public abstract partial class ScheduleAPIBase
     {
-      public virtual global::System.Threading.Tasks.Task GetScheduleByGroupName(global::ScheduleController.ScheduleRequest request, grpc::IServerStreamWriter<global::ScheduleController.ScheduleReply> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task GetGroupType(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::IServerStreamWriter<global::ScheduleController.GroupsTypeReply> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task GetGroupsName(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::IServerStreamWriter<global::ScheduleController.GroupsNameReply> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task GetClasses(global::ScheduleController.ClassesRequest request, grpc::IServerStreamWriter<global::ScheduleController.ClassesReply> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task GetGroupsName(global::ScheduleController.GroupsNameRequest request, grpc::IServerStreamWriter<global::ScheduleController.GroupsNameReply> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task GetWeeksType(global::ScheduleController.WeeksTypeRequest request, grpc::IServerStreamWriter<global::ScheduleController.WeeksTypeReply> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task GetScheduleByGroupName(global::ScheduleController.ScheduleRequest request, grpc::IServerStreamWriter<global::ScheduleController.ScheduleReply> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -102,8 +144,11 @@ namespace ScheduleController {
     public static grpc::ServerServiceDefinition BindService(ScheduleAPIBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetScheduleByGroupName, serviceImpl.GetScheduleByGroupName)
+          .AddMethod(__Method_GetGroupType, serviceImpl.GetGroupType)
+          .AddMethod(__Method_GetClasses, serviceImpl.GetClasses)
           .AddMethod(__Method_GetGroupsName, serviceImpl.GetGroupsName)
+          .AddMethod(__Method_GetWeeksType, serviceImpl.GetWeeksType)
+          .AddMethod(__Method_GetScheduleByGroupName, serviceImpl.GetScheduleByGroupName)
           .AddMethod(__Method_GetDateScheduleByGroupName, serviceImpl.GetDateScheduleByGroupName).Build();
     }
 
@@ -113,8 +158,11 @@ namespace ScheduleController {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ScheduleAPIBase serviceImpl)
     {
+      serviceBinder.AddMethod(__Method_GetGroupType, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::ScheduleController.GroupsTypeReply>(serviceImpl.GetGroupType));
+      serviceBinder.AddMethod(__Method_GetClasses, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::ScheduleController.ClassesRequest, global::ScheduleController.ClassesReply>(serviceImpl.GetClasses));
+      serviceBinder.AddMethod(__Method_GetGroupsName, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::ScheduleController.GroupsNameRequest, global::ScheduleController.GroupsNameReply>(serviceImpl.GetGroupsName));
+      serviceBinder.AddMethod(__Method_GetWeeksType, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::ScheduleController.WeeksTypeRequest, global::ScheduleController.WeeksTypeReply>(serviceImpl.GetWeeksType));
       serviceBinder.AddMethod(__Method_GetScheduleByGroupName, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::ScheduleController.ScheduleRequest, global::ScheduleController.ScheduleReply>(serviceImpl.GetScheduleByGroupName));
-      serviceBinder.AddMethod(__Method_GetGroupsName, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::ScheduleController.GroupsNameReply>(serviceImpl.GetGroupsName));
       serviceBinder.AddMethod(__Method_GetDateScheduleByGroupName, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::ScheduleController.DateScheduleRequest, global::ScheduleController.DateScheduleReply>(serviceImpl.GetDateScheduleByGroupName));
     }
 

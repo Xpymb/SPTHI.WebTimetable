@@ -16,10 +16,49 @@ namespace ScheduleController
             _logger = logger;
         }
 
+        public override async Task GetGroupType(Empty request, IServerStreamWriter<GroupsTypeReply> responseStream, ServerCallContext context)
+        {
+            var groupsType = ScheduleManager.GetGroupTypes();
+
+            foreach (var groupType in groupsType)
+            {
+                await responseStream.WriteAsync(new GroupsTypeReply
+                {
+                    GroupType = groupType,
+                });
+            }
+        }
+
+        public override async Task GetClasses(ClassesRequest request, IServerStreamWriter<ClassesReply> responseStream, ServerCallContext context)
+        {
+            var classes = ScheduleManager.GetClasses(request.GroupType);
+
+            foreach (var _class in classes)
+            {
+                await responseStream.WriteAsync(new ClassesReply
+                {
+                    Class = _class
+                });
+            }
+        }
+
+        public override async Task GetWeeksType(WeeksTypeRequest request, IServerStreamWriter<WeeksTypeReply> responseStream, ServerCallContext context)
+        {
+            var weeksType = ScheduleManager.GetWeeksType(request.GroupName, request.GroupType);
+
+            foreach (var weekType in weeksType)
+            {
+                await responseStream.WriteAsync(new WeeksTypeReply
+                {
+                    WeeksType = weekType,
+                });
+            }
+        }
+
         public override async Task GetScheduleByGroupName(ScheduleRequest request,
             IServerStreamWriter<ScheduleReply> responseStream, ServerCallContext context)
         {
-            var lessons = ScheduleManager.GetScheduleByGroupName(request.GroupName, DateTime.ParseExact(request.Date, "dd.MM.yyyy", CultureInfo.InvariantCulture));
+            var lessons = ScheduleManager.GetSchedule(request.GroupName, DateTime.ParseExact(request.Date, "dd.MM.yyyy", CultureInfo.InvariantCulture), request.WeekType);
 
             foreach (var lesson in lessons)
             {
@@ -36,10 +75,10 @@ namespace ScheduleController
             }
         }
 
-        public override async Task GetGroupsName(Empty request,
+        public override async Task GetGroupsName(GroupsNameRequest request,
             IServerStreamWriter<GroupsNameReply> responseStream, ServerCallContext context)
         {
-            var groupsName = ScheduleManager.GetGroupsName();
+            var groupsName = ScheduleManager.GetGroupsName(request.Class, request.GroupType);
 
             foreach (var groupName in groupsName)
             {
@@ -53,7 +92,7 @@ namespace ScheduleController
         public override async Task GetDateScheduleByGroupName(DateScheduleRequest request,
             IServerStreamWriter<DateScheduleReply> responseStream, ServerCallContext context)
         {
-            var lessonsDates = ScheduleManager.GetDatesLessonsByGroup(request.GroupName);
+            var lessonsDates = ScheduleManager.GetDatesLessons(request.GroupName, request.GroupType, request.WeeksType);
 
             foreach (var lessonDate in lessonsDates)
             {

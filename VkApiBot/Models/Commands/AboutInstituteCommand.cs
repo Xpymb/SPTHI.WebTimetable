@@ -15,7 +15,8 @@ namespace VkApiBot.Models.Commands
                                           "государственное образовательное учреждение высшего образования. Единственный вуз " +
                                           "в Снежинске (бывший Челябинск-70). Входит в состав федерального государственного " +
                                           "автономного образовательного учреждения высшего образования «Национальный " +
-                                          "исследовательский ядерный университет «МИФИ» (СФТИ НИЯУ МИФИ).";
+                                          "исследовательский ядерный университет «МИФИ» (СФТИ НИЯУ МИФИ).\n\n" +
+                                          "Официальный сайт института: https://www.sphti.ru/";
 
         public override List<string> Payload => new() { "undefined" };
         public override void Execute(Message message, VkApi client)
@@ -24,9 +25,11 @@ namespace VkApiBot.Models.Commands
             var listButtons = new List<Button>();
 
             var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О боте", VkKeyboard.ButtonColorType.White);
+            var linkSiteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.OpenLink, ButtonPayload.GetDefaultPayload(), "Официальный сайт института", VkKeyboard.ButtonColorType.Null, "https://www.sphti.ru/");
             var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColorType.Blue);
 
             listButtons.Add(aboutBotButton);
+            listButtons.Add(linkSiteButton);
             listButtons.Add(homeButton);
 
             var keyboard = VkKeyboard.CreateKeyboard(false, listButtons);

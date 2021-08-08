@@ -20,35 +20,56 @@ namespace VkApiBot.gRPC.Services
 
         public static CallReply GetNextCall()
         {
-            return _client.GetNextCall(new Empty());
+            try
+            {
+                return _client.GetNextCall(new Empty());
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public static async Task<List<CallReply>> GetListCalls()
         {
-            var reply = _client.GetListCalls(new Empty());
-
-            var listCalls = new List<CallReply>();
-
-            await foreach(var response in reply.ResponseStream.ReadAllAsync())
+            try
             {
-                listCalls.Add(response);
-            }
+                var reply = _client.GetListCalls(new Empty());
 
-            return listCalls;
+                var listCalls = new List<CallReply>();
+
+                await foreach (var response in reply.ResponseStream.ReadAllAsync())
+                {
+                    listCalls.Add(response);
+                }
+
+                return listCalls;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public static async Task<List<CallReply>> GetListNextCalls()
         {
-            var reply = _client.GetListNextCalls(new Empty());
-
-            var listCalls = new List<CallReply>();
-
-            await foreach (var response in reply.ResponseStream.ReadAllAsync())
+            try
             {
-                listCalls.Add(response);
-            }
+                var reply = _client.GetListNextCalls(new Empty());
 
-            return listCalls;
+                var listCalls = new List<CallReply>();
+
+                await foreach (var response in reply.ResponseStream.ReadAllAsync())
+                {
+                    listCalls.Add(response);
+                }
+
+                return listCalls;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

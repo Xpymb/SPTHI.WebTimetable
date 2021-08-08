@@ -9,7 +9,8 @@ namespace VkApiBot.Models.VK.Keyboard
         public enum ButtonColorType
         {
             White,
-            Blue
+            Blue,
+            Null
         }
 
         public enum ButtonActionType
@@ -61,7 +62,14 @@ namespace VkApiBot.Models.VK.Keyboard
                 Link = link,
             };
 
-            return new Button { Action = action, Color = GetColorValue(color) };
+            if (color != ButtonColorType.Null)
+            {
+                return new Button { Action = action, Color = GetColorValue(color) };
+            }
+            else
+            {
+                return new Button { Action = action };
+            }
         }
 
         public static string GetColorValue(ButtonColorType color)

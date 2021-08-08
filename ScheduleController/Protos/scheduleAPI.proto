@@ -7,14 +7,45 @@ import "google/protobuf/empty.proto";
 package scheduleAPI;
 
 service ScheduleAPI {
+  rpc GetGroupType (google.protobuf.Empty) returns (stream GroupsTypeReply);
+  rpc GetClasses (ClassesRequest) returns (stream ClassesReply);
+  rpc GetGroupsName (GroupsNameRequest) returns (stream GroupsNameReply);
+  rpc GetWeeksType (WeeksTypeRequest) returns (stream WeeksTypeReply);
   rpc GetScheduleByGroupName (ScheduleRequest) returns (stream ScheduleReply);
-  rpc GetGroupsName (google.protobuf.Empty) returns (stream GroupsNameReply);
   rpc GetDateScheduleByGroupName (DateScheduleRequest) returns (stream DateScheduleReply);
 }
 
 message ScheduleRequest {
 	string groupName = 1;
 	string date = 2;
+	string weekType = 3;
+}
+
+message ClassesRequest {
+	string groupType = 1;
+}
+
+message GroupsNameRequest {
+	string groupType = 1;
+	string class = 2;
+}
+
+message WeeksTypeRequest {
+	string groupType = 1;
+	string class = 2;
+	string groupName = 3;
+}
+
+message GroupsTypeReply {
+	string groupType = 1;
+}
+
+message ClassesReply {
+	string class = 1;
+}
+
+message WeeksTypeReply {
+	string weeksType = 1;
 }
 
 message ScheduleReply {
@@ -32,7 +63,10 @@ message GroupsNameReply {
 }
 
 message DateScheduleRequest {
-	string groupName = 1;
+	string groupType = 1;
+	string groupName = 2;
+	string class = 3;
+	string weeksType = 4;
 }
 
 message DateScheduleReply {
