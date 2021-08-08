@@ -9,7 +9,7 @@ namespace VkApiBot.Models.Commands
 {
     public class AboutInstituteCommand : Command
     {
-        public override List<string> Name => new() { "О институте" };
+        public override List<string> Name => new() { "Об институте" };
 
         public override string Message => "Снежинский физико-технический институт (с 2001 года — академия) — федеральное " +
                                           "государственное образовательное учреждение высшего образования. Единственный вуз " +
@@ -24,7 +24,7 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
-            var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О боте", VkKeyboard.ButtonColorType.White);
+            var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О чат-боте", VkKeyboard.ButtonColorType.White);
             var linkSiteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.OpenLink, ButtonPayload.GetDefaultPayload(), "Официальный сайт института", VkKeyboard.ButtonColorType.Null, "https://www.sphti.ru/");
             var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColorType.Blue);
 

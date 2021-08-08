@@ -14,5 +14,18 @@ namespace ScheduleController.Schedule.Model
         {
             return GroupType == groupType;
         }
+
+        public static bool ListGroupContains(List<Group> groups, string groupName)
+        {
+            foreach (var group in groups)
+            {
+                if(group.Name == groupName)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

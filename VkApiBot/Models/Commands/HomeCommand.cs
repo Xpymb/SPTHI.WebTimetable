@@ -21,9 +21,9 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
-            var aboutInstituteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О институте", VkKeyboard.ButtonColorType.White);
+            var aboutInstituteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "Об институте", VkKeyboard.ButtonColorType.White);
 
-            var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О боте", VkKeyboard.ButtonColorType.White);
+            var aboutBotButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О чат-боте", VkKeyboard.ButtonColorType.White);
 
             var schedulePayload = ButtonPayload.CreatePayload("schedule_choosegrouptype");
             var scheduleButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, schedulePayload, "Расписание пар", VkKeyboard.ButtonColorType.White);
@@ -33,10 +33,10 @@ namespace VkApiBot.Models.Commands
 
             var callbackButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.OpenLink, ButtonPayload.GetDefaultPayload(), "Сообщить о проблеме", VkKeyboard.ButtonColorType.Null, AppSettings.CallbackForm);
 
-            listButtons.Add(aboutInstituteButton);
-            listButtons.Add(aboutBotButton);
             listButtons.Add(scheduleButton);
             listButtons.Add(callButton);
+            listButtons.Add(aboutInstituteButton);
+            listButtons.Add(aboutBotButton);
             listButtons.Add(callbackButton);
 
             var keyboard = VkKeyboard.CreateKeyboard(false, listButtons);

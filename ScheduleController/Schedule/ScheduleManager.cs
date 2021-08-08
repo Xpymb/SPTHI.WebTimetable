@@ -233,7 +233,7 @@ namespace ScheduleController.Schedule
 
             foreach (var group in groupType.Groups)
             {
-                if(group.Class.Name == _class)
+                if(group.Class.Name == _class && !listGroupsName.Contains(group.Name))
                 {
                     listGroupsName.Add(group.Name);
                 }

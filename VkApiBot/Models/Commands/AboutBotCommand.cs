@@ -9,7 +9,7 @@ namespace VkApiBot.Models.Commands
 {
     public class AboutBotCommand : Command
     {
-        public override List<string> Name => new() { "О боте" };
+        public override List<string> Name => new() { "О чат-боте" };
 
         public override string Message => "Я умный чат-бот из системы БАРСик, разработанный " +
                                           "Лабораторией Мобильной Робототехники \n\n" +
@@ -22,7 +22,7 @@ namespace VkApiBot.Models.Commands
             var userId = message.FromId;
             var listButtons = new List<Button>();
 
-            var aboutInstituteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "О институте", VkKeyboard.ButtonColorType.White);
+            var aboutInstituteButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "Об институте", VkKeyboard.ButtonColorType.White);
             var callbackButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.OpenLink, ButtonPayload.GetDefaultPayload(), "Обратная связь", VkKeyboard.ButtonColorType.Null, $"https://vk.com/id{AppSettings.AdminId}");
             var homeButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, ButtonPayload.GetDefaultPayload(), "Главное меню", VkKeyboard.ButtonColorType.Blue);
 

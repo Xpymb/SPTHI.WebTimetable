@@ -37,7 +37,7 @@ namespace VkApiBot.Models.Commands
                 "schedule_choosegroup" => ChooseGroup(listButtons, payloadArgs.GroupType, payloadArgs.Class),
                 "schedule_chooseweektype" => ChooseWeekType(listButtons, payloadArgs.GroupType, payloadArgs.Class, payloadArgs.GroupName),
                 "schedule_choosedate" => ChooseDate(listButtons, payloadArgs.GroupName, payloadArgs.GroupType, payloadArgs.Class, payloadArgs.WeekType),
-                "schedule_result" => GetResult(listButtons, payloadArgs.GroupName, payloadArgs.Date, payloadArgs.WeekType),
+                "schedule_result" => GetResult(listButtons, payloadArgs.GroupType, payloadArgs.GroupName, payloadArgs.Date, payloadArgs.WeekType, payloadArgs.Class),
                 _ => "Сервис временно не доступен, повторите попытку позже (ооаоа)",
             };
 
@@ -109,29 +109,14 @@ namespace VkApiBot.Models.Commands
 
             var message = "Выберите группу с помощью одной из кнопок";
 
-            if (groupType.Contains("Колледж"))
+            foreach (var group in groups)
             {
-                foreach (var group in groups)
-                {
-                    var schedulePayload = ButtonPayload.CreateSchedulePayload(groupName: group.GroupName, _class: _class, groupType: groupType, weekType: groupType);
-                    var nextPayload = ButtonPayload.CreatePayload("schedule_choosedate", schedulePayload);
+                var schedulePayload = ButtonPayload.CreateSchedulePayload(groupName: group.GroupName, _class: _class, groupType: groupType);
+                var nextPayload = ButtonPayload.CreatePayload("schedule_chooseweektype", schedulePayload);
 
-                    var button = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, nextPayload, group.GroupName, VkKeyboard.ButtonColorType.White);
+                var button = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, nextPayload, group.GroupName, VkKeyboard.ButtonColorType.White);
 
-                    listButtons.Add(button);
-                }
-            }
-            else
-            {
-                foreach (var group in groups)
-                {
-                    var schedulePayload = ButtonPayload.CreateSchedulePayload(groupName: group.GroupName, _class: _class, groupType: groupType);
-                    var nextPayload = ButtonPayload.CreatePayload("schedule_chooseweektype", schedulePayload);
-
-                    var button = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, nextPayload, group.GroupName, VkKeyboard.ButtonColorType.White);
-
-                    listButtons.Add(button);
-                }
+                listButtons.Add(button);
             }
 
             return message;
@@ -145,6 +130,11 @@ namespace VkApiBot.Models.Commands
             {
                 return "Сервис временно не доступен, повторите попытку позже";
             }
+
+            if(weeksTypeList[0].WeeksType.Contains("Колледж"))
+            {
+                return ChooseDate(listButtons, groupName, groupType, _class, weeksTypeList[0].WeeksType);
+            }    
 
             var message = "Выберите тип недели с помощью одной из кнопок";
 
@@ -185,7 +175,7 @@ namespace VkApiBot.Models.Commands
             return message;
         }
 
-        private static string GetResult(List<Button> listButtons, string groupName, string date, string weekType)
+        private static string GetResult(List<Button> listButtons, string groupType, string groupName, string date, string weekType, string _class)
         {
             var lessons = ScheduleServiceAPI.GetScheduleByGroupName(groupName, date, weekType).Result;
 
@@ -201,10 +191,15 @@ namespace VkApiBot.Models.Commands
                 message.Append($"{lesson.Time} {lesson.Name} {lesson.Classroom} {lesson.TeacherName}\n");
             }
 
+            var schedulePayload = ButtonPayload.CreateSchedulePayload(groupType: groupType, groupName: groupName, weekType: weekType, _class: _class);
+            var backPayload = ButtonPayload.CreatePayload("schedule_chooseweektype", schedulePayload);
+
             var nextPayload = ButtonPayload.CreatePayload("schedule_choosegrouptype");
 
+            var backButton = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, backPayload, groupName, VkKeyboard.ButtonColorType.White);
             var button = VkKeyboard.CreateButton(VkKeyboard.ButtonActionType.Text, nextPayload, "Расписание пар", VkKeyboard.ButtonColorType.White);
 
+            listButtons.Add(backButton);
             listButtons.Add(button);
 
             return message.ToString();
